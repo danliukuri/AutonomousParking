@@ -2,6 +2,7 @@
   "dependencies": {
     "com.unity.collab-proxy": "2.0.0",
     "com.unity.feature.development": "1.0.1",
+    "com.unity.ml-agents": "2.0.1",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.2",
     "com.unity.ugui": "1.0.0",
