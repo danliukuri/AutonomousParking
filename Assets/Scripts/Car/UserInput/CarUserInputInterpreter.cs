@@ -1,4 +1,6 @@
-﻿namespace AutomaticParking.Car.UserInput
+﻿using System;
+
+namespace AutomaticParking.Car.UserInput
 {
     public class CarUserInputInterpreter
     {
@@ -9,6 +11,8 @@
         public float InterpretAsWheelTorque(float input) => input * carData.MaxWheelTorque;
 
         public float InterpretAsSteeringAngle(float input) => input * carData.MaxSteeringAngle;
+
+        public bool InterpretAsBreakingState(float input) => Convert.ToBoolean(input);
 
         public bool InterpretAsBreakingState(bool input) => input;
     }
