@@ -3195,6 +3195,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: 74.2, z: 0}
+--- !u!1001 &800815207
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9950004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033333, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_Name
+      value: CarParkingAgentTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033333, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033334, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3135997747677033329, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+    - {fileID: 3135997747677033334, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+    - {fileID: 3135997747677033335, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+--- !u!4 &800815208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+  m_PrefabInstance: {fileID: 800815207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &804706252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4625,6 +4686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarParkingAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 5342535204235625003, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: <Target>k__BackingField
+      value: 
+      objectReference: {fileID: 800815208}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
