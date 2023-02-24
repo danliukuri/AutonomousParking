@@ -12,6 +12,7 @@ namespace AutomaticParking.Agents
         {
             float reward = default;
             reward += CalculateRewardForDecreasingDistanceToTarget();
+            reward += CalculateRewardForDecreasingAngleToTarget();
             return reward;
         }
 
@@ -28,6 +29,22 @@ namespace AutomaticParking.Agents
                 reward -= distancesDifference;
 
             data.PreviousDistanceToTarget = currentDistanceToTarget;
+            return reward;
+        }
+
+        private float CalculateRewardForDecreasingAngleToTarget()
+        {
+            float reward = default;
+
+            float currentAngleToTarget = Quaternion.Angle(data.Transform.rotation, data.Target.rotation);
+            float angleDifference = Mathf.Abs(data.PreviousAngleToTarget - currentAngleToTarget);
+
+            if (currentAngleToTarget < data.PreviousAngleToTarget)
+                reward += angleDifference;
+            else
+                reward -= angleDifference;
+
+            data.PreviousAngleToTarget = currentAngleToTarget;
             return reward;
         }
     }
