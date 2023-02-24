@@ -14,6 +14,7 @@ namespace AutomaticParking.Agents
         public override void OnActionReceived(ActionBuffers actions)
         {
             data.ActionsHandler.HandleInputActions(actions);
+            AddReward(data.RewardCalculator.CalculateReward());
         }
     }
 }

@@ -8,6 +8,7 @@ namespace AutomaticParking.Agents
         public Transform Transform { get; private set; }
 
         public ParkingAgentActionsHandler ActionsHandler { get; private set; }
+        public ParkingAgentRewardCalculator RewardCalculator { get; private set; }
 
         public float PreviousDistanceToTarget { get; set; }
         public float PreviousAngleToTarget { get; set; }
@@ -16,6 +17,7 @@ namespace AutomaticParking.Agents
         {
             Transform = transform;
             ActionsHandler = GetComponentInChildren<ParkingAgentActionsHandler>();
+            RewardCalculator = new ParkingAgentRewardCalculator(this);
         }
 
         public void Reset()
