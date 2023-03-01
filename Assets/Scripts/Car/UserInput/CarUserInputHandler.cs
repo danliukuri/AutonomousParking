@@ -4,10 +4,6 @@ namespace AutomaticParking.Car.UserInput
 {
     public class CarUserInputHandler : MonoBehaviour
     {
-        private const string VerticalAxisName = "Vertical";
-        private const string HorizontalAxisName = "Horizontal";
-        private const KeyCode BrakingKeyCode = KeyCode.Space;
-
         [SerializeField] private CarData carData;
         private CarUserInputInterpreter interpreter;
 
@@ -15,9 +11,9 @@ namespace AutomaticParking.Car.UserInput
 
         private void Update()
         {
-            carData.CurrentWheelTorque = interpreter.InterpretAsWheelTorque(Input.GetAxis(VerticalAxisName));
-            carData.CurrentSteeringAngle = interpreter.InterpretAsSteeringAngle(Input.GetAxis(HorizontalAxisName));
-            carData.IsBreaking = interpreter.InterpretAsBreakingState(Input.GetKey(BrakingKeyCode));
+            carData.CurrentWheelTorque = interpreter.InterpretAsWheelTorque(CarUserInputData.WheelTorque);
+            carData.CurrentSteeringAngle = interpreter.InterpretAsSteeringAngle(CarUserInputData.SteeringAngle);
+            carData.IsBreaking = interpreter.InterpretAsBreakingState(CarUserInputData.IsBreaking);
         }
     }
 }
