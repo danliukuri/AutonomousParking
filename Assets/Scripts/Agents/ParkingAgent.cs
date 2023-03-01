@@ -16,5 +16,11 @@ namespace AutomaticParking.Agents
             data.ActionsHandler.HandleInputActions(actions);
             AddReward(data.RewardCalculator.CalculateReward());
         }
+
+        public override void Heuristic(in ActionBuffers actionsOut)
+        {
+            data.ActionsHandler.HandleHeuristicInputContinuousActions(actionsOut.ContinuousActions);
+            data.ActionsHandler.HandleHeuristicInputDiscreteActions(actionsOut.DiscreteActions);
+        }
     }
 }
