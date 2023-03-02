@@ -19,8 +19,15 @@ namespace AutomaticParking.Car
         {
             var wheelsInfo = GetComponentInChildren<WheelsData>();
             int drivingWheelsCount = wheelsInfo.DrivingWheels.Length;
-            
+
             MaxWheelTorque = MaxEngineTorque * DrivetrainEfficiency / drivingWheelsCount;
+        }
+
+        public void Reset()
+        {
+            CurrentWheelTorque = default;
+            CurrentSteeringAngle = default;
+            IsBreaking = default;
         }
     }
 }
