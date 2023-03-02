@@ -2,16 +2,19 @@
 using AutomaticParking.Car;
 using AutomaticParking.Car.UserInput;
 using Unity.MLAgents.Actuators;
-using UnityEngine;
 
 namespace AutomaticParking.Agents
 {
-    public class ParkingAgentActionsHandler : MonoBehaviour
+    public class ParkingAgentActionsHandler
     {
-        [SerializeField] private CarData carData;
-        private CarUserInputInterpreter interpreter;
+        private readonly CarData carData;
+        private readonly CarUserInputInterpreter interpreter;
 
-        private void Awake() => interpreter = new CarUserInputInterpreter(carData);
+        public ParkingAgentActionsHandler(CarData carData)
+        {
+            this.carData = carData;
+            interpreter = new CarUserInputInterpreter(carData);
+        }
 
         public void HandleInputActions(ActionBuffers actions)
         {

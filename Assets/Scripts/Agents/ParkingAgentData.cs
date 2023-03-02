@@ -24,7 +24,7 @@ namespace AutomaticParking.Agents
             Transform = transform;
             CarData = GetComponentInChildren<CarData>();
 
-            ActionsHandler = GetComponentInChildren<ParkingAgentActionsHandler>();
+            ActionsHandler = new ParkingAgentActionsHandler(CarData);
             RewardCalculator = new ParkingAgentRewardCalculator(this);
 
             InitialPosition = Transform.position;

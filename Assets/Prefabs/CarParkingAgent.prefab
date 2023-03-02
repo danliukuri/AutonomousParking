@@ -31,7 +31,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4041575795403989542}
   - {fileID: 2818123274456997969}
   m_Father: {fileID: 804726562621074605}
   m_RootOrder: -1
@@ -96,51 +95,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 1
   TakeActionsBetweenDecisions: 1
---- !u!1 &4128218710860453534
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4041575795403989542}
-  - component: {fileID: 472881571897030739}
-  m_Layer: 0
-  m_Name: ActionsHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4041575795403989542
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4128218710860453534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2494113362946614818}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &472881571897030739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4128218710860453534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57b4d9973d7a45908e5af129d821964e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carData: {fileID: 3976088911092082861}
 --- !u!1 &6178620244002601107
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,14 +244,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Target>k__BackingField: {fileID: 0}
---- !u!114 &3976088911092082861 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6922358955521790748, guid: 1a6e7dba8317839448132027ec189c61, type: 3}
-  m_PrefabInstance: {fileID: 6286126810260159409}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c082468e7854f078982c571411a8d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  <InitialPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  <InitialRotation>k__BackingField: {x: 0, y: 0, z: 0}
