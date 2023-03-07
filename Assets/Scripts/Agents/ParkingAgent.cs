@@ -15,9 +15,7 @@ namespace AutomaticParking.Agents
         {
             data.Reset();
             data.CarData.Reset();
-
-            data.PreviousDistanceToTarget = Vector3.Distance(data.InitialPosition, data.Target.position);
-            data.PreviousAngleToTarget = Quaternion.Angle(data.InitialRotation, data.Target.rotation);
+            data.TargetTrackingData.Reset();
         }
 
         public override void CollectObservations(VectorSensor sensor)

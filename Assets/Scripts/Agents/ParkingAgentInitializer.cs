@@ -9,21 +9,25 @@ namespace AutomaticParking.Agents
 
         public ParkingAgentData Initialize()
         {
-            var data = new ParkingAgentData();
-            data.Target = target;
-
-            data.CarData = GetComponentInChildren<CarData>();
-            data.Rigidbody = GetComponent<Rigidbody>();
-            data.Transform = transform;
+            var data = new ParkingAgentData
+            {
+                CarData = GetComponentInChildren<CarData>(),
+                Rigidbody = GetComponent<Rigidbody>(),
+                Transform = transform
+            };
             data.InitialPosition = data.Transform.position;
             data.InitialRotation = data.Transform.rotation;
 
+            data.TargetTrackingData = new()
+            {
+                Transform = target,
+                InitialDistanceToTarget = Vector3.Distance(data.InitialPosition, target.position),
+                InitialAngleToTarget = Quaternion.Angle(data.InitialRotation, target.rotation)
+            };
+            
             data.ActionsHandler = new ParkingAgentActionsHandler(data.CarData);
-            data.RewardCalculator = new ParkingAgentRewardCalculator(data);
-            data.ObservationsCollector = new ParkingAgentObservationsCollector(data, data.Rigidbody);
-
-            data.PreviousDistanceToTarget = Vector3.Distance(data.InitialPosition, data.Target.position);
-            data.PreviousAngleToTarget = Quaternion.Angle(data.InitialRotation, data.Target.rotation);
+            data.RewardCalculator = new ParkingAgentRewardCalculator(data, data.TargetTrackingData);
+            data.ObservationsCollector = new ParkingAgentObservationsCollector(data);
             return data;
         }
     }

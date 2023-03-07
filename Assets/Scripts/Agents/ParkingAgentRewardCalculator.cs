@@ -4,9 +4,14 @@ namespace AutomaticParking.Agents
 {
     public class ParkingAgentRewardCalculator
     {
-        private readonly ParkingAgentData data;
+        private readonly ParkingAgentData agentData;
+        private readonly ParkingAgentTargetTrackingData data;
 
-        public ParkingAgentRewardCalculator(ParkingAgentData data) => this.data = data;
+        public ParkingAgentRewardCalculator(ParkingAgentData agentData, ParkingAgentTargetTrackingData data)
+        {
+            this.agentData = agentData;
+            this.data = data;
+        }
 
         public float CalculateReward()
         {
@@ -20,15 +25,16 @@ namespace AutomaticParking.Agents
         {
             float reward = default;
 
-            float currentDistanceToTarget = Vector3.Distance(data.Transform.position, data.Target.position);
-            float distancesDifference = Mathf.Abs(data.PreviousDistanceToTarget - currentDistanceToTarget);
+            data.PreviousDistanceToTarget = data.CurrentDistanceToTarget;
+            data.CurrentDistanceToTarget =
+                Vector3.Distance(agentData.Transform.position, data.Transform.position);
+            data.DistancesDifference = Mathf.Abs(data.PreviousDistanceToTarget - data.CurrentDistanceToTarget);
 
-            if (currentDistanceToTarget < data.PreviousDistanceToTarget)
-                reward += distancesDifference;
+            if (data.CurrentDistanceToTarget < data.PreviousDistanceToTarget)
+                reward += data.DistancesDifference;
             else
-                reward -= distancesDifference;
+                reward -= data.DistancesDifference;
 
-            data.PreviousDistanceToTarget = currentDistanceToTarget;
             return reward;
         }
 
@@ -36,15 +42,15 @@ namespace AutomaticParking.Agents
         {
             float reward = default;
 
-            float currentAngleToTarget = Quaternion.Angle(data.Transform.rotation, data.Target.rotation);
-            float angleDifference = Mathf.Abs(data.PreviousAngleToTarget - currentAngleToTarget);
+            data.PreviousAngleToTarget = data.CurrentAngleToTarget;
+            data.CurrentAngleToTarget = Quaternion.Angle(agentData.Transform.rotation, data.Transform.rotation);
+            data.AngleDifference = Mathf.Abs(data.PreviousAngleToTarget - data.CurrentAngleToTarget);
 
-            if (currentAngleToTarget < data.PreviousAngleToTarget)
-                reward += angleDifference;
+            if (data.CurrentAngleToTarget < data.PreviousAngleToTarget)
+                reward += data.AngleDifference;
             else
-                reward -= angleDifference;
+                reward -= data.AngleDifference;
 
-            data.PreviousAngleToTarget = currentAngleToTarget;
             return reward;
         }
     }
