@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CarParkingAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1690076225502334247}
     - target: {fileID: 5342535204235625003, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
       propertyPath: <Target>k__BackingField
       value: 

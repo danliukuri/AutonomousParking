@@ -1,6 +1,7 @@
 ﻿using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEngine;
 
 namespace AutomaticParking.Agents
 {
@@ -8,9 +9,16 @@ namespace AutomaticParking.Agents
     {
         private ParkingAgentData data;
 
-        public override void Initialize() => data = GetComponentInParent<ParkingAgentData>();
+        public override void Initialize() => data = GetComponentInParent<ParkingAgentInitializer>().Initialize();
 
-        public override void OnEpisodeBegin() => data.Reset();
+        public override void OnEpisodeBegin()
+        {
+            data.Reset();
+            data.CarData.Reset();
+
+            data.PreviousDistanceToTarget = Vector3.Distance(data.InitialPosition, data.Target.position);
+            data.PreviousAngleToTarget = Quaternion.Angle(data.InitialRotation, data.Target.rotation);
+        }
 
         public override void CollectObservations(VectorSensor sensor)
         {
