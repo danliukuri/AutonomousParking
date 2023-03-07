@@ -7,28 +7,33 @@ namespace AutomaticParking.Agents
     {
         [SerializeField] public Transform target;
 
-        public ParkingAgentData Initialize()
+        public ParkingAgentData InitializeAgentData()
         {
-            var data = new ParkingAgentData
+            var agentRigidbody = GetComponent<Rigidbody>();
+            var agentTransform = GetComponent<Transform>();
+            return new ParkingAgentData
             {
-                CarData = GetComponentInChildren<CarData>(),
-                Rigidbody = GetComponent<Rigidbody>(),
-                Transform = transform
+                Rigidbody = agentRigidbody,
+                Transform = agentTransform,
+                InitialPosition = agentTransform.position,
+                InitialRotation = agentTransform.rotation
             };
-            data.InitialPosition = data.Transform.position;
-            data.InitialRotation = data.Transform.rotation;
+        }
 
-            data.TargetTrackingData = new()
-            {
-                Transform = target,
-                InitialDistanceToTarget = Vector3.Distance(data.InitialPosition, target.position),
-                InitialAngleToTarget = Quaternion.Angle(data.InitialRotation, target.rotation)
-            };
-            
+        public CarData InitializeCarData() => GetComponentInChildren<CarData>();
+
+        public ParkingAgentTargetTrackingData InitializeTargetTrackingData(ParkingAgentData data) => new()
+        {
+            Transform = target,
+            InitialDistanceToTarget = Vector3.Distance(data.InitialPosition, target.position),
+            InitialAngleToTarget = Quaternion.Angle(data.InitialRotation, target.rotation)
+        };
+
+        public void InitializeAgentDataComponents(ParkingAgentData data)
+        {
+            data.ObservationsCollector = new ParkingAgentObservationsCollector(data);
             data.ActionsHandler = new ParkingAgentActionsHandler(data.CarData);
             data.RewardCalculator = new ParkingAgentRewardCalculator(data, data.TargetTrackingData);
-            data.ObservationsCollector = new ParkingAgentObservationsCollector(data);
-            return data;
         }
     }
 }

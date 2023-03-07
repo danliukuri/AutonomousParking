@@ -1,7 +1,6 @@
 ﻿using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
-using UnityEngine;
 
 namespace AutomaticParking.Agents
 {
@@ -9,7 +8,14 @@ namespace AutomaticParking.Agents
     {
         private ParkingAgentData data;
 
-        public override void Initialize() => data = GetComponentInParent<ParkingAgentInitializer>().Initialize();
+        public override void Initialize()
+        {
+            var initializer = GetComponentInParent<ParkingAgentInitializer>();
+            data = initializer.InitializeAgentData();
+            data.TargetTrackingData = initializer.InitializeTargetTrackingData(data);
+            data.CarData = initializer.InitializeCarData();
+            initializer.InitializeAgentDataComponents(data);
+        }
 
         public override void OnEpisodeBegin()
         {
