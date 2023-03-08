@@ -14,6 +14,7 @@ namespace AutomaticParking.Agents
         public ParkingAgentTargetTrackingData TargetTrackingData { get; set; }
 
         public ParkingAgentActionsHandler ActionsHandler { get; set; }
+        public ParkingAgentMetricsCalculator MetricsCalculator { get; set; }
         public ParkingAgentRewardCalculator RewardCalculator { get; set; }
         public ParkingAgentObservationsCollector ObservationsCollector { get; set; }
         

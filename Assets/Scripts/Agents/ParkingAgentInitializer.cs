@@ -31,9 +31,10 @@ namespace AutomaticParking.Agents
 
         public void InitializeAgentDataComponents(ParkingAgentData data)
         {
-            data.ObservationsCollector = new ParkingAgentObservationsCollector(data);
             data.ActionsHandler = new ParkingAgentActionsHandler(data.CarData);
-            data.RewardCalculator = new ParkingAgentRewardCalculator(data, data.TargetTrackingData);
+            data.MetricsCalculator = new ParkingAgentMetricsCalculator(data, data.TargetTrackingData);
+            data.RewardCalculator = new ParkingAgentRewardCalculator(data.TargetTrackingData);
+            data.ObservationsCollector = new ParkingAgentObservationsCollector(data);
         }
     }
 }

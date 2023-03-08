@@ -35,6 +35,7 @@ namespace AutomaticParking.Agents
         public override void OnActionReceived(ActionBuffers actions)
         {
             data.ActionsHandler.HandleInputActions(actions);
+            data.MetricsCalculator.CalculateTargetTrackingMetrics();
             AddReward(data.RewardCalculator.CalculateReward());
         }
 
