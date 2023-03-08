@@ -2,6 +2,8 @@
 {
     public class ParkingAgentRewardCalculator
     {
+        private const float MaxRewardForDecreasingDistanceToTarget = 10f;
+        private const float MaxRewardForDecreasingAngleToTarget = 10f;
         private readonly ParkingAgentTargetTrackingData data;
 
         public ParkingAgentRewardCalculator(ParkingAgentTargetTrackingData data) => this.data = data;
@@ -18,9 +20,9 @@
         {
             float reward = default;
             if (data.CurrentDistanceToTarget < data.PreviousDistanceToTarget)
-                reward += data.DistancesDifference;
+                reward += data.DistancesDifferenceNormalized * MaxRewardForDecreasingDistanceToTarget;
             else
-                reward -= data.DistancesDifference;
+                reward -= data.DistancesDifferenceNormalized * MaxRewardForDecreasingDistanceToTarget;
             return reward;
         }
 
@@ -28,9 +30,9 @@
         {
             float reward = default;
             if (data.CurrentAngleToTarget < data.PreviousAngleToTarget)
-                reward += data.AngleDifference;
+                reward += data.AngleDifferenceNormalized * MaxRewardForDecreasingAngleToTarget;
             else
-                reward -= data.AngleDifference;
+                reward -= data.AngleDifferenceNormalized * MaxRewardForDecreasingAngleToTarget;
             return reward;
         }
     }

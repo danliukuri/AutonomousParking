@@ -22,12 +22,21 @@ namespace AutomaticParking.Agents
 
         public CarData InitializeCarData() => GetComponentInChildren<CarData>();
 
-        public ParkingAgentTargetTrackingData InitializeTargetTrackingData(ParkingAgentData data) => new()
+        public ParkingAgentTargetTrackingData InitializeTargetTrackingData(ParkingAgentData data)
         {
-            Transform = target,
-            InitialDistanceToTarget = Vector3.Distance(data.InitialPosition, target.position),
-            InitialAngleToTarget = Quaternion.Angle(data.InitialRotation, target.rotation)
-        };
+            float initialDistanceToTarget = Vector3.Distance(data.InitialPosition, target.position);
+            float initialAngleToTarget = Quaternion.Angle(data.InitialRotation, target.rotation);
+            return new ParkingAgentTargetTrackingData
+            {
+                Transform = target,
+                InitialDistanceToTarget = initialDistanceToTarget,
+                MinDistanceToTarget = default,
+                MaxDistanceToTarget = initialDistanceToTarget,
+                InitialAngleToTarget = initialAngleToTarget,
+                MinAngleToTarget = default,
+                MaxAngleToTarget = initialAngleToTarget
+            };
+        }
 
         public void InitializeAgentDataComponents(ParkingAgentData data)
         {
