@@ -1,4 +1,4 @@
-﻿namespace AutomaticParking.Agents
+﻿namespace AutomaticParking.Agents.Data
 {
     public class ParkingAgentRewardData
     {

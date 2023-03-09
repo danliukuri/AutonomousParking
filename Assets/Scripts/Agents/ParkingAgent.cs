@@ -1,4 +1,5 @@
-﻿using Unity.MLAgents;
+﻿using AutomaticParking.Agents.Data;
+using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 

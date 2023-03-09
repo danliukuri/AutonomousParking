@@ -1,4 +1,5 @@
-﻿using static AutomaticParking.Agents.ParkingAgentRewardData;
+﻿using AutomaticParking.Agents.Data;
+using static AutomaticParking.Agents.Data.ParkingAgentRewardData;
 
 namespace AutomaticParking.Agents
 {
