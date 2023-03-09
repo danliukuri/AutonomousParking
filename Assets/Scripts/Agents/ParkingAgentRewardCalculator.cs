@@ -1,9 +1,9 @@
-﻿namespace AutomaticParking.Agents
+﻿using static AutomaticParking.Agents.ParkingAgentRewardData;
+
+namespace AutomaticParking.Agents
 {
     public class ParkingAgentRewardCalculator
     {
-        private const float MaxRewardForDecreasingDistanceToTarget = 10f;
-        private const float MaxRewardForDecreasingAngleToTarget = 10f;
         private readonly ParkingAgentTargetTrackingData data;
 
         public ParkingAgentRewardCalculator(ParkingAgentTargetTrackingData data) => this.data = data;
@@ -18,22 +18,14 @@
 
         private float CalculateRewardForDecreasingDistanceToTarget()
         {
-            float reward = default;
-            if (data.CurrentDistanceToTarget < data.PreviousDistanceToTarget)
-                reward += data.DistancesDifferenceNormalized * MaxRewardForDecreasingDistanceToTarget;
-            else
-                reward -= data.DistancesDifferenceNormalized * MaxRewardForDecreasingDistanceToTarget;
-            return reward;
+            float possibleReward = data.DistancesDifferenceNormalized * MaxRewardForDecreasingDistanceToTarget;
+            return data.CurrentDistanceToTarget < data.PreviousDistanceToTarget ? possibleReward : -possibleReward;
         }
 
         private float CalculateRewardForDecreasingAngleToTarget()
         {
-            float reward = default;
-            if (data.CurrentAngleToTarget < data.PreviousAngleToTarget)
-                reward += data.AngleDifferenceNormalized * MaxRewardForDecreasingAngleToTarget;
-            else
-                reward -= data.AngleDifferenceNormalized * MaxRewardForDecreasingAngleToTarget;
-            return reward;
+            float possibleReward =  data.AngleDifferenceNormalized * MaxRewardForDecreasingAngleToTarget;
+            return data.CurrentAngleToTarget < data.PreviousAngleToTarget ? possibleReward : -possibleReward;
         }
     }
 }
