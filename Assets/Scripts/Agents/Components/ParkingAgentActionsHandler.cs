@@ -3,7 +3,7 @@ using AutomaticParking.Car;
 using AutomaticParking.Car.UserInput;
 using Unity.MLAgents.Actuators;
 
-namespace AutomaticParking.Agents
+namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentActionsHandler
     {

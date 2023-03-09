@@ -2,7 +2,7 @@
 using AutomaticParking.Car;
 using UnityEngine;
 
-namespace AutomaticParking.Agents
+namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentInitializer : MonoBehaviour
     {

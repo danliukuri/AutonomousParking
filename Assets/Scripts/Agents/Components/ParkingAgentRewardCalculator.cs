@@ -1,7 +1,7 @@
 ﻿using AutomaticParking.Agents.Data;
 using static AutomaticParking.Agents.Data.ParkingAgentRewardData;
 
-namespace AutomaticParking.Agents
+namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentRewardCalculator
     {

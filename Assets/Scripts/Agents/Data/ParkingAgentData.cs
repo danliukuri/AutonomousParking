@@ -1,4 +1,5 @@
-﻿using AutomaticParking.Car;
+﻿using AutomaticParking.Agents.Components;
+using AutomaticParking.Car;
 using UnityEngine;
 
 namespace AutomaticParking.Agents.Data

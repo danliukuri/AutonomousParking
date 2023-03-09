@@ -2,7 +2,7 @@
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-namespace AutomaticParking.Agents
+namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentObservationsCollector
     {

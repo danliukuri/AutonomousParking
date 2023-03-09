@@ -2,7 +2,7 @@
 using AutomaticParking.Common.Extensions;
 using UnityEngine;
 
-namespace AutomaticParking.Agents
+namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentMetricsCalculator
     {
