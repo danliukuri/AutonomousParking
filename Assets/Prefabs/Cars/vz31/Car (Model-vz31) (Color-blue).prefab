@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: vz31_ blue
       objectReference: {fileID: 0}
+    - target: {fileID: 1740524711390046, guid: 9b4761b9dd041174e9fc952df05c6055, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 4612596946966040, guid: 9b4761b9dd041174e9fc952df05c6055, type: 3}
       propertyPath: m_RootOrder
       value: 0

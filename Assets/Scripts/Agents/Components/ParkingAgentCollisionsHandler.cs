@@ -14,7 +14,11 @@ namespace AutomaticParking.Agents.Components
         private void Awake()
         {
             agent = GetComponentInChildren<ParkingAgent>();
-            collisionEnterHandlers = new Dictionary<string, Action> { [Tags.Wall] = HandleWallCollisionEnter };
+            collisionEnterHandlers = new Dictionary<string, Action>
+            {
+                [Tags.Wall] = HandleWallCollisionEnter,
+                [Tags.Car] = HandleCarCollisionEnter
+            };
         }
 
         private void OnCollisionEnter(Collision collision) =>
@@ -23,6 +27,12 @@ namespace AutomaticParking.Agents.Components
         private void HandleWallCollisionEnter()
         {
             agent.AddReward(RewardData.RewardForWallCollisionEnter);
+            agent.EndEpisode();
+        }
+
+        private void HandleCarCollisionEnter()
+        {
+            agent.AddReward(RewardData.RewardForCarCollisionEnter);
             agent.EndEpisode();
         }
     }

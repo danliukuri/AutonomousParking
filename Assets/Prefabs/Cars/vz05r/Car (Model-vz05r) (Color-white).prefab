@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5768958075611470801}
     m_Modifications:
+    - target: {fileID: 1570351967427958, guid: 51d31e6e50a474d47ad97a8e78f3cfeb, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 1762712976003096, guid: 51d31e6e50a474d47ad97a8e78f3cfeb, type: 3}
       propertyPath: m_Name
       value: vz05r_ white

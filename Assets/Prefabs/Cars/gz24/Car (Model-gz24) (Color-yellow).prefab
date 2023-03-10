@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7580249223648096756}
     m_Modifications:
+    - target: {fileID: 1180323785467670, guid: e4f692da1b272f04eac6261a030dfec6, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 1394608552899700, guid: e4f692da1b272f04eac6261a030dfec6, type: 3}
       propertyPath: m_Name
       value: gz24_yellow

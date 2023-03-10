@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 3616485008184171689}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3620829052282508777
 PrefabInstance:
@@ -43,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 1380036574070504, guid: 46061d83d9ec9e74f948ce797eb4cd10, type: 3}
       propertyPath: m_Name
       value: gz24_black
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914364853954494, guid: 46061d83d9ec9e74f948ce797eb4cd10, type: 3}
+      propertyPath: m_TagString
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 4381703990757696, guid: 46061d83d9ec9e74f948ce797eb4cd10, type: 3}
       propertyPath: m_RootOrder

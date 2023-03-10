@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2417634571045137850}
     m_Modifications:
+    - target: {fileID: 1078952432069926, guid: b715dfc184e0abc428a98b2aa0613e19, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 1079394918832292, guid: b715dfc184e0abc428a98b2aa0613e19, type: 3}
       propertyPath: m_Name
       value: vz21_black

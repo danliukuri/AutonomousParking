@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5061197210906705305}
     m_Modifications:
+    - target: {fileID: 1363183884463242, guid: 4e064c3d0fcd8a54a80d57ad478af168, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     - target: {fileID: 1768927824259052, guid: 4e064c3d0fcd8a54a80d57ad478af168, type: 3}
       propertyPath: m_Name
       value: vz05r_ lightblue
