@@ -14,6 +14,8 @@ namespace AutomaticParking.Agents.Components
             float reward = default;
             reward += CalculateRewardForDecreasingDistanceToTarget();
             reward += CalculateRewardForDecreasingAngleToTarget();
+            if (data.IsTargetReached)
+                reward += RewardForTargetReach;
             return reward;
         }
 

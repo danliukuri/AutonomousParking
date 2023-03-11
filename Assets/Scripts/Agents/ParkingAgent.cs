@@ -39,6 +39,9 @@ namespace AutomaticParking.Agents
             data.ActionsHandler.HandleInputActions(actions);
             data.MetricsCalculator.CalculateTargetTrackingMetrics();
             AddReward(data.RewardCalculator.CalculateReward());
+
+            if (data.TargetTrackingData.IsTargetReached)
+                EndEpisode();
         }
 
         public override void Heuristic(in ActionBuffers actionsOut)

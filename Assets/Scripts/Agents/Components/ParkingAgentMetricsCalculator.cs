@@ -1,6 +1,7 @@
 ﻿using AutomaticParking.Agents.Data;
 using AutomaticParking.Common.Extensions;
 using UnityEngine;
+using static AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData;
 
 namespace AutomaticParking.Agents.Components
 {
@@ -26,6 +27,8 @@ namespace AutomaticParking.Agents.Components
             data.DistancesDifferenceNormalized = CalculateDistancesDifferenceNormalized();
             data.AngleDifference = CalculateAngleDifference();
             data.AngleDifferenceNormalized = CalculateAngleDifferenceNormalized();
+
+            data.IsTargetReached = CalculateWhetherTargetHasBeenReached();
         }
 
         private float CalculateCurrentDistanceToTarget() =>
@@ -44,5 +47,9 @@ namespace AutomaticParking.Agents.Components
 
         private float CalculateAngleDifferenceNormalized() =>
             CalculateAngleDifference().Normalize(data.MinAngleToTarget, data.MaxAngleToTarget);
+
+        private bool CalculateWhetherTargetHasBeenReached() =>
+            Mathf.Abs(data.CurrentDistanceToTarget) < TargetReachRadius &&
+            Mathf.Abs(data.CurrentAngleToTarget) < TargetReachAngle;
     }
 }

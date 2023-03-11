@@ -4,6 +4,10 @@ namespace AutomaticParking.Agents.Data
 {
     public class ParkingAgentTargetTrackingData
     {
+        public const float TargetReachRadius = 0.15f;
+        public const float TargetReachAngle = 2f;
+        public bool IsTargetReached { get; set; }
+
         public Transform Transform { get; set; }
 
         public float InitialDistanceToTarget { get; set; }
@@ -27,6 +31,7 @@ namespace AutomaticParking.Agents.Data
         {
             CurrentDistanceToTarget = PreviousDistanceToTarget = InitialDistanceToTarget;
             CurrentAngleToTarget = PreviousAngleToTarget = InitialAngleToTarget;
+            IsTargetReached = default;
         }
     }
 }
