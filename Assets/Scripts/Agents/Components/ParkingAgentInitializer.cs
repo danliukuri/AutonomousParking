@@ -8,6 +8,8 @@ namespace AutomaticParking.Agents.Components
     {
         [SerializeField] public ParkingAgentTargetData targetData;
 
+        public CarData InitializeCarData() => GetComponentInChildren<CarData>();
+
         public ParkingAgentData InitializeAgentData()
         {
             var agentRigidbody = GetComponent<Rigidbody>();
@@ -17,12 +19,11 @@ namespace AutomaticParking.Agents.Components
                 Rigidbody = agentRigidbody,
                 Transform = agentTransform,
                 InitialPosition = agentTransform.position,
-                InitialRotation = agentTransform.rotation,
-                TargetData = targetData
+                InitialRotation = agentTransform.rotation
             };
         }
 
-        public CarData InitializeCarData() => GetComponentInChildren<CarData>();
+        public ParkingAgentTargetData InitializeTargetData() => targetData;
 
         public ParkingAgentTargetTrackingData InitializeTargetTrackingData(ParkingAgentData data)
         {
@@ -37,14 +38,6 @@ namespace AutomaticParking.Agents.Components
                 MinAngleToTarget = default,
                 MaxAngleToTarget = initialAngleToTarget
             };
-        }
-
-        public void InitializeAgentDataComponents(ParkingAgentData data)
-        {
-            data.ActionsHandler = new ParkingAgentActionsHandler(data.CarData);
-            data.MetricsCalculator = new ParkingAgentMetricsCalculator(data, data.TargetData, data.TargetTrackingData);
-            data.RewardCalculator = new ParkingAgentRewardCalculator(data.TargetTrackingData);
-            data.ObservationsCollector = new ParkingAgentObservationsCollector(data);
         }
     }
 }

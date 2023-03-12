@@ -6,27 +6,32 @@ namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentObservationsCollector
     {
-        private readonly ParkingAgentData data;
+        private readonly ParkingAgentData agentData;
+        private readonly ParkingAgentTargetData targetData;
 
-        public ParkingAgentObservationsCollector(ParkingAgentData data) => this.data = data;
+        public ParkingAgentObservationsCollector(ParkingAgentData agentData, ParkingAgentTargetData targetData)
+        {
+            this.agentData = agentData;
+            this.targetData = targetData;
+        }
 
         public void CollectAgentTransformObservations(VectorSensor sensor)
         {
-            Vector3 agentPosition = data.Transform.position;
+            Vector3 agentPosition = agentData.Transform.position;
             sensor.AddObservation(agentPosition.x);
             sensor.AddObservation(agentPosition.z);
-            sensor.AddObservation(data.Transform.rotation.eulerAngles.y);
+            sensor.AddObservation(agentData.Transform.rotation.eulerAngles.y);
         }
 
         public void CollectAgentVelocityObservations(VectorSensor sensor)
         {
-            sensor.AddObservation(data.Rigidbody.velocity.x);
-            sensor.AddObservation(data.Rigidbody.velocity.z);
+            sensor.AddObservation(agentData.Rigidbody.velocity.x);
+            sensor.AddObservation(agentData.Rigidbody.velocity.z);
         }
 
         public void CollectTargetTransformObservations(VectorSensor sensor)
         {
-            Transform targetTransform = data.TargetData.Transform;
+            Transform targetTransform = targetData.Transform;
             Vector3 targetPosition = targetTransform.position;
             sensor.AddObservation(targetPosition.x);
             sensor.AddObservation(targetPosition.z);

@@ -1,5 +1,6 @@
 ﻿using AutomaticParking.Agents.Components;
 using AutomaticParking.Agents.Data;
+using AutomaticParking.Car;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -8,46 +9,60 @@ namespace AutomaticParking.Agents
 {
     public class ParkingAgent : Agent
     {
-        private ParkingAgentData data;
+        private CarData carData;
+        private ParkingAgentData agentData;
+        private ParkingAgentTargetData targetData;
+        private ParkingAgentTargetTrackingData targetTrackingData;
+
+        private ParkingAgentActionsHandler actionsHandler;
+        private ParkingAgentMetricsCalculator metricsCalculator;
+        private ParkingAgentRewardCalculator rewardCalculator;
+        private ParkingAgentObservationsCollector observationsCollector;
 
         public override void Initialize()
         {
             var initializer = GetComponentInParent<ParkingAgentInitializer>();
-            data = initializer.InitializeAgentData();
-            data.TargetTrackingData = initializer.InitializeTargetTrackingData(data);
-            data.CarData = initializer.InitializeCarData();
-            initializer.InitializeAgentDataComponents(data);
+
+            carData = initializer.InitializeCarData();
+            agentData = initializer.InitializeAgentData();
+            targetData = initializer.InitializeTargetData();
+            targetTrackingData = initializer.InitializeTargetTrackingData(agentData);
+
+            actionsHandler = new ParkingAgentActionsHandler(carData);
+            metricsCalculator = new ParkingAgentMetricsCalculator(agentData, targetData, targetTrackingData);
+            rewardCalculator = new ParkingAgentRewardCalculator(targetTrackingData);
+            observationsCollector = new ParkingAgentObservationsCollector(agentData, targetData);
         }
 
         public override void OnEpisodeBegin()
         {
-            data.Reset();
-            data.CarData.Reset();
-            data.TargetTrackingData.Reset();
+            agentData.Reset();
+            carData.Reset();
+            targetTrackingData.Reset();
         }
 
         public override void CollectObservations(VectorSensor sensor)
         {
-            data.ObservationsCollector.CollectAgentTransformObservations(sensor);
-            data.ObservationsCollector.CollectAgentVelocityObservations(sensor);
+            observationsCollector.CollectAgentTransformObservations(sensor);
+            observationsCollector.CollectAgentVelocityObservations(sensor);
 
-            data.ObservationsCollector.CollectTargetTransformObservations(sensor);
+            observationsCollector.CollectTargetTransformObservations(sensor);
         }
 
         public override void OnActionReceived(ActionBuffers actions)
         {
-            data.ActionsHandler.HandleInputActions(actions);
-            data.MetricsCalculator.CalculateTargetTrackingMetrics();
-            AddReward(data.RewardCalculator.CalculateReward());
+            actionsHandler.HandleInputActions(actions);
+            metricsCalculator.CalculateTargetTrackingMetrics();
+            AddReward(rewardCalculator.CalculateReward());
 
-            if (data.TargetTrackingData.IsTargetReached)
+            if (targetTrackingData.IsTargetReached)
                 EndEpisode();
         }
 
         public override void Heuristic(in ActionBuffers actionsOut)
         {
-            data.ActionsHandler.HandleHeuristicInputContinuousActions(actionsOut.ContinuousActions);
-            data.ActionsHandler.HandleHeuristicInputDiscreteActions(actionsOut.DiscreteActions);
+            actionsHandler.HandleHeuristicInputContinuousActions(actionsOut.ContinuousActions);
+            actionsHandler.HandleHeuristicInputDiscreteActions(actionsOut.DiscreteActions);
         }
     }
 }
