@@ -20,28 +20,23 @@ namespace AutomaticParking.Agents.Components
 
         public void CalculateTargetTrackingMetrics()
         {
-            data.PreviousDistanceToTarget = data.CurrentDistanceToTarget;
-            data.CurrentDistanceToTarget = CalculateCurrentDistanceToTarget();
+            data.DistanceToTarget = CalculateDistanceToTarget();
+            data.NormalizedDistanceToTarget = CalculateNormalizedDistanceToTarget();
+
             data.PreviousAngleToTarget = data.CurrentAngleToTarget;
             data.CurrentAngleToTarget = CalculateCurrentAngleToTarget();
-
-            data.DistancesDifference = CalculateDistancesDifference();
-            data.DistancesDifferenceNormalized = CalculateDistancesDifferenceNormalized();
             data.AngleDifference = CalculateAngleDifference();
             data.AngleDifferenceNormalized = CalculateAngleDifferenceNormalized();
 
             data.IsTargetReached = CalculateWhetherTargetHasBeenReached();
         }
 
-        private float CalculateCurrentDistanceToTarget() =>
+        private float CalculateDistanceToTarget() =>
             Vector3.Distance(agentData.Transform.position, targetData.Transform.position);
 
-        private float CalculateDistancesDifference() =>
-            Mathf.Abs(data.PreviousDistanceToTarget - data.CurrentDistanceToTarget);
-
-        private float CalculateDistancesDifferenceNormalized() =>
-            CalculateDistancesDifference().Normalize(data.MinDistanceToTarget, data.MaxDistanceToTarget);
-
+        private float CalculateNormalizedDistanceToTarget() =>
+            data.DistanceToTarget.Normalize(data.MaxDistanceToTarget, data.MinDistanceToTarget);
+        
         private float CalculateCurrentAngleToTarget() =>
             Quaternion.Angle(agentData.Transform.rotation, targetData.Transform.rotation);
 
@@ -51,7 +46,7 @@ namespace AutomaticParking.Agents.Components
             CalculateAngleDifference().Normalize(data.MinAngleToTarget, data.MaxAngleToTarget);
 
         private bool CalculateWhetherTargetHasBeenReached() =>
-            Mathf.Abs(data.CurrentDistanceToTarget) < targetData.ReachRadius &&
+            Mathf.Abs(data.DistanceToTarget) < targetData.ReachRadius &&
             Mathf.Abs(data.CurrentAngleToTarget) < targetData.ReachAngle;
     }
 }

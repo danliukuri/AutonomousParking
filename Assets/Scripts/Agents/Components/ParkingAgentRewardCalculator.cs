@@ -19,11 +19,8 @@ namespace AutomaticParking.Agents.Components
             return reward;
         }
 
-        private float CalculateRewardForDecreasingDistanceToTarget()
-        {
-            float possibleReward = data.DistancesDifferenceNormalized * MaxRewardForDecreasingDistanceToTarget;
-            return data.CurrentDistanceToTarget < data.PreviousDistanceToTarget ? possibleReward : -possibleReward;
-        }
+        private float CalculateRewardForDecreasingDistanceToTarget() =>
+            data.NormalizedDistanceToTarget * MaxRewardForDecreasingDistanceToTargetPerStep;
 
         private float CalculateRewardForDecreasingAngleToTarget()
         {
