@@ -3,8 +3,7 @@
     public class ParkingAgentRewardData
     {
         public const float MaxRewardForDecreasingDistanceToTargetPerStep = 1f;
-
-        public const float MaxRewardForDecreasingAngleToTarget = 10f;
+        public const float MaxRewardForDecreasingAngleToTargetPerStep = 1f;
 
         public const float RewardForTargetReach = 100f;
 

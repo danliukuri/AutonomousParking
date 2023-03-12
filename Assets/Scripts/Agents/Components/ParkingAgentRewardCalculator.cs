@@ -22,10 +22,7 @@ namespace AutomaticParking.Agents.Components
         private float CalculateRewardForDecreasingDistanceToTarget() =>
             data.NormalizedDistanceToTarget * MaxRewardForDecreasingDistanceToTargetPerStep;
 
-        private float CalculateRewardForDecreasingAngleToTarget()
-        {
-            float possibleReward =  data.AngleDifferenceNormalized * MaxRewardForDecreasingAngleToTarget;
-            return data.CurrentAngleToTarget < data.PreviousAngleToTarget ? possibleReward : -possibleReward;
-        }
+        private float CalculateRewardForDecreasingAngleToTarget() =>
+            data.NormalizedAngleToTarget * MaxRewardForDecreasingAngleToTargetPerStep;
     }
 }

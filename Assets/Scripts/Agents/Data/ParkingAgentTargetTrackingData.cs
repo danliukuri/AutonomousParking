@@ -11,18 +11,15 @@
         public float MaxDistanceToTarget { get; set; }
 
         public float InitialAngleToTarget { get; set; }
-        public float PreviousAngleToTarget { get; set; }
-        public float CurrentAngleToTarget { get; set; }
+        public float AngleToTarget { get; set; }
+        public float NormalizedAngleToTarget { get; set; }
         public float MinAngleToTarget { get; set; }
         public float MaxAngleToTarget { get; set; }
-
-        public float AngleDifference { get; set; }
-        public float AngleDifferenceNormalized { get; set; }
 
         public void Reset()
         {
             DistanceToTarget = InitialDistanceToTarget;
-            CurrentAngleToTarget = PreviousAngleToTarget = InitialAngleToTarget;
+            AngleToTarget = InitialAngleToTarget;
             IsTargetReached = default;
         }
     }

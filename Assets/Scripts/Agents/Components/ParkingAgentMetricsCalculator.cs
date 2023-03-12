@@ -22,11 +22,8 @@ namespace AutomaticParking.Agents.Components
         {
             data.DistanceToTarget = CalculateDistanceToTarget();
             data.NormalizedDistanceToTarget = CalculateNormalizedDistanceToTarget();
-
-            data.PreviousAngleToTarget = data.CurrentAngleToTarget;
-            data.CurrentAngleToTarget = CalculateCurrentAngleToTarget();
-            data.AngleDifference = CalculateAngleDifference();
-            data.AngleDifferenceNormalized = CalculateAngleDifferenceNormalized();
+            data.AngleToTarget = CalculateAngleToTarget();
+            data.NormalizedAngleToTarget = CalculateNormalizedAngleToTarget();
 
             data.IsTargetReached = CalculateWhetherTargetHasBeenReached();
         }
@@ -36,17 +33,15 @@ namespace AutomaticParking.Agents.Components
 
         private float CalculateNormalizedDistanceToTarget() =>
             data.DistanceToTarget.Normalize(data.MaxDistanceToTarget, data.MinDistanceToTarget);
-        
-        private float CalculateCurrentAngleToTarget() =>
+
+        private float CalculateAngleToTarget() =>
             Quaternion.Angle(agentData.Transform.rotation, targetData.Transform.rotation);
 
-        private float CalculateAngleDifference() => Mathf.Abs(data.PreviousAngleToTarget - data.CurrentAngleToTarget);
-
-        private float CalculateAngleDifferenceNormalized() =>
-            CalculateAngleDifference().Normalize(data.MinAngleToTarget, data.MaxAngleToTarget);
+        private float CalculateNormalizedAngleToTarget() =>
+            data.AngleToTarget.Normalize(data.MaxAngleToTarget, data.MinAngleToTarget);
 
         private bool CalculateWhetherTargetHasBeenReached() =>
             Mathf.Abs(data.DistanceToTarget) < targetData.ReachRadius &&
-            Mathf.Abs(data.CurrentAngleToTarget) < targetData.ReachAngle;
+            Mathf.Abs(data.AngleToTarget) < targetData.ReachAngle;
     }
 }
