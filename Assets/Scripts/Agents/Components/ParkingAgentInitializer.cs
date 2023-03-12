@@ -6,7 +6,7 @@ namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentInitializer : MonoBehaviour
     {
-        [SerializeField] public Transform target;
+        [SerializeField] public ParkingAgentTargetData targetData;
 
         public ParkingAgentData InitializeAgentData()
         {
@@ -17,7 +17,8 @@ namespace AutomaticParking.Agents.Components
                 Rigidbody = agentRigidbody,
                 Transform = agentTransform,
                 InitialPosition = agentTransform.position,
-                InitialRotation = agentTransform.rotation
+                InitialRotation = agentTransform.rotation,
+                TargetData = targetData
             };
         }
 
@@ -25,11 +26,10 @@ namespace AutomaticParking.Agents.Components
 
         public ParkingAgentTargetTrackingData InitializeTargetTrackingData(ParkingAgentData data)
         {
-            float initialDistanceToTarget = Vector3.Distance(data.InitialPosition, target.position);
-            float initialAngleToTarget = Quaternion.Angle(data.InitialRotation, target.rotation);
+            float initialDistanceToTarget = Vector3.Distance(data.InitialPosition, targetData.Transform.position);
+            float initialAngleToTarget = Quaternion.Angle(data.InitialRotation, targetData.Transform.rotation);
             return new ParkingAgentTargetTrackingData
             {
-                Transform = target,
                 InitialDistanceToTarget = initialDistanceToTarget,
                 MinDistanceToTarget = default,
                 MaxDistanceToTarget = initialDistanceToTarget,
@@ -42,7 +42,7 @@ namespace AutomaticParking.Agents.Components
         public void InitializeAgentDataComponents(ParkingAgentData data)
         {
             data.ActionsHandler = new ParkingAgentActionsHandler(data.CarData);
-            data.MetricsCalculator = new ParkingAgentMetricsCalculator(data, data.TargetTrackingData);
+            data.MetricsCalculator = new ParkingAgentMetricsCalculator(data, data.TargetData, data.TargetTrackingData);
             data.RewardCalculator = new ParkingAgentRewardCalculator(data.TargetTrackingData);
             data.ObservationsCollector = new ParkingAgentObservationsCollector(data);
         }

@@ -26,7 +26,7 @@ namespace AutomaticParking.Agents.Components
 
         public void CollectTargetTransformObservations(VectorSensor sensor)
         {
-            Transform targetTransform = data.TargetTrackingData.Transform;
+            Transform targetTransform = data.TargetData.Transform;
             Vector3 targetPosition = targetTransform.position;
             sensor.AddObservation(targetPosition.x);
             sensor.AddObservation(targetPosition.z);

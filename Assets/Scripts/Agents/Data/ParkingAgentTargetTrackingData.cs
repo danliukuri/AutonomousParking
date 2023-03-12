@@ -1,14 +1,8 @@
-﻿using UnityEngine;
-
-namespace AutomaticParking.Agents.Data
+﻿namespace AutomaticParking.Agents.Data
 {
     public class ParkingAgentTargetTrackingData
     {
-        public const float TargetReachRadius = 0.15f;
-        public const float TargetReachAngle = 2f;
         public bool IsTargetReached { get; set; }
-
-        public Transform Transform { get; set; }
 
         public float InitialDistanceToTarget { get; set; }
         public float PreviousDistanceToTarget { get; set; }

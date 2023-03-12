@@ -12,6 +12,7 @@ namespace AutomaticParking.Agents.Data
         public Quaternion InitialRotation { get; set; }
 
         public CarData CarData { get; set; }
+        public ParkingAgentTargetData TargetData { get; set; }
         public ParkingAgentTargetTrackingData TargetTrackingData { get; set; }
 
         public ParkingAgentActionsHandler ActionsHandler { get; set; }
