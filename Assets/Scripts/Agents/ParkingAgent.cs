@@ -24,13 +24,13 @@ namespace AutomaticParking.Agents
             var initializer = GetComponentInParent<ParkingAgentInitializer>();
 
             carData = initializer.InitializeCarData();
-            agentData = initializer.InitializeAgentData();
+            agentData = initializer.InitializeAgentData(this);
             targetData = initializer.InitializeTargetData();
             targetTrackingData = initializer.InitializeTargetTrackingData(agentData);
 
             actionsHandler = new ParkingAgentActionsHandler(carData);
             metricsCalculator = new ParkingAgentMetricsCalculator(agentData, targetData, targetTrackingData);
-            rewardCalculator = new ParkingAgentRewardCalculator(targetTrackingData);
+            rewardCalculator = new ParkingAgentRewardCalculator(agentData, targetTrackingData);
             observationsCollector = new ParkingAgentObservationsCollector(agentData, targetData);
         }
 

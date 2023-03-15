@@ -10,11 +10,11 @@ namespace AutomaticParking.Agents.Components
 
         public CarData InitializeCarData() => GetComponentInChildren<CarData>();
 
-        public ParkingAgentData InitializeAgentData()
+        public ParkingAgentData InitializeAgentData(ParkingAgent agent)
         {
             var agentRigidbody = GetComponent<Rigidbody>();
             var agentTransform = GetComponent<Transform>();
-            return new ParkingAgentData
+            return new ParkingAgentData(agent)
             {
                 Rigidbody = agentRigidbody,
                 Transform = agentTransform,
