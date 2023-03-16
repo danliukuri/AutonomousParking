@@ -10,5 +10,11 @@ namespace AutomaticParking.Car.Wheel
         public WheelData[] AllWheels { get; private set; } 
 
         private void Awake() => AllWheels = GetComponentsInChildren<WheelData>();
+
+        public void Reset()
+        {
+            foreach (WheelData wheel in AllWheels)
+                wheel.Reset();
+        }
     }
 }

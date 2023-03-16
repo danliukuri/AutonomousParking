@@ -5,6 +5,7 @@ namespace AutomaticParking.Car
 {
     public class CarData : MonoBehaviour
     {
+        private WheelsData wheelsData;
         [field: SerializeField] public float MaxEngineTorque { get; private set; } = 100f;
         [field: SerializeField] public float MaxBrakeTorque { get; private set; } = 1000f;
         [field: SerializeField, Range(0, 90)] public float MaxSteeringAngle { get; private set; } = 35f;
@@ -17,8 +18,8 @@ namespace AutomaticParking.Car
 
         private void Awake()
         {
-            var wheelsInfo = GetComponentInChildren<WheelsData>();
-            int drivingWheelsCount = wheelsInfo.DrivingWheels.Length;
+            wheelsData = GetComponentInChildren<WheelsData>();
+            int drivingWheelsCount = wheelsData.DrivingWheels.Length;
 
             MaxWheelTorque = MaxEngineTorque * DrivetrainEfficiency / drivingWheelsCount;
         }
@@ -28,6 +29,7 @@ namespace AutomaticParking.Car
             CurrentWheelTorque = default;
             CurrentSteeringAngle = default;
             IsBreaking = default;
+            wheelsData.Reset();
         }
     }
 }
