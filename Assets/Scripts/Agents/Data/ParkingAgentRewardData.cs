@@ -9,6 +9,6 @@
         public const float MaxRewardForTargetReach = 500f;
 
         public const float RewardForWallCollisionEnter = -50f;
-        public const float RewardForCarCollisionEnter = -10f;
+        public const float RewardForCarCollisionEnter = -100f;
     }
 }
