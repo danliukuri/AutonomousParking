@@ -27,6 +27,7 @@ namespace AutomaticParking.Agents.Components
         {
             sensor.AddObservation(agentData.Rigidbody.velocity.x);
             sensor.AddObservation(agentData.Rigidbody.velocity.z);
+            sensor.AddObservation(agentData.Rigidbody.angularVelocity.y);
         }
 
         public void CollectTargetTransformObservations(VectorSensor sensor)
