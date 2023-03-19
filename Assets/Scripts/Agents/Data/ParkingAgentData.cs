@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using AutomaticParking.Common.Extensions;
+using UnityEngine;
 
 namespace AutomaticParking.Agents.Data
 {
@@ -16,11 +17,6 @@ namespace AutomaticParking.Agents.Data
         public Vector3 InitialPosition { get; set; }
         public Quaternion InitialRotation { get; set; }
 
-        public void Reset()
-        {
-            Rigidbody.velocity = default;
-            Transform.position = InitialPosition;
-            Transform.rotation = InitialRotation;
-        }
+        public void Reset() => Rigidbody.Reset(InitialPosition, InitialRotation);
     }
 }
