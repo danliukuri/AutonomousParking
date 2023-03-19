@@ -18,13 +18,15 @@ namespace AutomaticParking.Agents.Components
 
         public float CalculateReward()
         {
-            float reward = default;
+            float reward = CalculateRewardForInactivity();
             reward += CalculateRewardForDecreasingDistanceToTarget(targetTrackingData);
             reward += CalculateRewardForDecreasingAngleToTarget(targetTrackingData);
             if (targetTrackingData.IsTargetReached)
                 reward += CalculateRewardForTargetReach(agentData);
             return reward;
         }
+
+        private float CalculateRewardForInactivity() => MaxRewardForInactivityPerStep / agentData.StepCount;
 
         private float CalculateRewardForDecreasingDistanceToTarget(ParkingAgentTargetTrackingData data) =>
             data.NormalizedDistanceToTarget * MaxRewardForDecreasingDistanceToTargetPerStep;
