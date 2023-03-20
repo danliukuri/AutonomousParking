@@ -3,12 +3,15 @@
     public class ParkingAgentTargetTrackingData
     {
         public bool IsTargetReached { get; set; }
+        public bool IsGettingRewardForDecreasingAngleToTarget { get; set; }
 
         public float InitialDistanceToTarget { get; set; }
         public float DistanceToTarget { get; set; }
         public float NormalizedDistanceToTarget { get; set; }
         public float MinDistanceToTarget { get; set; }
         public float MaxDistanceToTarget { get; set; }
+
+        public float MaxDistanceToTargetToGetRewardForDecreasingAngle => 8f;
 
         public float InitialAngleToTarget { get; set; }
         public float AngleToTarget { get; set; }
@@ -21,6 +24,7 @@
             DistanceToTarget = InitialDistanceToTarget;
             AngleToTarget = InitialAngleToTarget;
             IsTargetReached = default;
+            IsGettingRewardForDecreasingAngleToTarget = default;
         }
     }
 }

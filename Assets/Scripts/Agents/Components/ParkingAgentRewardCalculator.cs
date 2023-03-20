@@ -20,7 +20,8 @@ namespace AutomaticParking.Agents.Components
         {
             float reward = CalculateRewardForInactivity();
             reward += CalculateRewardForDecreasingDistanceToTarget(targetTrackingData);
-            reward += CalculateRewardForDecreasingAngleToTarget(targetTrackingData);
+            if (targetTrackingData.IsGettingRewardForDecreasingAngleToTarget)
+                reward += CalculateRewardForDecreasingAngleToTarget(targetTrackingData);
             if (targetTrackingData.IsTargetReached)
                 reward += CalculateRewardForTargetReach(agentData);
             return reward;

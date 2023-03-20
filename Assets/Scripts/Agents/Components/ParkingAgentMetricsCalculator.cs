@@ -26,6 +26,7 @@ namespace AutomaticParking.Agents.Components
             data.NormalizedAngleToTarget = CalculateNormalizedAngleToTarget();
 
             data.IsTargetReached = CalculateWhetherTargetHasBeenReached();
+            data.IsGettingRewardForDecreasingAngleToTarget = CalculateWhetherToGetRewardForDecreasingAngleToTarget();
         }
 
         private float CalculateDistanceToTarget() =>
@@ -43,5 +44,8 @@ namespace AutomaticParking.Agents.Components
         private bool CalculateWhetherTargetHasBeenReached() =>
             Mathf.Abs(data.DistanceToTarget) < targetData.ReachRadius &&
             Mathf.Abs(data.AngleToTarget) < targetData.ReachAngle;
+
+        private bool CalculateWhetherToGetRewardForDecreasingAngleToTarget() =>
+            Mathf.Abs(data.DistanceToTarget) <= data.MaxDistanceToTargetToGetRewardForDecreasingAngle;
     }
 }
