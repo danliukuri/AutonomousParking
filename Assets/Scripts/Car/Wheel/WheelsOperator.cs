@@ -30,7 +30,7 @@ namespace AutomaticParking.Car.Wheel
         {
             foreach (WheelData wheel in wheelsData.AllWheels)
                 SynchronizePoseWithCollider(wheel);
-            
+
             void SynchronizePoseWithCollider(WheelData wheel)
             {
                 wheel.Collider.GetWorldPose(out Vector3 position, out Quaternion rotation);
