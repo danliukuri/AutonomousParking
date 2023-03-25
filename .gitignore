@@ -68,6 +68,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Mm][Ll]-[Aa]gents/
 /[Aa]ssets/[Mm][Ll]-[Aa]gents.meta
 
+/[Aa]ssets/[Mm][Ll][Aa]gents/Training/Demonstrations/
+/[Aa]ssets/[Mm][Ll][Aa]gents/Training/Demonstrations.meta
+/[Aa]ssets/[Mm][Ll][Aa]gents/Training/Results/
+/[Aa]ssets/[Mm][Ll][Aa]gents/Training/Results.meta
+
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
