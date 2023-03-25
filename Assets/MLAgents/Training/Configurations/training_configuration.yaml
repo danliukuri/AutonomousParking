@@ -1,3 +1,38 @@
 behaviors:
   CarParkingBehavior:
-    max_steps: 50000000
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 6144
+      learning_rate: 0.00035
+      beta: 0.0025
+      epsilon: 0.3
+      lambd: 0.95
+      num_epoch: 5
+      learning_rate_schedule: linear
+
+    network_settings:
+      normalize: true
+      hidden_units: 256
+      num_layers: 3
+
+    reward_signals:
+      extrinsic:
+        gamma: 0.95
+        strength: 0.99
+      gail:
+        strength: 0.3
+        demo_path: Demonstrations/Test.demo
+        use_actions: false
+
+    behavioral_cloning: 
+      demo_path: Demonstrations/Test.demo
+      steps: 750000
+      strength: 0.4
+
+    keep_checkpoints: 15
+    checkpoint_interval: 200000
+    time_horizon: 256
+    max_steps: 10000000
+    summary_freq: 50000
+    threaded: true
