@@ -18,5 +18,15 @@ namespace AutomaticParking.Common.Extensions
                 throw new InvalidOperationException("Sequence contains no elements");
             return argument;
         }
+
+        public static T ThrowExceptionIfArgumentOutOfRange<T>(this T argument, string argumentName,
+            T minValue, T maxValue) where T : IComparable<T>
+        {
+            if (argument.CompareTo(minValue) < (int)default)
+                throw new ArgumentOutOfRangeException(argumentName, $"Value cannot be less than {minValue}.");
+            if (argument.CompareTo(maxValue) > (int)default)
+                throw new ArgumentOutOfRangeException(argumentName, $"Value cannot be greater than {maxValue}.");
+            return argument;
+        }
     }
 }

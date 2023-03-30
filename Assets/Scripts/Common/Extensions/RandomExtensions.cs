@@ -23,5 +23,17 @@ namespace AutomaticParking.Common.Extensions
             source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
             return Random.Range(default, source.Count);
         }
+
+        public static List<T> PickRandomItems<T>(this IReadOnlyList<T> source, int countToPick)
+        {
+            source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
+            countToPick.ThrowExceptionIfArgumentOutOfRange(nameof(countToPick), default, countToPick);
+
+            var pickedItems = new List<T>(source);
+            int remainingItemsCount = source.Count - countToPick;
+            for (var i = 0; i < remainingItemsCount; i++)
+                pickedItems.RemoveAt(pickedItems.RandomIndex());
+            return pickedItems;
+        }
     }
 }
