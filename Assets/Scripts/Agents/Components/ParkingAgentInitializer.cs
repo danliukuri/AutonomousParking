@@ -1,12 +1,14 @@
 ﻿using AutomaticParking.Agents.Data;
 using AutomaticParking.Car;
+using AutomaticParking.ParkingLot;
 using UnityEngine;
 
 namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentInitializer : MonoBehaviour
     {
-        [SerializeField] public ParkingAgentTargetData targetData;
+        [field: SerializeField] public ParkingAgentTargetData TargetData { get; private set; }
+        [field: SerializeField] public ParkingLotInitializer ParkingLotInitializer { get; private set; }
 
         public CarData InitializeCarData() => GetComponentInChildren<CarData>();
 
@@ -23,12 +25,10 @@ namespace AutomaticParking.Agents.Components
             };
         }
 
-        public ParkingAgentTargetData InitializeTargetData() => targetData;
-
         public ParkingAgentTargetTrackingData InitializeTargetTrackingData(ParkingAgentData data)
         {
-            float initialDistanceToTarget = Vector3.Distance(data.InitialPosition, targetData.Transform.position);
-            float initialAngleToTarget = Quaternion.Angle(data.InitialRotation, targetData.Transform.rotation);
+            float initialDistanceToTarget = Vector3.Distance(data.InitialPosition, TargetData.Transform.position);
+            float initialAngleToTarget = Quaternion.Angle(data.InitialRotation, TargetData.Transform.rotation);
             return new ParkingAgentTargetTrackingData
             {
                 InitialDistanceToTarget = initialDistanceToTarget,

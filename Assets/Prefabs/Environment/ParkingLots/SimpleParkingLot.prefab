@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858525169686058066}
+  - component: {fileID: 5612103078785498247}
+  - component: {fileID: 9085011450636252765}
   m_Layer: 0
   m_Name: SimpleParkingLot
   m_TagString: Untagged
@@ -35,6 +37,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5612103078785498247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858525169686058077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8efb8c155844f2c8b8c04b634830b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSpawner: {fileID: 0}
+  parkingLotData: {fileID: 9085011450636252765}
+--- !u!114 &9085011450636252765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858525169686058077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8587ad99b84882a07f42b02b47d5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <FreeParkingSpotsCount>k__BackingField: 0
+  <ParkingSpotData>k__BackingField: {fileID: 5610155700633364510}
+  <AvailableParkingSpots>k__BackingField:
+  - {fileID: 1858525171650446710}
+  - {fileID: 7560471371416828640}
+  - {fileID: 7560471371798606777}
+  - {fileID: 7560471371402934672}
+  - {fileID: 7560471371400641782}
+  - {fileID: 7560471371394928053}
+  - {fileID: 7560471371553064691}
+  - {fileID: 7560471372421781895}
+  - {fileID: 7560471371373610999}
+  - {fileID: 7560471370608766245}
+  - {fileID: 7560471371974055543}
 --- !u!1 &1858525169924888119
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858525171240363862}
+  - component: {fileID: 5610155700633364510}
   m_Layer: 0
   m_Name: ParkingSpots
   m_TagString: Untagged
@@ -677,6 +720,20 @@ Transform:
   m_Father: {fileID: 1858525169686058066}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5610155700633364510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858525171240363857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e93dd6559c41d19c3443df3f81048f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MaxParkingOffset>k__BackingField: 0.15
+  <MaxParkingAngleOffset>k__BackingField: 2
 --- !u!1 &1858525171295346639
 GameObject:
   m_ObjectHideFlags: 0

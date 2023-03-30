@@ -1,6 +1,7 @@
 ﻿using AutomaticParking.Agents.Components;
 using AutomaticParking.Agents.Data;
 using AutomaticParking.Car;
+using AutomaticParking.ParkingLot;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
@@ -14,6 +15,8 @@ namespace AutomaticParking.Agents
         private ParkingAgentTargetData targetData;
         private ParkingAgentTargetTrackingData targetTrackingData;
 
+        private ParkingLotInitializer parkingLotInitializer;
+
         private ParkingAgentActionsHandler actionsHandler;
         private ParkingAgentMetricsCalculator metricsCalculator;
         private ParkingAgentRewardCalculator rewardCalculator;
@@ -22,16 +25,30 @@ namespace AutomaticParking.Agents
         public override void Initialize()
         {
             var initializer = GetComponentInParent<ParkingAgentInitializer>();
+            ExtractExisting();
+            InitializeData();
+            InitializeComponents();
 
-            carData = initializer.InitializeCarData();
-            agentData = initializer.InitializeAgentData(this);
-            targetData = initializer.InitializeTargetData();
-            targetTrackingData = initializer.InitializeTargetTrackingData(agentData);
+            void ExtractExisting()
+            {
+                parkingLotInitializer = initializer.ParkingLotInitializer;
+                targetData = initializer.TargetData;
+            }
 
-            actionsHandler = new ParkingAgentActionsHandler(carData);
-            metricsCalculator = new ParkingAgentMetricsCalculator(agentData, targetData, targetTrackingData);
-            rewardCalculator = new ParkingAgentRewardCalculator(agentData, targetTrackingData);
-            observationsCollector = new ParkingAgentObservationsCollector(agentData, targetData);
+            void InitializeData()
+            {
+                carData = initializer.InitializeCarData();
+                agentData = initializer.InitializeAgentData(this);
+                targetTrackingData = initializer.InitializeTargetTrackingData(agentData);
+            }
+
+            void InitializeComponents()
+            {
+                actionsHandler = new ParkingAgentActionsHandler(carData);
+                metricsCalculator = new ParkingAgentMetricsCalculator(agentData, targetData, targetTrackingData);
+                rewardCalculator = new ParkingAgentRewardCalculator(agentData, targetTrackingData);
+                observationsCollector = new ParkingAgentObservationsCollector(agentData, targetData);
+            }
         }
 
         public override void OnEpisodeBegin()
@@ -39,6 +56,7 @@ namespace AutomaticParking.Agents
             agentData.Reset();
             carData.Reset();
             targetTrackingData.Reset();
+            parkingLotInitializer.ReInitialize();
         }
 
         public override void CollectObservations(VectorSensor sensor)
