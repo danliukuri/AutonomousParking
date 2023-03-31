@@ -12,22 +12,10 @@ namespace AutomaticParking.Common.Extensions
         public static Quaternion RandomizeVerticalRotation(this Quaternion rotation, float maxAngleOffset) =>
             rotation * Quaternion.Euler(default, Random.Range(-maxAngleOffset, maxAngleOffset), default);
 
-        public static T RandomItem<T>(this ICollection<T> source)
-        {
-            source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
-            return source.ElementAt(source.RandomIndex());
-        }
-
         public static int NextRandomIndex<T>(this ICollection<T> source, int currentIndex)
         {
             currentIndex.ThrowExceptionIfArgumentOutOfRange(nameof(currentIndex), source);
             return Random.Range(currentIndex, source.Count);
-        }
-
-        public static int RandomIndex<T>(this ICollection<T> source)
-        {
-            source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
-            return Random.Range(default, source.Count);
         }
 
         public static IEnumerable<T> PickRandomItems<T>(this IEnumerable<T> source, int count) =>

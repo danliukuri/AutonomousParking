@@ -1468,11 +1468,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3886815317193504615, guid: bb8ab16484aeee84096e3070ae10108f, type: 3}
       propertyPath: <StartCount>k__BackingField
-      value: 12
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3886815317193504615, guid: bb8ab16484aeee84096e3070ae10108f, type: 3}
       propertyPath: <StartCapacity>k__BackingField
-      value: 15
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

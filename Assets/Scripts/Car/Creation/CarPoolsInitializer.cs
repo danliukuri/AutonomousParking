@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutomaticParking.Common;
 using AutomaticParking.Common.Patterns.Factory;
 using AutomaticParking.Common.Patterns.Pool;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace AutomaticParking.Car.Creation
         [SerializeField] private CarsFactoryData factoryData;
 
         public List<IObjectPool<Transform>> CarPools { get; } = new();
+        public NextRandomItemProvider<IObjectPool<Transform>> NextRandomCarPoolProvider { get; private set; }
 
         private void Awake()
         {
@@ -21,6 +23,8 @@ namespace AutomaticParking.Car.Creation
                 var carPoolFactory = new ComponentPoolFactory<Transform>(carFactory, poolData);
                 CarPools.Add(carPoolFactory.FillWithStartObjects(carPoolFactory.Create()));
             }
+
+            NextRandomCarPoolProvider = new NextRandomItemProvider<IObjectPool<Transform>>(CarPools);
         }
     }
 }
