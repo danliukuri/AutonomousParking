@@ -12,31 +12,35 @@ namespace AutomaticParking.Common.Extensions
         public static Quaternion RandomizeVerticalRotation(this Quaternion rotation, float maxAngleOffset) =>
             rotation * Quaternion.Euler(default, Random.Range(-maxAngleOffset, maxAngleOffset), default);
 
-        public static T RandomItem<T>(this IReadOnlyCollection<T> source)
+        public static T RandomItem<T>(this ICollection<T> source)
         {
             source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
             return source.ElementAt(source.RandomIndex());
         }
 
-        public static int RandomIndex<T>(this IReadOnlyCollection<T> source)
+        public static int NextRandomIndex<T>(this ICollection<T> source, int currentIndex)
+        {
+            currentIndex.ThrowExceptionIfArgumentOutOfRange(nameof(currentIndex), source);
+            return Random.Range(currentIndex, source.Count);
+        }
+
+        public static int RandomIndex<T>(this ICollection<T> source)
         {
             source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
             return Random.Range(default, source.Count);
         }
 
-        public static IEnumerable<T> PickRandomItems<T>(this IEnumerable<T> source, int countToPick)
+        public static IEnumerable<T> PickRandomItems<T>(this IEnumerable<T> source, int count) =>
+            source.ToArray().Shuffle(count).Take(count);
+
+        public static IList<T> Shuffle<T>(this IList<T> source, int count)
         {
-            source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
-            countToPick.ThrowExceptionIfArgumentOutOfRange(nameof(countToPick), default, countToPick);
-
-            List<T> pickedItems = source.ToList();
-            for (var i = 0; i < countToPick; i++)
-            {
-                int randomIndex = Random.Range(i, pickedItems.Count);
-                (pickedItems[i], pickedItems[randomIndex]) = (pickedItems[randomIndex], pickedItems[i]);
-            }
-
-            return pickedItems.Take(countToPick);
+            for (var i = 0; i < count; i++)
+                source.SwapItemWithNextRandom(i);
+            return source;
         }
+
+        public static IList<T> SwapItemWithNextRandom<T>(this IList<T> source, int itemIndex) =>
+            source.SwapItems(itemIndex, source.NextRandomIndex(itemIndex));
     }
 }

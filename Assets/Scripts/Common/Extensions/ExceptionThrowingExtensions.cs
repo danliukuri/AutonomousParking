@@ -13,12 +13,9 @@ namespace AutomaticParking.Common.Extensions
             return argument;
         }
 
-        public static IEnumerable<T> ThrowExceptionIfNoElements<T>(this IEnumerable<T> argument)
-        {
-            if (!argument.Any())
-                throw new InvalidOperationException("Sequence contains no elements");
-            return argument;
-        }
+        public static int ThrowExceptionIfArgumentOutOfRange<T>(this int argument, string argumentName,
+            ICollection<T> collection) =>
+            argument.ThrowExceptionIfArgumentOutOfRange(argumentName, collection.FirstIndex(), collection.LastIndex());
 
         public static T ThrowExceptionIfArgumentOutOfRange<T>(this T argument, string argumentName,
             T minValue, T maxValue) where T : IComparable<T>
@@ -28,6 +25,13 @@ namespace AutomaticParking.Common.Extensions
             if (argument.CompareTo(maxValue) > (int)default)
                 throw new ArgumentOutOfRangeException(argumentName, $"Value cannot be greater than {maxValue}.");
             return argument;
+        }
+
+        public static IEnumerable<T> ThrowExceptionIfNoElements<T>(this IEnumerable<T> source)
+        {
+            if (!source.Any())
+                throw new InvalidOperationException("Sequence contains no elements");
+            return source;
         }
     }
 }
