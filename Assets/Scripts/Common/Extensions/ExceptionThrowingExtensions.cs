@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AutomaticParking.Common.Extensions
 {
@@ -12,9 +13,9 @@ namespace AutomaticParking.Common.Extensions
             return argument;
         }
 
-        public static IReadOnlyCollection<T> ThrowExceptionIfNoElements<T>(this IReadOnlyCollection<T> argument)
+        public static IEnumerable<T> ThrowExceptionIfNoElements<T>(this IEnumerable<T> argument)
         {
-            if (argument.Count == default)
+            if (!argument.Any())
                 throw new InvalidOperationException("Sequence contains no elements");
             return argument;
         }

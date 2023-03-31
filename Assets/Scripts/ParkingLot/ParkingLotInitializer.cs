@@ -13,10 +13,11 @@ namespace AutomaticParking.ParkingLot
 
         public void Initialize()
         {
-            List<Transform> parkingSpotsToOccupy = PickRandomParkingSpotsToOccupy();
-            parkingSpotsToOccupy.ForEach(parkingSpot => carSpawner.Spawn(parkingSpot, parkingLotData.ParkingSpotData));
+            IEnumerable<Transform> parkingSpotsToOccupy = PickRandomParkingSpotsToOccupy();
+            foreach (Transform parkingSpot in parkingSpotsToOccupy)
+                carSpawner.Spawn(parkingSpot, parkingLotData.ParkingSpotData);
 
-            List<Transform> PickRandomParkingSpotsToOccupy()
+            IEnumerable<Transform> PickRandomParkingSpotsToOccupy()
             {
                 List<Transform> availableParkingSpots = parkingLotData.AvailableParkingSpots;
                 int occupiedParkingSpotsCount = availableParkingSpots.Count - parkingLotData.FreeParkingSpotsCount;
