@@ -13,16 +13,17 @@ namespace AutomaticParking.ParkingLot
 
         public void Initialize()
         {
-            IEnumerable<Transform> parkingSpotsToOccupy = PickRandomParkingSpotsToOccupy();
-            foreach (Transform parkingSpot in parkingSpotsToOccupy)
-                carSpawner.Spawn(parkingSpot, parkingLotData.ParkingSpotData);
+            PlaceCars(PickRandomParkingSpotsToOccupy());
 
-            IEnumerable<Transform> PickRandomParkingSpotsToOccupy()
+            List<Transform> PickRandomParkingSpotsToOccupy()
             {
-                List<Transform> availableParkingSpots = parkingLotData.AvailableParkingSpots;
+                List<Transform> availableParkingSpots = parkingLotData.CurrentlyAvailableParkingSpots;
                 int occupiedParkingSpotsCount = availableParkingSpots.Count - parkingLotData.FreeParkingSpotsCount;
-                return availableParkingSpots.PickRandomItems(occupiedParkingSpotsCount);
+                return availableParkingSpots.ExtractRandomItems(occupiedParkingSpotsCount);
             }
+
+            void PlaceCars(List<Transform> parkingSpots) =>
+                parkingSpots.ForEach(parkingSpot => carSpawner.Spawn(parkingSpot, parkingLotData.ParkingSpotData));
         }
 
         public void ReInitialize()
@@ -31,6 +32,10 @@ namespace AutomaticParking.ParkingLot
             Initialize();
         }
 
-        public void DeInitialize() => carSpawner.DeSpawnAll();
+        public void DeInitialize()
+        {
+            carSpawner.DeSpawnAll();
+            parkingLotData.Reset();
+        }
     }
 }

@@ -18,8 +18,12 @@ namespace AutomaticParking.Common.Extensions
             return Random.Range(currentIndex, source.Count);
         }
 
-        public static IEnumerable<T> PickRandomItems<T>(this IEnumerable<T> source, int count) =>
-            source.ToArray().Shuffle(count).Take(count);
+        public static List<T> ExtractRandomItems<T>(this List<T> source, int count)
+        {
+            List<T> extractedItems = source.Shuffle(count).Take(count).ToList();
+            source.RemoveRange(default, count);
+            return extractedItems;
+        }
 
         public static IList<T> Shuffle<T>(this IList<T> source, int count)
         {

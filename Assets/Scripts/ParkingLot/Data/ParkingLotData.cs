@@ -8,5 +8,14 @@ namespace AutomaticParking.ParkingLot.Data
         [field: SerializeField, Min(default)] public int FreeParkingSpotsCount { get; private set; }
         [field: SerializeField] public ParkingSpotData ParkingSpotData { get; private set; }
         [field: SerializeField] public List<Transform> AvailableParkingSpots { get; private set; }
+        public List<Transform> CurrentlyAvailableParkingSpots { get; private set; }
+
+        private void Awake() => CurrentlyAvailableParkingSpots = new List<Transform>(AvailableParkingSpots);
+
+        public void Reset()
+        {
+            CurrentlyAvailableParkingSpots.Clear();
+            CurrentlyAvailableParkingSpots.AddRange(AvailableParkingSpots);
+        }
     }
 }
