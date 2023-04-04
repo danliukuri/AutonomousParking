@@ -24,20 +24,5 @@ namespace AutomaticParking.Agents.Components
                 InitialRotation = agentTransform.rotation
             };
         }
-
-        public ParkingAgentTargetTrackingData InitializeTargetTrackingData(ParkingAgentData data)
-        {
-            float initialDistanceToTarget = Vector3.Distance(data.InitialPosition, TargetData.Transform.position);
-            float initialAngleToTarget = Quaternion.Angle(data.InitialRotation, TargetData.Transform.rotation);
-            return new ParkingAgentTargetTrackingData
-            {
-                InitialDistanceToTarget = initialDistanceToTarget,
-                MinDistanceToTarget = default,
-                MaxDistanceToTarget = initialDistanceToTarget,
-                InitialAngleToTarget = initialAngleToTarget,
-                MinAngleToTarget = default,
-                MaxAngleToTarget = initialAngleToTarget
-            };
-        }
     }
 }

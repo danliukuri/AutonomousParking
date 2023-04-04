@@ -39,7 +39,7 @@ namespace AutomaticParking.Agents
             {
                 carData = initializer.InitializeCarData();
                 agentData = initializer.InitializeAgentData(this);
-                targetTrackingData = initializer.InitializeTargetTrackingData(agentData);
+                targetTrackingData = new ParkingAgentTargetTrackingData();
             }
 
             void InitializeComponents()
@@ -55,7 +55,7 @@ namespace AutomaticParking.Agents
         {
             agentData.Reset();
             carData.Reset();
-            targetTrackingData.Reset();
+            metricsCalculator.CalculateTargetTrackingMetrics();
             parkingLotInitializer.ReInitialize();
         }
 
