@@ -1,4 +1,5 @@
 ﻿using AutomaticParking.Agents.Data;
+using AutomaticParking.Agents.Target;
 using AutomaticParking.Car;
 using AutomaticParking.ParkingLot;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentInitializer : MonoBehaviour
     {
-        [field: SerializeField] public ParkingAgentTargetData TargetData { get; private set; }
+        [field: SerializeField] public ParkingAgentTargetInitializer TargetInitializer { get; private set; }
         [field: SerializeField] public ParkingLotInitializer ParkingLotInitializer { get; private set; }
 
         public CarData InitializeCarData() => GetComponentInChildren<CarData>();

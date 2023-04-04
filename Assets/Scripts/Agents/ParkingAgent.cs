@@ -1,5 +1,6 @@
 ﻿using AutomaticParking.Agents.Components;
 using AutomaticParking.Agents.Data;
+using AutomaticParking.Agents.Target;
 using AutomaticParking.Car;
 using AutomaticParking.ParkingLot;
 using Unity.MLAgents;
@@ -16,6 +17,7 @@ namespace AutomaticParking.Agents
         private ParkingAgentTargetTrackingData targetTrackingData;
 
         private ParkingLotInitializer parkingLotInitializer;
+        private ParkingAgentTargetInitializer targetInitializer;
 
         private ParkingAgentActionsHandler actionsHandler;
         private ParkingAgentMetricsCalculator metricsCalculator;
@@ -32,7 +34,8 @@ namespace AutomaticParking.Agents
             void ExtractExisting()
             {
                 parkingLotInitializer = initializer.ParkingLotInitializer;
-                targetData = initializer.TargetData;
+                targetInitializer = initializer.TargetInitializer;
+                targetData = targetInitializer.TargetData;
             }
 
             void InitializeData()
@@ -53,10 +56,12 @@ namespace AutomaticParking.Agents
 
         public override void OnEpisodeBegin()
         {
+            parkingLotInitializer.ReInitialize();
+            targetInitializer.Initialize();
+            
             agentData.Reset();
             carData.Reset();
             metricsCalculator.CalculateInitialTargetTrackingMetrics();
-            parkingLotInitializer.ReInitialize();
         }
 
         public override void CollectObservations(VectorSensor sensor)
