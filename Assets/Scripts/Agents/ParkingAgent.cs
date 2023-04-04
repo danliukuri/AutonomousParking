@@ -55,7 +55,7 @@ namespace AutomaticParking.Agents
         {
             agentData.Reset();
             carData.Reset();
-            metricsCalculator.CalculateTargetTrackingMetrics();
+            metricsCalculator.CalculateInitialTargetTrackingMetrics();
             parkingLotInitializer.ReInitialize();
         }
 

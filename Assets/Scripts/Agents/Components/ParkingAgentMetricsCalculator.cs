@@ -18,6 +18,17 @@ namespace AutomaticParking.Agents.Components
             this.data = data;
         }
 
+        public void CalculateInitialTargetTrackingMetrics()
+        {
+            data.MaxDistanceToTarget = data.DistanceToTarget = CalculateDistanceToTarget();
+            data.NormalizedDistanceToTarget = CalculateNormalizedDistanceToTarget();
+            data.MaxAngleToTarget = data.AngleToTarget = CalculateAngleToTarget();
+            data.NormalizedAngleToTarget = CalculateNormalizedAngleToTarget();
+
+            data.IsTargetReached = CalculateWhetherTargetHasBeenReached();
+            data.IsGettingRewardForDecreasingAngleToTarget = CalculateWhetherToGetRewardForDecreasingAngleToTarget();
+        }
+
         public void CalculateTargetTrackingMetrics()
         {
             data.DistanceToTarget = CalculateDistanceToTarget();
