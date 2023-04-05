@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8587ad99b84882a07f42b02b47d5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <FreeParkingSpotsCount>k__BackingField: 1
+  <FreeParkingSpotsCount>k__BackingField: 4
   <ParkingSpotData>k__BackingField: {fileID: 5610155700633364510}
   <AvailableParkingSpots>k__BackingField:
   - {fileID: 1858525171650446710}
