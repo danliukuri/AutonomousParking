@@ -1,4 +1,5 @@
-﻿using AutomaticParking.Agents.Data;
+﻿using System.Collections.Generic;
+using AutomaticParking.Agents.Data;
 using AutomaticParking.Common.Extensions;
 using AutomaticParking.ParkingLot.Data;
 using UnityEngine;
@@ -10,9 +11,12 @@ namespace AutomaticParking.Agents.Target
         [field: SerializeField] public ParkingAgentTargetData TargetData { get; private set; }
         [SerializeField] private ParkingLotData parkingLotData;
 
-        public void Initialize()
+        public void Initialize(Transform agent)
         {
-            PlaceTarget(parkingLotData.CurrentlyAvailableParkingSpots.RandomItem());
+            PlaceTarget(FindClosestParkingSpot(parkingLotData.CurrentlyAvailableParkingSpots));
+
+            Transform FindClosestParkingSpot(IEnumerable<Transform> availableParkingSpots) =>
+                availableParkingSpots.MinBy(parkingSpot => Vector3.Distance(agent.position, parkingSpot.position));
 
             void PlaceTarget(Transform parkingSpot)
             {
@@ -20,5 +24,7 @@ namespace AutomaticParking.Agents.Target
                 TargetData.Transform.rotation = parkingSpot.rotation;
             }
         }
+
+        public void ReInitialize(Transform agent) => Initialize(agent);
     }
 }

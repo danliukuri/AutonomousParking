@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace AutomaticParking.Common.Extensions
 {
@@ -22,6 +23,43 @@ namespace AutomaticParking.Common.Extensions
             if (firstIndex != secondIndex)
                 (source[firstIndex], source[secondIndex]) = (source[secondIndex], source[firstIndex]);
             return source;
+        }
+
+
+        public static TSource MinBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
+            where TKey : IComparable<TKey> => ExtremumBy(source, keySelector, (key1, key2) => key1.IsLessThan(key2));
+
+        public static TSource ExtremumBy<TSource, TKey>(this IEnumerable<TSource> source,
+            Func<TSource, TKey> keySelector, Func<TKey, TKey, bool> predicate) where TKey : IComparable<TKey>
+        {
+            source.ThrowExceptionIfArgumentIsNull(nameof(source)).ThrowExceptionIfNoElements();
+            keySelector.ThrowExceptionIfArgumentIsNull(nameof(keySelector));
+
+            using IEnumerator<TSource> enumerator = source.GetEnumerator();
+
+            (TSource Value, TKey Key) extremum = enumerator.IterateToFirstItemWithNotNullKey(keySelector);
+            while (enumerator.MoveNext())
+            {
+                (TSource Value, TKey Key) item = (enumerator.Current, keySelector(enumerator.Current));
+                if (item.Key != null && predicate(item.Key, extremum.Key))
+                    extremum = item;
+            }
+
+            return extremum.Value;
+        }
+
+        public static (TSource Value, TKey Key) IterateToFirstItemWithNotNullKey<TSource, TKey>(
+            this IEnumerator<TSource> enumerator, Func<TSource, TKey> keySelector) where TKey : IComparable<TKey>
+        {
+            enumerator.ThrowExceptionIfArgumentIsNull(nameof(enumerator));
+            keySelector.ThrowExceptionIfArgumentIsNull(nameof(keySelector));
+
+            enumerator.MoveNext();
+            (TSource Value, TKey Key) item = (enumerator.Current, keySelector(enumerator.Current));
+            if (default(TKey) is null)
+                while (enumerator.MoveNext() && item.Key == null)
+                    item = (enumerator.Current, keySelector(enumerator.Current));
+            return item;
         }
     }
 }
