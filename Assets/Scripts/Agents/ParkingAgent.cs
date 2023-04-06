@@ -11,82 +11,59 @@ namespace AutomaticParking.Agents
 {
     public class ParkingAgent : Agent
     {
-        private CarData carData;
-        private ParkingAgentData agentData;
-        private ParkingAgentTargetData targetData;
-        private ParkingAgentTargetTrackingData targetTrackingData;
+        public CarData CarData { get; set; }
+        public ParkingAgentData AgentData { get; set; }
+        public ParkingAgentTargetTrackingData TargetTrackingData { get; set; }
 
-        private ParkingLotInitializer parkingLotInitializer;
-        private ParkingAgentTargetInitializer targetInitializer;
+        public ParkingLotInitializer ParkingLotInitializer { get; set; }
+        public ParkingAgentTargetInitializer TargetInitializer { get; set; }
 
-        private ParkingAgentActionsHandler actionsHandler;
-        private ParkingAgentMetricsCalculator metricsCalculator;
-        private ParkingAgentRewardCalculator rewardCalculator;
-        private ParkingAgentObservationsCollector observationsCollector;
+        public ParkingAgentActionsHandler ActionsHandler { get; set; }
+        public ParkingAgentMetricsCalculator MetricsCalculator { get; set; }
+        public ParkingAgentRewardCalculator RewardCalculator { get; set; }
+        public ParkingAgentObservationsCollector ObservationsCollector { get; set; }
 
         public override void Initialize()
         {
             var initializer = GetComponentInParent<ParkingAgentInitializer>();
-            ExtractExisting();
-            InitializeData();
-            InitializeComponents();
-
-            void ExtractExisting()
-            {
-                parkingLotInitializer = initializer.ParkingLotInitializer;
-                targetInitializer = initializer.TargetInitializer;
-                targetData = targetInitializer.TargetData;
-            }
-
-            void InitializeData()
-            {
-                carData = initializer.InitializeCarData();
-                agentData = initializer.InitializeAgentData(this);
-                targetTrackingData = new ParkingAgentTargetTrackingData();
-            }
-
-            void InitializeComponents()
-            {
-                actionsHandler = new ParkingAgentActionsHandler(carData);
-                metricsCalculator = new ParkingAgentMetricsCalculator(agentData, targetData, targetTrackingData);
-                rewardCalculator = new ParkingAgentRewardCalculator(agentData, targetTrackingData);
-                observationsCollector = new ParkingAgentObservationsCollector(agentData, targetData);
-            }
+            initializer.InitializeExternal(this);
+            initializer.InitializeData(this);
+            initializer.InitializeComponents(this);
         }
 
         public override void OnEpisodeBegin()
         {
-            agentData.Reset();
-            carData.Reset();
+            AgentData.Reset();
+            CarData.Reset();
 
-            parkingLotInitializer.ReInitialize();
-            targetInitializer.ReInitialize(agentData.Transform);
+            ParkingLotInitializer.ReInitialize();
+            TargetInitializer.ReInitialize(AgentData.Transform);
 
-            metricsCalculator.CalculateInitialTargetTrackingMetrics();
+            MetricsCalculator.CalculateInitialTargetTrackingMetrics();
         }
 
         public override void CollectObservations(VectorSensor sensor)
         {
-            observationsCollector.CollectAgentTransformObservations(sensor);
-            observationsCollector.CollectAgentVelocityObservations(sensor);
+            ObservationsCollector.CollectAgentTransformObservations(sensor);
+            ObservationsCollector.CollectAgentVelocityObservations(sensor);
 
-            observationsCollector.CollectTargetTransformObservations(sensor);
+            ObservationsCollector.CollectTargetTransformObservations(sensor);
         }
 
         public override void OnActionReceived(ActionBuffers actions)
         {
-            actionsHandler.HandleInputActions(actions);
-            metricsCalculator.CalculateTargetTrackingMetrics();
-            AddReward(rewardCalculator.CalculateReward());
+            ActionsHandler.HandleInputActions(actions);
+            MetricsCalculator.CalculateTargetTrackingMetrics();
+            AddReward(RewardCalculator.CalculateReward());
 
-            if (targetTrackingData.IsTargetReached)
+            if (TargetTrackingData.IsTargetReached)
                 EndEpisode();
         }
 
         public override void Heuristic(in ActionBuffers actionsOut)
         {
-            actionsHandler.HandleHeuristicInputContinuousActions(actionsOut.ContinuousActions);
-            actionsHandler.HandleHeuristicInputDiscreteActions(actionsOut.DiscreteActions);
+            ActionsHandler.HandleHeuristicInputContinuousActions(actionsOut.ContinuousActions);
+            ActionsHandler.HandleHeuristicInputDiscreteActions(actionsOut.DiscreteActions);
         }
     }
 }
