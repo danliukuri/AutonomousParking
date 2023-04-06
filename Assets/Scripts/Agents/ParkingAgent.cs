@@ -56,11 +56,12 @@ namespace AutomaticParking.Agents
 
         public override void OnEpisodeBegin()
         {
-            parkingLotInitializer.ReInitialize();
-            targetInitializer.ReInitialize(agentData.Transform);
-            
             agentData.Reset();
             carData.Reset();
+
+            parkingLotInitializer.ReInitialize();
+            targetInitializer.ReInitialize(agentData.Transform);
+
             metricsCalculator.CalculateInitialTargetTrackingMetrics();
         }
 
