@@ -30,7 +30,6 @@ Transform:
   m_Children:
   - {fileID: 4391315341018655788}
   - {fileID: 8943537124848033090}
-  - {fileID: 4391315340721555222}
   m_Father: {fileID: 4391315340159274307}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98,7 +97,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4391315339913328985}
+  m_Father: {fileID: 8943537124848033090}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &61901592712403086
@@ -138,9 +137,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8943537124848033090}
+  - component: {fileID: 8994163759662458605}
   - component: {fileID: 8196260663383911901}
   m_Layer: 0
-  m_Name: SimpleParkingLotObjectPlacers
+  m_Name: Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,10 +157,25 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4391315340721555222}
   m_Father: {fileID: 4391315339913328985}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8994163759662458605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316308760499832154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8efb8c155844f2c8b8c04b634830b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSpawner: {fileID: 61901592712403086}
+  parkingLotData: {fileID: 6570656222190947875}
 --- !u!114 &8196260663383911901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,17 +254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e8587ad99b84882a07f42b02b47d5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7555327989278557433 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5612103078785498247, guid: 2589dd93ce1831f429f18139cde178cc, type: 3}
-  m_PrefabInstance: {fileID: 2682976334378006654}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8efb8c155844f2c8b8c04b634830b3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4391315340063164224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,9 +307,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8196260663383911901}
     - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: parkedCarsPlacer
+      value: 
+      objectReference: {fileID: 8994163759662458605}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: parkingLotCarsPlacer
+      value: 
+      objectReference: {fileID: 8994163759662458605}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
       propertyPath: parkingLotInitializer
       value: 
-      objectReference: {fileID: 7555327989278557433}
+      objectReference: {fileID: 0}
     - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
       propertyPath: <TargetData>k__BackingField
       value: 
@@ -317,7 +329,7 @@ PrefabInstance:
     - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
       propertyPath: <ParkingLotInitializer>k__BackingField
       value: 
-      objectReference: {fileID: 7555327989278557433}
+      objectReference: {fileID: 0}
     - target: {fileID: 5342535204235625003, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
       propertyPath: <Target>k__BackingField
       value: 

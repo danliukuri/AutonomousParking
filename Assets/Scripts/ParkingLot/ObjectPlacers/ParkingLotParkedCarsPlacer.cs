@@ -4,16 +4,17 @@ using AutomaticParking.Common.Extensions;
 using AutomaticParking.ParkingLot.Data;
 using UnityEngine;
 
-namespace AutomaticParking.ParkingLot
+namespace AutomaticParking.ParkingLot.ObjectPlacers
 {
-    public class ParkingLotInitializer : MonoBehaviour
+    public class ParkingLotParkedCarsPlacer : MonoBehaviour
     {
         [SerializeField] private CarSpawner carSpawner;
         [SerializeField] private ParkingLotData parkingLotData;
 
-        public void Initialize()
+        public void Place()
         {
-            PlaceCars(PickRandomParkingSpotsToOccupy());
+            List<Transform> parkingSpotsToOccupy = PickRandomParkingSpotsToOccupy();
+            parkingSpotsToOccupy.ForEach(parkingSpot => carSpawner.Spawn(parkingSpot, parkingLotData.ParkingSpotData));
 
             List<Transform> PickRandomParkingSpotsToOccupy()
             {
@@ -21,18 +22,9 @@ namespace AutomaticParking.ParkingLot
                 int occupiedParkingSpotsCount = availableParkingSpots.Count - parkingLotData.FreeParkingSpotsCount;
                 return availableParkingSpots.ExtractRandomItems(occupiedParkingSpotsCount);
             }
-
-            void PlaceCars(List<Transform> parkingSpots) =>
-                parkingSpots.ForEach(parkingSpot => carSpawner.Spawn(parkingSpot, parkingLotData.ParkingSpotData));
         }
 
-        public void ReInitialize()
-        {
-            DeInitialize();
-            Initialize();
-        }
-
-        public void DeInitialize()
+        public void Remove()
         {
             carSpawner.DeSpawnAll();
             parkingLotData.Reset();

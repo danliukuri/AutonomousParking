@@ -1,7 +1,6 @@
 ﻿using AutomaticParking.Agents.Components;
 using AutomaticParking.Agents.Data;
 using AutomaticParking.Car;
-using AutomaticParking.ParkingLot;
 using AutomaticParking.ParkingLot.ObjectPlacers;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
@@ -16,8 +15,8 @@ namespace AutomaticParking.Agents
         public ParkingAgentTargetData TargetData { get; set; }
         public ParkingAgentTargetTrackingData TargetTrackingData { get; set; }
 
-        public ParkingLotInitializer ParkingLotInitializer { get; set; }
         public ParkingLotAgentTargetPlacer TargetPlacer { get; set; }
+        public ParkingLotParkedCarsPlacer ParkedCarsPlacer { get; set; }
 
         public ParkingAgentActionsHandler ActionsHandler { get; set; }
         public ParkingAgentMetricsCalculator MetricsCalculator { get; set; }
@@ -37,7 +36,8 @@ namespace AutomaticParking.Agents
             AgentData.Reset();
             CarData.Reset();
 
-            ParkingLotInitializer.ReInitialize();
+            ParkedCarsPlacer.Remove();
+            ParkedCarsPlacer.Place();
             TargetPlacer.Place(TargetData.Transform, AgentData.Transform);
 
             MetricsCalculator.CalculateInitialTargetTrackingMetrics();

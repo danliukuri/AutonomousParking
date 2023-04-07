@@ -1,6 +1,5 @@
 ﻿using AutomaticParking.Agents.Data;
 using AutomaticParking.Car;
-using AutomaticParking.ParkingLot;
 using AutomaticParking.ParkingLot.ObjectPlacers;
 using UnityEngine;
 
@@ -10,13 +9,13 @@ namespace AutomaticParking.Agents.Components
     {
         [field: SerializeField] private ParkingAgentTargetData targetData;
         [field: SerializeField] private ParkingLotAgentTargetPlacer targetPlacer;
-        [field: SerializeField] private ParkingLotInitializer parkingLotInitializer;
+        [field: SerializeField] private ParkingLotParkedCarsPlacer parkedCarsPlacer;
 
         public void InitializeExternal(ParkingAgent agent)
         {
             agent.TargetData = targetData;
             agent.TargetPlacer = targetPlacer;
-            agent.ParkingLotInitializer = parkingLotInitializer;
+            agent.ParkedCarsPlacer = parkedCarsPlacer;
         }
 
         public void InitializeData(ParkingAgent agent)
