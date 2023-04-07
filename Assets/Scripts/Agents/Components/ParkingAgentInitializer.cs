@@ -1,20 +1,22 @@
 ﻿using AutomaticParking.Agents.Data;
-using AutomaticParking.Agents.Target;
 using AutomaticParking.Car;
 using AutomaticParking.ParkingLot;
+using AutomaticParking.ParkingLot.ObjectPlacers;
 using UnityEngine;
 
 namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentInitializer : MonoBehaviour
     {
-        [field: SerializeField] public ParkingAgentTargetInitializer TargetInitializer { get; private set; }
-        [field: SerializeField] public ParkingLotInitializer ParkingLotInitializer { get; private set; }
+        [field: SerializeField] private ParkingAgentTargetData targetData;
+        [field: SerializeField] private ParkingLotAgentTargetPlacer targetPlacer;
+        [field: SerializeField] private ParkingLotInitializer parkingLotInitializer;
 
         public void InitializeExternal(ParkingAgent agent)
         {
-            agent.ParkingLotInitializer = ParkingLotInitializer;
-            agent.TargetInitializer = TargetInitializer;
+            agent.TargetData = targetData;
+            agent.TargetPlacer = targetPlacer;
+            agent.ParkingLotInitializer = parkingLotInitializer;
         }
 
         public void InitializeData(ParkingAgent agent)
@@ -41,7 +43,6 @@ namespace AutomaticParking.Agents.Components
         {
             CarData carData = agent.CarData;
             ParkingAgentData agentData = agent.AgentData;
-            ParkingAgentTargetData targetData = TargetInitializer.TargetData;
             ParkingAgentTargetTrackingData targetTrackingData = agent.TargetTrackingData;
 
             agent.ActionsHandler = new ParkingAgentActionsHandler(carData);
