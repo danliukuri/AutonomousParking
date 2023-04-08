@@ -13,15 +13,7 @@ namespace AutomaticParking.Agents.Data
 
         public Rigidbody Rigidbody { get; set; }
         public Transform Transform { get; set; }
-        public Vector3 InitialPosition { get; set; }
-        public Quaternion InitialRotation { get; set; }
 
-        public void Reset()
-        {
-            Transform.position = InitialPosition;
-            Transform.rotation = InitialRotation;
-            Rigidbody.velocity = default;
-            Rigidbody.angularVelocity = default;
-        }
+        public void Reset() => Rigidbody.velocity = Rigidbody.angularVelocity = default;
     }
 }

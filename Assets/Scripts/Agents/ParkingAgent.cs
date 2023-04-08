@@ -15,6 +15,7 @@ namespace AutomaticParking.Agents
         public ParkingAgentTargetData TargetData { get; set; }
         public ParkingAgentTargetTrackingData TargetTrackingData { get; set; }
 
+        public ParkingLotEnteringCarPlacer AgentPlacer { get; set; }
         public ParkingLotAgentTargetPlacer TargetPlacer { get; set; }
         public ParkingLotParkedCarsPlacer ParkedCarsPlacer { get; set; }
 
@@ -38,6 +39,7 @@ namespace AutomaticParking.Agents
 
             ParkedCarsPlacer.Remove();
             ParkedCarsPlacer.Place();
+            AgentPlacer.Place(AgentData.Transform);
             TargetPlacer.Place(TargetData.Transform, AgentData.Transform);
 
             MetricsCalculator.CalculateInitialTargetTrackingMetrics();

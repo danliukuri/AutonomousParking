@@ -8,12 +8,16 @@ namespace AutomaticParking.Agents.Components
     public class ParkingAgentInitializer : MonoBehaviour
     {
         [field: SerializeField] private ParkingAgentTargetData targetData;
+
+        [field: SerializeField] private ParkingLotEnteringCarPlacer agentPlacer;
         [field: SerializeField] private ParkingLotAgentTargetPlacer targetPlacer;
         [field: SerializeField] private ParkingLotParkedCarsPlacer parkedCarsPlacer;
 
         public void InitializeExternal(ParkingAgent agent)
         {
             agent.TargetData = targetData;
+
+            agent.AgentPlacer = agentPlacer;
             agent.TargetPlacer = targetPlacer;
             agent.ParkedCarsPlacer = parkedCarsPlacer;
         }
@@ -21,21 +25,9 @@ namespace AutomaticParking.Agents.Components
         public void InitializeData(ParkingAgent agent)
         {
             agent.CarData = GetComponentInChildren<CarData>();
-            agent.AgentData = InitializeAgentData();
+            agent.AgentData = new ParkingAgentData(agent)
+                { Rigidbody = GetComponent<Rigidbody>(), Transform = GetComponent<Transform>() };
             agent.TargetTrackingData = new ParkingAgentTargetTrackingData();
-
-            ParkingAgentData InitializeAgentData()
-            {
-                var agentRigidbody = GetComponent<Rigidbody>();
-                var agentTransform = GetComponent<Transform>();
-                return new ParkingAgentData(agent)
-                {
-                    Rigidbody = agentRigidbody,
-                    Transform = agentTransform,
-                    InitialPosition = agentTransform.position,
-                    InitialRotation = agentTransform.rotation
-                };
-            }
         }
 
         public void InitializeComponents(ParkingAgent agent)
