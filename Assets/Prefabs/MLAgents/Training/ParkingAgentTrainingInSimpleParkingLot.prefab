@@ -187,8 +187,10 @@ MonoBehaviour:
   <MaxPositionX>k__BackingField: 6.25
   <MinPositionZ>k__BackingField: -11.5
   <MaxPositionZ>k__BackingField: -14.25
-  <MinRotationAngle>k__BackingField: -90
-  <MaxRotationAngle>k__BackingField: 90
+  <MinRotationAngle>k__BackingField: -20
+  <MaxRotationAngle>k__BackingField: 20
+  <RotationAngleOffsetOnMinPositionX>k__BackingField: 90
+  <RotationAngleOffsetOnMaxPositionX>k__BackingField: -90
 --- !u!1 &4391315339913328984
 GameObject:
   m_ObjectHideFlags: 0

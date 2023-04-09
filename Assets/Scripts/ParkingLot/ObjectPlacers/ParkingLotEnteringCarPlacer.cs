@@ -1,4 +1,5 @@
-﻿using AutomaticParking.ParkingLot.Data;
+﻿using AutomaticParking.Common.Extensions;
+using AutomaticParking.ParkingLot.Data;
 using UnityEngine;
 
 namespace AutomaticParking.ParkingLot.ObjectPlacers
@@ -14,7 +15,9 @@ namespace AutomaticParking.ParkingLot.ObjectPlacers
             agent.localPosition = new Vector3(randomX, default, randomZ);
 
             float randomAngle = Random.Range(Data.MinRotationAngle, Data.MaxRotationAngle);
-            agent.localRotation = Quaternion.Euler(default, randomAngle, default);
+            float angleOffset = randomX.ChangeBounds(Data.MinPositionX, Data.MaxPositionX,
+                Data.RotationAngleOffsetOnMinPositionX, Data.RotationAngleOffsetOnMaxPositionX);
+            agent.localRotation = Quaternion.Euler(default, randomAngle + angleOffset, default);
         }
     }
 }

@@ -10,5 +10,7 @@ namespace AutomaticParking.ParkingLot.Data
         [field: SerializeField] public float MaxPositionZ { get; private set; }
         [field: SerializeField] public float MinRotationAngle { get; private set; }
         [field: SerializeField] public float MaxRotationAngle { get; private set; }
+        [field: SerializeField] public float RotationAngleOffsetOnMinPositionX { get; private set; }
+        [field: SerializeField] public float RotationAngleOffsetOnMaxPositionX { get; private set; }
     }
 }
