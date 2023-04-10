@@ -4,7 +4,7 @@
     {
         public const float MaxRewardForInactivityPerStep = -1f;
         public const float MaxRewardForDecreasingDistanceToTargetPerStep = 0.5f;
-        public const float MaxRewardForDecreasingAngleToTargetPerStep = 1f;
+        public const float MaxRewardForDecreasingAngleToTargetPerStep = 0.5f;
 
         public const float MinRewardForTargetReach = 400f;
         public const float MaxRewardForTargetReach = 500f;
