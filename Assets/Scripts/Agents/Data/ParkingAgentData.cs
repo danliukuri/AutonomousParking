@@ -7,9 +7,9 @@ namespace AutomaticParking.Agents.Data
         private readonly ParkingAgent agent;
         public ParkingAgentData(ParkingAgent agent) => this.agent = agent;
 
-        public float MinStepToReachTarget => 200f;
-        public float MaxStepToReachTarget => agent.MaxStep;
-        public float StepCount => agent.StepCount;
+        public int MinStepToReachTarget => 200;
+        public int MaxStepToReachTarget => agent.MaxStep;
+        public int StepCount => agent.StepCount;
 
         public Rigidbody Rigidbody { get; set; }
         public Transform Transform { get; set; }
