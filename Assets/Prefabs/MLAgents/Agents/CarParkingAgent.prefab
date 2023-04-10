@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 10
+  DecisionPeriod: 20
   TakeActionsBetweenDecisions: 1
 --- !u!1 &6178620244002601107
 GameObject:
@@ -247,6 +247,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetData: {fileID: 0}
+  agentPlacer: {fileID: 0}
+  targetPlacer: {fileID: 0}
+  parkedCarsPlacer: {fileID: 0}
 --- !u!114 &6275114809760919275
 MonoBehaviour:
   m_ObjectHideFlags: 0
