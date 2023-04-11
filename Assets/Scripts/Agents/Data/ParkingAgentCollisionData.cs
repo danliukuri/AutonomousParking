@@ -1,8 +1,10 @@
-﻿namespace AutomaticParking.Agents.Data
+﻿using AutomaticParking.Common.Enumerations;
+
+namespace AutomaticParking.Agents.Data
 {
     public class ParkingAgentCollisionData
     {
-        public string CollisionTag { get; set; }
+        public Tag CollisionTag { get; set; }
         public bool IsAnyCollision => CollisionTag != default;
         
         public void Reset() => CollisionTag = default;

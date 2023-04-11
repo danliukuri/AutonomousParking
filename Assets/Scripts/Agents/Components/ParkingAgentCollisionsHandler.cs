@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using AutomaticParking.Agents.Data;
-using AutomaticParking.Common;
+using AutomaticParking.Common.Enumerations;
 using UnityEngine;
 
 namespace AutomaticParking.Agents.Components
@@ -12,7 +12,7 @@ namespace AutomaticParking.Agents.Components
         private void OnCollisionEnter(Collision collision)
         {
             string gameObjectTag = collision.gameObject.tag;
-            if (Tags.List.Contains(gameObjectTag))
+            if (Tag.List.Contains(gameObjectTag))
                 collisionData.CollisionTag = gameObjectTag;
         }
 

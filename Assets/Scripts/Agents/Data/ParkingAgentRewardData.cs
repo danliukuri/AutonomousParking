@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using AutomaticParking.Common;
+using AutomaticParking.Common.Enumerations;
 
 namespace AutomaticParking.Agents.Data
 {
@@ -15,10 +15,10 @@ namespace AutomaticParking.Agents.Data
         public const float RewardForWallCollisionEnter = -400f;
         public const float RewardForCarCollisionEnter = -500f;
 
-        public static Dictionary<string, float> CollisionRewards { get; } = new()
+        public static Dictionary<Tag, float> CollisionRewards { get; } = new()
         {
-            [Tags.Wall] = RewardForWallCollisionEnter,
-            [Tags.Car] = RewardForCarCollisionEnter
+            [Tag.Wall] = RewardForWallCollisionEnter,
+            [Tag.Car] = RewardForCarCollisionEnter
         };
     }
 }
