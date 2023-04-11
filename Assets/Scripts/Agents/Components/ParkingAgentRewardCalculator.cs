@@ -8,10 +8,12 @@ namespace AutomaticParking.Agents.Components
     {
         private readonly ParkingAgentData agentData;
         private readonly ParkingAgentTargetTrackingData targetTrackingData;
+        private readonly ParkingAgentCollisionData agentCollisionData;
 
         public ParkingAgentRewardCalculator(ParkingAgentData agentData,
-            ParkingAgentTargetTrackingData targetTrackingData)
+            ParkingAgentTargetTrackingData targetTrackingData, ParkingAgentCollisionData agentCollisionData)
         {
+            this.agentCollisionData = agentCollisionData;
             this.agentData = agentData;
             this.targetTrackingData = targetTrackingData;
         }
@@ -24,6 +26,8 @@ namespace AutomaticParking.Agents.Components
                 reward += CalculateRewardForDecreasingAngleToTarget(targetTrackingData);
             if (targetTrackingData.IsTargetReached)
                 reward += CalculateRewardForTargetReach(agentData);
+            if (agentCollisionData.IsAnyCollision)
+                reward += CollisionRewards[agentCollisionData.CollisionTag];
             return reward;
         }
 

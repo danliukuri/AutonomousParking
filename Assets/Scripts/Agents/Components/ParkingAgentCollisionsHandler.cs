@@ -1,39 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Linq;
+using AutomaticParking.Agents.Data;
 using AutomaticParking.Common;
 using UnityEngine;
-using RewardData = AutomaticParking.Agents.Data.ParkingAgentRewardData;
 
 namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentCollisionsHandler : MonoBehaviour
     {
-        private ParkingAgent agent;
-        private Dictionary<string, Action> collisionEnterHandlers;
+        private ParkingAgentCollisionData collisionData;
 
-        private void Awake()
+        private void OnCollisionEnter(Collision collision)
         {
-            agent = GetComponentInChildren<ParkingAgent>();
-            collisionEnterHandlers = new Dictionary<string, Action>
-            {
-                [Tags.Wall] = HandleWallCollisionEnter,
-                [Tags.Car] = HandleCarCollisionEnter
-            };
+            string gameObjectTag = collision.gameObject.tag;
+            if (Tags.List.Contains(gameObjectTag))
+                collisionData.CollisionTag = gameObjectTag;
         }
 
-        private void OnCollisionEnter(Collision collision) =>
-            collisionEnterHandlers.GetValueOrDefault(collision.gameObject.tag)?.Invoke();
-
-        private void HandleWallCollisionEnter()
+        public ParkingAgentCollisionsHandler Initialize(ParkingAgentCollisionData collisionData)
         {
-            agent.AddReward(RewardData.RewardForWallCollisionEnter);
-            agent.EndEpisode();
-        }
-
-        private void HandleCarCollisionEnter()
-        {
-            agent.AddReward(RewardData.RewardForCarCollisionEnter);
-            agent.EndEpisode();
+            this.collisionData = collisionData;
+            return this;
         }
     }
 }

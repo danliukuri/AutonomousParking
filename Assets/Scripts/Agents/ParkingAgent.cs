@@ -14,6 +14,7 @@ namespace AutomaticParking.Agents
         public ParkingAgentData AgentData { get; set; }
         public ParkingAgentTargetData TargetData { get; set; }
         public ParkingAgentTargetTrackingData TargetTrackingData { get; set; }
+        public ParkingAgentCollisionData CollisionData { get; set; }
 
         public ParkingLotEnteringCarPlacer AgentPlacer { get; set; }
         public ParkingLotAgentTargetPlacer TargetPlacer { get; set; }
@@ -23,6 +24,7 @@ namespace AutomaticParking.Agents
         public ParkingAgentMetricsCalculator MetricsCalculator { get; set; }
         public ParkingAgentRewardCalculator RewardCalculator { get; set; }
         public ParkingAgentObservationsCollector ObservationsCollector { get; set; }
+        public ParkingAgentCollisionsHandler CollisionsHandler { get; set; }
 
         public override void Initialize()
         {
@@ -59,8 +61,10 @@ namespace AutomaticParking.Agents
             MetricsCalculator.CalculateTargetTrackingMetrics();
             AddReward(RewardCalculator.CalculateReward());
 
-            if (TargetTrackingData.IsTargetReached)
+            if (TargetTrackingData.IsTargetReached || CollisionData.IsAnyCollision)
                 EndEpisode();
+
+            CollisionData.Reset();
         }
 
         public override void Heuristic(in ActionBuffers actionsOut)
