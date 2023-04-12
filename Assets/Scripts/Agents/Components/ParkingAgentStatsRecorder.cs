@@ -10,6 +10,7 @@ namespace AutomaticParking.Agents.Components
     {
         private readonly ParkingAgentCollisionData agentCollisionData;
         private readonly ParkingAgentTargetTrackingData targetTrackingData;
+        private bool isRecording;
 
         public ParkingAgentStatsRecorder(ParkingAgentCollisionData agentCollisionData,
             ParkingAgentTargetTrackingData targetTrackingData)
@@ -29,8 +30,12 @@ namespace AutomaticParking.Agents.Components
                 Record(Header.Collision + tag, agentCollisionData.CollisionTag == tag);
         }
 
-        private void Record(string key, float value, StatAggregationMethod aggregationMethod = default) =>
-            Academy.Instance.StatsRecorder.Add(key, value, aggregationMethod);
+        private void Record(string key, float value, StatAggregationMethod aggregationMethod = default)
+        {
+            isRecording = isRecording || targetTrackingData.IsTargetReached;
+            if (isRecording)
+                Academy.Instance.StatsRecorder.Add(key, value, aggregationMethod);
+        }
 
         private void Record(string key, bool value = true, StatAggregationMethod aggregationMethod = default) =>
             Record(key, Convert.ToSingle(value), aggregationMethod);
