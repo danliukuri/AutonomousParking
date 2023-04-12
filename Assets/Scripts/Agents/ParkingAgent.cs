@@ -25,6 +25,7 @@ namespace AutomaticParking.Agents
         public ParkingAgentRewardCalculator RewardCalculator { get; set; }
         public ParkingAgentObservationsCollector ObservationsCollector { get; set; }
         public ParkingAgentCollisionsHandler CollisionsHandler { get; set; }
+        public ParkingAgentStatsRecorder StatsRecorder { get; set; }
 
         public override void Initialize()
         {
@@ -61,7 +62,13 @@ namespace AutomaticParking.Agents
             MetricsCalculator.CalculateTargetTrackingMetrics();
             AddReward(RewardCalculator.CalculateReward());
 
-            if (TargetTrackingData.IsTargetReached || CollisionData.IsAnyCollision)
+            bool isNeededToEndEpisode = CollisionData.IsAnyCollision || TargetTrackingData.IsTargetReached;
+            bool isLastStep = AgentData.HasReachedMaxStep || isNeededToEndEpisode;
+
+            if (isLastStep)
+                StatsRecorder.RecordStats();
+
+            if (isNeededToEndEpisode)
                 EndEpisode();
 
             CollisionData.Reset();

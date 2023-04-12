@@ -10,6 +10,7 @@ namespace AutomaticParking.Agents.Data
         public int MinStepToReachTarget => 200;
         public int MaxStepToReachTarget => agent.MaxStep;
         public int StepCount => agent.StepCount;
+        public bool HasReachedMaxStep => agent.StepCount == agent.MaxStep;
 
         public Rigidbody Rigidbody { get; set; }
         public Transform Transform { get; set; }

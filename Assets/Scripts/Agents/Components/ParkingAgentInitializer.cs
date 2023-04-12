@@ -43,6 +43,7 @@ namespace AutomaticParking.Agents.Components
             agent.RewardCalculator = new ParkingAgentRewardCalculator(agentData, targetTrackingData, collisionData);
             agent.ObservationsCollector = new ParkingAgentObservationsCollector(agentData, targetData);
             agent.CollisionsHandler = GetComponent<ParkingAgentCollisionsHandler>().Initialize(collisionData);
+            agent.StatsRecorder = new ParkingAgentStatsRecorder(collisionData, targetTrackingData);
         }
     }
 }
