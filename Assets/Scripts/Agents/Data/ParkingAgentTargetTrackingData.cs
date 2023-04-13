@@ -2,7 +2,6 @@
 {
     public class ParkingAgentTargetTrackingData
     {
-        public bool IsTargetReached { get; set; }
         public bool IsGettingRewardForDecreasingAngleToTarget { get; set; }
 
         public float DistanceToTarget { get; set; }
