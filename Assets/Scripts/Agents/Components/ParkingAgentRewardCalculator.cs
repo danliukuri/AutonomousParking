@@ -24,8 +24,6 @@ namespace AutomaticParking.Agents.Components
             reward += CalculateRewardForDecreasingDistanceToTarget(targetTrackingData);
             if (targetTrackingData.IsGettingRewardForDecreasingAngleToTarget)
                 reward += CalculateRewardForDecreasingAngleToTarget(targetTrackingData);
-            if (targetTrackingData.IsTargetReached)
-                reward += CalculateRewardForTargetReach(agentData);
             if (agentCollisionData.IsAnyCollision)
                 reward += CollisionRewards[agentCollisionData.CollisionTag];
             return reward;
@@ -38,9 +36,5 @@ namespace AutomaticParking.Agents.Components
 
         private float CalculateRewardForDecreasingAngleToTarget(ParkingAgentTargetTrackingData data) =>
             data.NormalizedAngleToTarget * MaxRewardForDecreasingAngleToTargetPerStep;
-
-        private float CalculateRewardForTargetReach(ParkingAgentData data) =>
-            data.StepCount.ChangeBounds(data.MaxStepToReachTarget, data.MinStepToReachTarget,
-                MinRewardForTargetReach, MaxRewardForTargetReach);
     }
 }
