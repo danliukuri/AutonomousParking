@@ -26,6 +26,7 @@ namespace AutomaticParking.Agents.Components
             data.NormalizedAngleToTarget = CalculateNormalizedAngleToTarget();
 
             data.IsParked = CalculateWhetherAgentIsParked();
+            data.IsPerfectlyParked = CalculateWhetherAgentIsPerfectlyParked();
             data.IsGettingRewardForDecreasingAngleToTarget = CalculateWhetherToGetRewardForDecreasingAngleToTarget();
         }
 
@@ -37,6 +38,7 @@ namespace AutomaticParking.Agents.Components
             data.NormalizedAngleToTarget = CalculateNormalizedAngleToTarget();
 
             data.IsParked = CalculateWhetherAgentIsParked();
+            data.IsPerfectlyParked = CalculateWhetherAgentIsPerfectlyParked();
             data.IsGettingRewardForDecreasingAngleToTarget = CalculateWhetherToGetRewardForDecreasingAngleToTarget();
         }
 
@@ -55,6 +57,10 @@ namespace AutomaticParking.Agents.Components
         private bool CalculateWhetherAgentIsParked() =>
             Mathf.Abs(data.DistanceToTarget) <= targetData.ParkingRadius &&
             Mathf.Abs(data.AngleToTarget) <= targetData.ParkingAngle;
+
+        private bool CalculateWhetherAgentIsPerfectlyParked() =>    
+            Mathf.Abs(data.DistanceToTarget) <= targetData.PerfectParkingRadius &&
+            Mathf.Abs(data.AngleToTarget) <= targetData.PerfectParkingAngle;
 
         private bool CalculateWhetherToGetRewardForDecreasingAngleToTarget() =>
             Mathf.Abs(data.DistanceToTarget) <= data.MaxDistanceToTargetToGetRewardForDecreasingAngle;

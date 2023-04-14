@@ -3,6 +3,7 @@
     public class ParkingAgentTargetTrackingData
     {
         public bool IsParked { get; set; }
+        public bool IsPerfectlyParked { get; set; }
 
         public bool IsGettingRewardForDecreasingAngleToTarget { get; set; }
         public float MaxDistanceToTargetToGetRewardForDecreasingAngle => 8f;
