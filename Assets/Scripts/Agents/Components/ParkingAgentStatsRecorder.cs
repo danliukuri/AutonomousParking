@@ -23,6 +23,10 @@ namespace AutomaticParking.Agents.Components
             Record(DistanceToTarget, targetTrackingData.DistanceToTarget);
             Record(AngleToTarget, targetTrackingData.AngleToTarget);
 
+            Record(Parked, targetTrackingData.IsParked);
+            if (targetTrackingData.IsParked)
+                Record(PerfectlyParked, targetTrackingData.IsPerfectlyParked);
+
             foreach (Tag tag in Tag.List)
                 Record(Header.Collision + tag, agentCollisionData.CollisionTag == tag);
         }

@@ -2,9 +2,11 @@
 {
     public static class ParkingAgentRecordKey
     {
-        public const string TargetReach = Header.Agent + nameof(TargetReach);
         public const string DistanceToTarget = Header.Agent + nameof(DistanceToTarget);
         public const string AngleToTarget = Header.Agent + nameof(AngleToTarget);
+
+        public const string Parked = Header.Agent + nameof(Parked);
+        public const string PerfectlyParked = Header.Agent + nameof(PerfectlyParked);
 
         public static class Header
         {
