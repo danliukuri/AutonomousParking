@@ -1,14 +1,15 @@
 ﻿using AutomaticParking.Agents.Data;
 using AutomaticParking.Common.Extensions;
+using UnityEngine;
 using static AutomaticParking.Agents.Data.ParkingAgentRewardData;
 
 namespace AutomaticParking.Agents.Components
 {
     public class ParkingAgentRewardCalculator
     {
+        private readonly ParkingAgentCollisionData agentCollisionData;
         private readonly ParkingAgentData agentData;
         private readonly ParkingAgentTargetTrackingData targetTrackingData;
-        private readonly ParkingAgentCollisionData agentCollisionData;
 
         public ParkingAgentRewardCalculator(ParkingAgentData agentData,
             ParkingAgentTargetTrackingData targetTrackingData, ParkingAgentCollisionData agentCollisionData)
@@ -26,6 +27,12 @@ namespace AutomaticParking.Agents.Components
                 reward += CalculateRewardForDecreasingAngleToTarget(targetTrackingData);
             if (agentCollisionData.IsAnyCollision)
                 reward += CollisionRewards[agentCollisionData.CollisionTag];
+            if (targetTrackingData.IsParked)
+            {
+                reward += CalculateRewardForParking();
+                if (targetTrackingData.IsPerfectlyParked)
+                    reward += CalculateRewardForPerfectParking();
+            }
             return reward;
         }
 
@@ -36,5 +43,13 @@ namespace AutomaticParking.Agents.Components
 
         private float CalculateRewardForDecreasingAngleToTarget(ParkingAgentTargetTrackingData data) =>
             data.NormalizedAngleToTarget * MaxRewardForDecreasingAngleToTargetPerStep;
+
+        private float CalculateRewardForParking() => agentData.StepCount
+            .ChangeBounds(agentData.MaxStepToStartParking, agentData.MinStepToStartParking,
+                MinRewardForParkingPerStep, MaxRewardForParkingPerStep);
+
+        private float CalculateRewardForPerfectParking() => agentData.StepCount
+            .ChangeBounds(agentData.MaxStepToStartParking, agentData.MinStepToStartParking,
+                MinRewardForPerfectParking, MaxRewardForPerfectParking);
     }
 }

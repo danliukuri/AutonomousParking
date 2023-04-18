@@ -7,6 +7,8 @@ namespace AutomaticParking.Agents.Data
         private readonly ParkingAgent agent;
         public ParkingAgentData(ParkingAgent agent) => this.agent = agent;
 
+        public int MinStepToStartParking => 150;
+        public int MaxStepToStartParking => agent.MaxStep;
         public int StepCount => agent.StepCount;
         public bool HasReachedMaxStep => agent.StepCount == agent.MaxStep;
 
