@@ -15,15 +15,16 @@ namespace AutomaticParking.Editor.ParkingLot.ObjectPlacers
 
         private void OnSceneGUI()
         {
-            EnteringCarPlacingData data = ((ParkingLotEnteringCarPlacer)target).Data;
+            var parkingLotEnteringCarPlacer = (ParkingLotEnteringCarPlacer)target;
+            EnteringCarPlacingData data = parkingLotEnteringCarPlacer.Data;
             if (data is not null)
-                DrawPlacingZone(data);
+                DrawPlacingZone(data, parkingLotEnteringCarPlacer.transform.position);
         }
 
-        private void DrawPlacingZone(EnteringCarPlacingData data)
+        private void DrawPlacingZone(EnteringCarPlacingData data, Vector3 targetPosition)
         {
-            var minPosition = new Vector3(data.MinPositionX, MinY, data.MinPositionZ);
-            var maxPosition = new Vector3(data.MaxPositionX, MaxY, data.MaxPositionZ);
+            Vector3 minPosition = targetPosition + new Vector3(data.MinPositionX, MinY, data.MinPositionZ);
+            Vector3 maxPosition = targetPosition + new Vector3(data.MaxPositionX, MaxY, data.MaxPositionZ);
             Vector3 placingZoneCenter = (minPosition + maxPosition) / 2f;
             Vector3 placingZoneSize = maxPosition - minPosition;
 
