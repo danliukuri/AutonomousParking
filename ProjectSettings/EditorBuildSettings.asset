@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SimpleParkingLotTraining.unity
-    guid: c94f219356986264e856210a8825ec5c
+  m_Scenes: []
   m_configObjects: {}
