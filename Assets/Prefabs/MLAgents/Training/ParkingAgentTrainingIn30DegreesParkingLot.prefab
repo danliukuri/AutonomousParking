@@ -1,0 +1,598 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6270283417871658647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283417871658646}
+  - component: {fileID: 6270283417871658645}
+  m_Layer: 0
+  m_Name: AgentTargetPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283417871658646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283417871658647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6270283419103242758}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6270283417871658645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283417871658647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff9346836204bbfa085bec7ebe444b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parkingLotData: {fileID: 8131282282356688504}
+--- !u!1 &6270283417888396073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283417888396072}
+  m_Layer: 0
+  m_Name: ParkingAgentTrainingIn30DegreesParkingLot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283417888396072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283417888396073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6270283419480573768}
+  - {fileID: 8971672771802108058}
+  - {fileID: 6642372976506854889}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6270283418714330682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283418714330681}
+  m_Layer: 0
+  m_Name: Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283418714330681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283418714330682}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6270283419373114690}
+  m_Father: {fileID: 6270283419480573768}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6270283418989323417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283418989323416}
+  - component: {fileID: 6270283418989323398}
+  - component: {fileID: 6270283418989323399}
+  m_Layer: 0
+  m_Name: AgentPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283418989323416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283418989323417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6270283419103242758}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6270283418989323398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283418989323417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c9d63e25c14655959c063fa11b28a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 6270283418989323399}
+--- !u!114 &6270283418989323399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283418989323417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb91d901a18460288203f8ed98246b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MinPositionX>k__BackingField: -4.115
+  <MaxPositionX>k__BackingField: 4.115
+  <MinPositionZ>k__BackingField: -12.425
+  <MaxPositionZ>k__BackingField: -14.005
+  <MinRotationAngle>k__BackingField: -20
+  <MaxRotationAngle>k__BackingField: 20
+  <RotationAngleOffsetOnMinPositionX>k__BackingField: 90
+  <RotationAngleOffsetOnMaxPositionX>k__BackingField: -90
+--- !u!1 &6270283419102365429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283419102365427}
+  - component: {fileID: 6270283419102365428}
+  m_Layer: 0
+  m_Name: ParkedCarsPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283419102365427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283419102365429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6270283419103242758}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6270283419102365428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283419102365429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8efb8c155844f2c8b8c04b634830b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carSpawner: {fileID: 6270283419373114692}
+  parkingLotData: {fileID: 8131282282356688504}
+--- !u!1 &6270283419103242759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283419103242758}
+  m_Layer: 0
+  m_Name: ParkingLotObjectPlacers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283419103242758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283419103242759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6270283418989323416}
+  - {fileID: 6270283417871658646}
+  - {fileID: 6270283419102365427}
+  m_Father: {fileID: 6270283419480573768}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6270283419373114693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283419373114690}
+  - component: {fileID: 6270283419373114692}
+  - component: {fileID: 6270283419373114691}
+  m_Layer: 0
+  m_Name: Cars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283419373114690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283419373114693}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6270283418714330681}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6270283419373114692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283419373114693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb16b114571e4a56ae8bce6d6537cbb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPoolsInitializer: {fileID: 0}
+  carTransformConfigurator: {fileID: 6270283419373114691}
+--- !u!114 &6270283419373114691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283419373114693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34691b1475f470f915462ba94e0e344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probabilityToSpawnReverseParked: 0.15
+  carsParent: {fileID: 6270283419373114690}
+--- !u!1 &6270283419480573769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270283419480573768}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270283419480573768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6270283419480573769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6270283419627867856}
+  - {fileID: 372143025560475958}
+  - {fileID: 6270283419103242758}
+  - {fileID: 6270283418714330681}
+  m_Father: {fileID: 6270283417888396072}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2791501255612236823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6270283419480573768}
+    m_Modifications:
+    - target: {fileID: 8194829582724221638, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+      propertyPath: m_Name
+      value: 30DegreesParkingLot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194829582724221639, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194829582724221639, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194829582724221639, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194829582724221639, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 2641285486777355023, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+--- !u!4 &6270283419627867856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8194829582724221639, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+  m_PrefabInstance: {fileID: 2791501255612236823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8131282282356688504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6225515915025269359, guid: 742453952083a6e47b024f1bd1311497, type: 3}
+  m_PrefabInstance: {fileID: 2791501255612236823}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e8587ad99b84882a07f42b02b47d5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &4990036329621003519
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6270283419480573768}
+    m_Modifications:
+    - target: {fileID: 4641581217067648457, guid: 4c8dcae02b095634a97344d638488a1e, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641581217067648457, guid: 4c8dcae02b095634a97344d638488a1e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641581217067648457, guid: 4c8dcae02b095634a97344d638488a1e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641581217067648457, guid: 4c8dcae02b095634a97344d638488a1e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994882632634129347, guid: 4c8dcae02b095634a97344d638488a1e, type: 3}
+      propertyPath: m_Name
+      value: 30DegreesParkingLotEntrance
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c8dcae02b095634a97344d638488a1e, type: 3}
+--- !u!4 &372143025560475958 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4641581217067648457, guid: 4c8dcae02b095634a97344d638488a1e, type: 3}
+  m_PrefabInstance: {fileID: 4990036329621003519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6270283417682833732
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6270283417888396072}
+    m_Modifications:
+    - target: {fileID: 804726562621074605, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 804726562621074605, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 804726562621074605, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 804726562621074605, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 804726562621074605, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 804726562621074606, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: m_Name
+      value: CarParkingAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1690076225502334247, guid: 937e01700430804458070a9669abedde, type: 3}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: targetData
+      value: 
+      objectReference: {fileID: 5161782750503769024}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: agentPlacer
+      value: 
+      objectReference: {fileID: 6270283418989323398}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: targetPlacer
+      value: 
+      objectReference: {fileID: 6270283417871658645}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: parkedCarsPlacer
+      value: 
+      objectReference: {fileID: 6270283419102365428}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: parkingLotCarsPlacer
+      value: 
+      objectReference: {fileID: 7898457055562151444, guid: 937e01700430804458070a9669abedde, type: 3}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: parkingLotInitializer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: <TargetData>k__BackingField
+      value: 
+      objectReference: {fileID: 3195239705585995389, guid: 937e01700430804458070a9669abedde, type: 3}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: <TargetInitializer>k__BackingField
+      value: 
+      objectReference: {fileID: 1822031619989016997, guid: 937e01700430804458070a9669abedde, type: 3}
+    - target: {fileID: 2592754471623370907, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      propertyPath: <ParkingLotInitializer>k__BackingField
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 224330385082838881, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6270283417682833729}
+  m_SourcePrefab: {fileID: 100100000, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+--- !u!1 &6059732696004927013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 224330385082838881, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+  m_PrefabInstance: {fileID: 6270283417682833732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6270283417682833729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059732696004927013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 0
+  NumStepsToRecord: 0
+  DemonstrationName: Test
+  DemonstrationDirectory: Assets\MLAgents\Training\Demonstrations
+--- !u!4 &6642372976506854889 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 804726562621074605, guid: 8ee4c945157d41f4398774abb1b538ec, type: 3}
+  m_PrefabInstance: {fileID: 6270283417682833732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6270283417732637678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6270283417888396072}
+    m_Modifications:
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3135997747677033333, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+      propertyPath: m_Name
+      value: CarParkingAgentTarget
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+--- !u!114 &5161782750503769024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1199879018673729582, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+  m_PrefabInstance: {fileID: 6270283417732637678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2caccddfca444e4caa2f41169365f134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8971672771802108058 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3135997747677033332, guid: 7a27b5c34a0a2024daf1411d63452897, type: 3}
+  m_PrefabInstance: {fileID: 6270283417732637678}
+  m_PrefabAsset: {fileID: 0}
