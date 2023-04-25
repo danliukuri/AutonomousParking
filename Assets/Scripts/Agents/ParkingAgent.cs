@@ -13,6 +13,7 @@ namespace AutomaticParking.Agents
     {
         [field: SerializeField] public ParkingAgentData AgentData { get; private set; }
         [field: SerializeField] public ParkingAgentTargetTrackingData TargetTrackingData { get; private set; }
+        [field: SerializeField] public ParkingAgentRewardData RewardData { get; private set; }
         public CarData CarData { get; set; }
         public ParkingAgentTargetData TargetData { get; set; }
         public ParkingAgentCollisionData CollisionData { get; set; }

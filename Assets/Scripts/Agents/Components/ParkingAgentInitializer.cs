@@ -26,6 +26,7 @@ namespace AutomaticParking.Agents.Components
         {
             agent.CarData = GetComponentInChildren<CarData>();
             agent.CollisionData = new ParkingAgentCollisionData();
+            agent.RewardData.Initialize();
 
             agent.AgentData.Agent = agent;
             agent.AgentData.Rigidbody = GetComponent<Rigidbody>();
@@ -41,7 +42,8 @@ namespace AutomaticParking.Agents.Components
 
             agent.ActionsHandler = new ParkingAgentActionsHandler(carData);
             agent.MetricsCalculator = new ParkingAgentMetricsCalculator(agentData, targetData, targetTrackingData);
-            agent.RewardCalculator = new ParkingAgentRewardCalculator(agentData, targetTrackingData, collisionData);
+            agent.RewardCalculator =
+                new ParkingAgentRewardCalculator(collisionData, agentData, agent.RewardData, targetTrackingData);
             agent.ObservationsCollector = new ParkingAgentObservationsCollector(agentData, targetData);
             agent.CollisionsHandler = GetComponent<ParkingAgentCollisionsHandler>().Initialize(collisionData);
             agent.StatsRecorder = new ParkingAgentStatsRecorder(collisionData, targetTrackingData);

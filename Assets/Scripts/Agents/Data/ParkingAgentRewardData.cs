@@ -1,26 +1,34 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutomaticParking.Common.Enumerations;
+using UnityEngine;
 
 namespace AutomaticParking.Agents.Data
 {
+    [Serializable]
     public class ParkingAgentRewardData
     {
-        public const float MaxRewardForInactivityPerStep = -1f;
-        public const float MaxRewardForDecreasingDistanceToTargetPerStep = 0.5f;
-        public const float MaxRewardForDecreasingAngleToTargetPerStep = 0.5f;
+        [field: Header("Target Reaching Rewards")]
+        [field: SerializeField] public float MaxRewardForInactivityPerStep { get; private set; }
+        [field: SerializeField] public float MaxRewardForDecreasingDistanceToTargetPerStep { get; private set; }
+        [field: SerializeField] public float MaxRewardForDecreasingAngleToTargetPerStep { get; private set; }
 
-        public const float MinRewardForParkingPerStep = 1f;
-        public const float MaxRewardForParkingPerStep = 1.5f;
-        public const float MinRewardForPerfectParking = 700f;
-        public const float MaxRewardForPerfectParking = 900f;
+        [field: Header("Parking Rewards")]
+        [field: SerializeField] public float MinRewardForParkingPerStep { get; private set; }
+        [field: SerializeField] public float MaxRewardForParkingPerStep { get; private set; }
+        [field: SerializeField] public float MinRewardForPerfectParking { get; private set; }
+        [field: SerializeField] public float MaxRewardForPerfectParking { get; private set; }
 
-        public const float RewardForWallCollisionEnter = -400f;
-        public const float RewardForCarCollisionEnter = -500f;
+        [field: Header("Collision Rewards")]
+        [field: SerializeField] public float RewardForWallCollisionEnter { get; private set; }
+        [field: SerializeField] public float RewardForCarCollisionEnter { get; private set; }
 
-        public static Dictionary<Tag, float> CollisionRewards { get; } = new()
+        public Dictionary<Tag, float> CollisionRewards { get; private set; } = new();
+
+        public void Initialize()
         {
-            [Tag.Wall] = RewardForWallCollisionEnter,
-            [Tag.Car] = RewardForCarCollisionEnter
-        };
+            CollisionRewards[Tag.Wall] = RewardForWallCollisionEnter;
+            CollisionRewards[Tag.Car] = RewardForCarCollisionEnter;
+        }
     }
 }

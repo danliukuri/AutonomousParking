@@ -1,7 +1,5 @@
 ﻿using AutomaticParking.Agents.Data;
 using AutomaticParking.Common.Extensions;
-using UnityEngine;
-using static AutomaticParking.Agents.Data.ParkingAgentRewardData;
 
 namespace AutomaticParking.Agents.Components
 {
@@ -9,47 +7,53 @@ namespace AutomaticParking.Agents.Components
     {
         private readonly ParkingAgentCollisionData agentCollisionData;
         private readonly ParkingAgentData agentData;
+        private readonly ParkingAgentRewardData rewardData;
         private readonly ParkingAgentTargetTrackingData targetTrackingData;
 
-        public ParkingAgentRewardCalculator(ParkingAgentData agentData,
-            ParkingAgentTargetTrackingData targetTrackingData, ParkingAgentCollisionData agentCollisionData)
+        public ParkingAgentRewardCalculator(ParkingAgentCollisionData agentCollisionData, ParkingAgentData agentData,
+            ParkingAgentRewardData rewardData, ParkingAgentTargetTrackingData targetTrackingData)
         {
             this.agentCollisionData = agentCollisionData;
             this.agentData = agentData;
+            this.rewardData = rewardData;
             this.targetTrackingData = targetTrackingData;
         }
 
         public float CalculateReward()
         {
             float reward = CalculateRewardForInactivity();
-            reward += CalculateRewardForDecreasingDistanceToTarget(targetTrackingData);
+
+            reward += CalculateRewardForDecreasingDistanceToTarget();
             if (targetTrackingData.IsGettingRewardForDecreasingAngleToTarget)
-                reward += CalculateRewardForDecreasingAngleToTarget(targetTrackingData);
+                reward += CalculateRewardForDecreasingAngleToTarget();
+
             if (agentCollisionData.IsAnyCollision)
-                reward += CollisionRewards[agentCollisionData.CollisionTag];
+                reward += rewardData.CollisionRewards[agentCollisionData.CollisionTag];
+
             if (targetTrackingData.IsParked)
             {
                 reward += CalculateRewardForParking();
                 if (targetTrackingData.IsPerfectlyParked)
                     reward += CalculateRewardForPerfectParking();
             }
+
             return reward;
         }
 
-        private float CalculateRewardForInactivity() => MaxRewardForInactivityPerStep / agentData.StepCount;
+        private float CalculateRewardForInactivity() => rewardData.MaxRewardForInactivityPerStep / agentData.StepCount;
 
-        private float CalculateRewardForDecreasingDistanceToTarget(ParkingAgentTargetTrackingData data) =>
-            data.NormalizedDistanceToTarget * MaxRewardForDecreasingDistanceToTargetPerStep;
+        private float CalculateRewardForDecreasingDistanceToTarget() =>
+            targetTrackingData.NormalizedDistanceToTarget * rewardData.MaxRewardForDecreasingDistanceToTargetPerStep;
 
-        private float CalculateRewardForDecreasingAngleToTarget(ParkingAgentTargetTrackingData data) =>
-            data.NormalizedAngleToTarget * MaxRewardForDecreasingAngleToTargetPerStep;
+        private float CalculateRewardForDecreasingAngleToTarget() =>
+            targetTrackingData.NormalizedAngleToTarget * rewardData.MaxRewardForDecreasingAngleToTargetPerStep;
 
         private float CalculateRewardForParking() => agentData.StepCount
             .ChangeBounds(agentData.MaxStepToStartParking, agentData.MinStepToStartParking,
-                MinRewardForParkingPerStep, MaxRewardForParkingPerStep);
+                rewardData.MinRewardForParkingPerStep, rewardData.MaxRewardForParkingPerStep);
 
         private float CalculateRewardForPerfectParking() => agentData.StepCount
             .ChangeBounds(agentData.MaxStepToStartParking, agentData.MinStepToStartParking,
-                MinRewardForPerfectParking, MaxRewardForPerfectParking);
+                rewardData.MinRewardForPerfectParking, rewardData.MaxRewardForPerfectParking);
     }
 }
