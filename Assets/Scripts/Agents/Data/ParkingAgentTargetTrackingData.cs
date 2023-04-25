@@ -1,12 +1,17 @@
-﻿namespace AutomaticParking.Agents.Data
+﻿using System;
+using UnityEngine;
+
+namespace AutomaticParking.Agents.Data
 {
+    [Serializable]
     public class ParkingAgentTargetTrackingData
     {
+        [field: SerializeField] public float MaxDistanceToTargetToGetRewardForDecreasingAngle { get; set; }
+
         public bool IsParked { get; set; }
         public bool IsPerfectlyParked { get; set; }
 
         public bool IsGettingRewardForDecreasingAngleToTarget { get; set; }
-        public float MaxDistanceToTargetToGetRewardForDecreasingAngle => 8f;
 
         public float DistanceToTarget { get; set; }
         public float NormalizedDistanceToTarget { get; set; }
