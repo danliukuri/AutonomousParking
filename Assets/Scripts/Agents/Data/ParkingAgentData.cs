@@ -1,17 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace AutomaticParking.Agents.Data
 {
+    [Serializable]
     public class ParkingAgentData
     {
-        private readonly ParkingAgent agent;
-        public ParkingAgentData(ParkingAgent agent) => this.agent = agent;
+        [field: SerializeField] public int MinStepToStartParking { get; private set; }
+        public int MaxStepToStartParking => Agent.MaxStep;
+        public int StepCount => Agent.StepCount;
+        public bool HasReachedMaxStep => Agent.StepCount == Agent.MaxStep;
 
-        public int MinStepToStartParking => 150;
-        public int MaxStepToStartParking => agent.MaxStep;
-        public int StepCount => agent.StepCount;
-        public bool HasReachedMaxStep => agent.StepCount == agent.MaxStep;
-
+        public ParkingAgent Agent { get; set; }
         public Rigidbody Rigidbody { get; set; }
         public Transform Transform { get; set; }
 

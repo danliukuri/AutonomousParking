@@ -5,13 +5,14 @@ using AutomaticParking.ParkingLot.ObjectPlacers;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
+using UnityEngine;
 
 namespace AutomaticParking.Agents
 {
     public class ParkingAgent : Agent
     {
+        [field: SerializeField] public ParkingAgentData AgentData { get; private set; }
         public CarData CarData { get; set; }
-        public ParkingAgentData AgentData { get; set; }
         public ParkingAgentTargetData TargetData { get; set; }
         public ParkingAgentTargetTrackingData TargetTrackingData { get; set; }
         public ParkingAgentCollisionData CollisionData { get; set; }

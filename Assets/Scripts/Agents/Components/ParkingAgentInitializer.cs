@@ -25,8 +25,11 @@ namespace AutomaticParking.Agents.Components
         public void InitializeData(ParkingAgent agent)
         {
             agent.CarData = GetComponentInChildren<CarData>();
-            agent.AgentData = new ParkingAgentData(agent)
-                { Rigidbody = GetComponent<Rigidbody>(), Transform = GetComponent<Transform>() };
+
+            agent.AgentData.Agent = agent;
+            agent.AgentData.Rigidbody = GetComponent<Rigidbody>();
+            agent.AgentData.Transform = GetComponent<Transform>();
+
             agent.TargetTrackingData = new ParkingAgentTargetTrackingData();
             agent.CollisionData = new ParkingAgentCollisionData();
         }
