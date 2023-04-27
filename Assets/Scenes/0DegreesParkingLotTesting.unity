@@ -365,14 +365,6 @@ PrefabInstance:
       propertyPath: carPoolsInitializer
       value: 
       objectReference: {fileID: 104936697}
-    - target: {fileID: 2705661642780729371, guid: 172a9508982a4414cb751a456af53edd, type: 3}
-      propertyPath: <RotationAngleOffsetOnMaxPositionX>k__BackingField
-      value: -70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2705661642780729371, guid: 172a9508982a4414cb751a456af53edd, type: 3}
-      propertyPath: <RotationAngleOffsetOnMinPositionX>k__BackingField
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 2705661643032662977, guid: 172a9508982a4414cb751a456af53edd, type: 3}
       propertyPath: m_RootOrder
       value: 3

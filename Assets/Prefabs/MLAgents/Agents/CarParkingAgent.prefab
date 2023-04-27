@@ -54,17 +54,17 @@ MonoBehaviour:
   <AgentData>k__BackingField:
     <MinStepToStartParking>k__BackingField: 150
   <TargetTrackingData>k__BackingField:
-    <MaxDistanceToTargetToGetRewardForDecreasingAngle>k__BackingField: 8
+    <MaxDistanceToTargetToGetRewardForDecreasingAngle>k__BackingField: 2
   <RewardData>k__BackingField:
     <MaxRewardForInactivityPerStep>k__BackingField: -1
     <MaxRewardForDecreasingDistanceToTargetPerStep>k__BackingField: 0.5
-    <MaxRewardForDecreasingAngleToTargetPerStep>k__BackingField: 0.5
+    <MaxRewardForDecreasingAngleToTargetPerStep>k__BackingField: 0.25
     <MinRewardForParkingPerStep>k__BackingField: 1
     <MaxRewardForParkingPerStep>k__BackingField: 1.5
     <MinRewardForPerfectParking>k__BackingField: 700
     <MaxRewardForPerfectParking>k__BackingField: 900
-    <RewardForWallCollisionEnter>k__BackingField: -400
-    <RewardForCarCollisionEnter>k__BackingField: -500
+    <RewardForWallCollisionEnter>k__BackingField: 0
+    <RewardForCarCollisionEnter>k__BackingField: 0
 --- !u!114 &4322059043978433893
 MonoBehaviour:
   m_ObjectHideFlags: 0
