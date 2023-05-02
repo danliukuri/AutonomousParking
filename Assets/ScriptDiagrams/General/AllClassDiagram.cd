@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentActionsHandler">
+    <Position X="21" Y="15" Width="3.25" />
+    <AssociationLine Name="carData" Type="AutomaticParking.Car.CarData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="16.312" />
+        <Point X="20" Y="16.312" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgACAAgAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentActionsHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+      <Field Name="interpreter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentCollisionsHandler">
+    <Position X="26" Y="9.75" Width="3" />
+    <AssociationLine Name="collisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" FixedFromPoint="true">
+      <Path>
+        <Point X="29" Y="10.625" />
+        <Point X="30.5" Y="10.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentCollisionsHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="collisionData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentInitializer">
+    <Position X="18.75" Y="18" Width="3.25" />
+    <AssociationLine Name="targetData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22" Y="19.121" />
+        <Point X="23.643" Y="19.121" />
+        <Point X="23.643" Y="21.932" />
+        <Point X="32.938" Y="21.932" />
+        <Point X="32.938" Y="20.704" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="agentPlacer" Type="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotEnteringCarPlacer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="18.557" />
+        <Point X="15.833" Y="18.557" Type="JumpStart" />
+        <Point X="15.667" Y="18.557" Type="JumpEnd" />
+        <Point X="13.25" Y="18.557" />
+        <Point X="13.25" Y="20" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="targetPlacer" Type="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotAgentTargetPlacer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="19.176" />
+        <Point X="17.062" Y="19.176" />
+        <Point X="17.062" Y="20" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="parkedCarsPlacer" Type="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotParkedCarsPlacer" FixedFromPoint="true">
+      <Path>
+        <Point X="20.25" Y="19.617" />
+        <Point X="20.25" Y="20" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAEAAAAAAAAAAAAAAAAAAQAAgIIAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentInitializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="targetData" />
+      <Field Name="agentPlacer" />
+      <Field Name="targetPlacer" />
+      <Field Name="parkedCarsPlacer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentMetricsCalculator">
+    <Position X="34.75" Y="16.75" Width="4.5" />
+    <AssociationLine Name="agentData" Type="AutomaticParking.Agents.Data.ParkingAgentData" FixedToPoint="true">
+      <Path>
+        <Point X="34.75" Y="17.625" />
+        <Point X="30.75" Y="17.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="data" Type="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData" FixedFromPoint="true">
+      <Path>
+        <Point X="38.062" Y="16.75" />
+        <Point X="38.062" Y="15.469" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="targetData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="34.75" Y="17.938" />
+        <Point X="32.938" Y="17.938" />
+        <Point X="32.938" Y="18.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAggAAAAAAAEgAAEIAAAAAAAAAEAAIAAAAAYAAAAUAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentMetricsCalculator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="agentData" />
+      <Field Name="data" />
+      <Field Name="targetData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentObservationsCollector">
+    <Position X="27" Y="19.75" Width="3.25" />
+    <AssociationLine Name="agentData" Type="AutomaticParking.Agents.Data.ParkingAgentData" FixedToPoint="true">
+      <Path>
+        <Point X="29.688" Y="19.75" />
+        <Point X="29.688" Y="19.267" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="targetData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetData" FixedToPoint="true">
+      <Path>
+        <Point X="30.25" Y="19.938" />
+        <Point X="31.75" Y="19.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAgAAAAAAAAQAAAAAAAABAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentObservationsCollector.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="agentData" />
+      <Field Name="targetData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentRewardCalculator">
+    <Position X="30.5" Y="12.25" Width="3.75" />
+    <AssociationLine Name="agentCollisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="33.875" Y="12.25" />
+        <Point X="33.875" Y="10.938" />
+        <Point X="32.75" Y="10.938" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="agentData" Type="AutomaticParking.Agents.Data.ParkingAgentData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="32.438" Y="14.507" />
+        <Point X="32.438" Y="17.188" />
+        <Point X="30.75" Y="17.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="rewardData" Type="AutomaticParking.Agents.Data.ParkingAgentRewardData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="32.438" Y="12.25" />
+        <Point X="32.438" Y="12.007" />
+        <Point X="27.625" Y="12.007" />
+        <Point X="27.625" Y="12.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="targetTrackingData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="32.875" Y="14.507" />
+        <Point X="32.875" Y="14.988" />
+        <Point X="35" Y="14.988" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAgAACAAAQAAAAAEAQEAAAAEAAAAAAAIAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentRewardCalculator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="agentCollisionData" />
+      <Field Name="agentData" />
+      <Field Name="rewardData" />
+      <Field Name="targetTrackingData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentStatsRecorder">
+    <Position X="35" Y="9.75" Width="3.75" />
+    <AssociationLine Name="agentCollisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="35" Y="10.25" />
+        <Point X="34.875" Y="10.25" />
+        <Point X="34.875" Y="10.25" />
+        <Point X="32.75" Y="10.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="targetTrackingData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData" FixedFromPoint="true">
+      <Path>
+        <Point X="38.062" Y="11.238" />
+        <Point X="38.062" Y="12.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAABIA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentStatsRecorder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="agentCollisionData" />
+      <Field Name="targetTrackingData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentCollisionData">
+    <Position X="30.5" Y="9.75" Width="2.25" />
+    <AssociationLine Name="CollisionTag" Type="AutomaticParking.Common.Enumerations.Tag" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="31.688" Y="9.75" />
+        <Point X="31.688" Y="9.461" />
+        <Point X="23.125" Y="9.461" />
+        <Point X="23.125" Y="9.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAIAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentCollisionData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CollisionTag" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentData">
+    <Position X="28.5" Y="16.75" Width="2.25" />
+    <AssociationLine Name="Agent" Type="AutomaticParking.Agents.ParkingAgent" FixedFromPoint="true">
+      <Path>
+        <Point X="28.5" Y="17.625" />
+        <Point X="27" Y="17.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAABAAEAAAYAAABAAAAAAEAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Agent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentRecordKey">
+    <Position X="27" Y="22.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="AutomaticParking.Agents.Data.ParkingAgentRecordKey.Header">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Agents\Data\ParkingAgentRecordKey.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQIAAAAAAAAAABAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentRecordKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentRewardData">
+    <Position X="26" Y="12.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAIACQEIIgAAAAAAAAAAAEAAAAAAYAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentRewardData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentTargetData">
+    <Position X="31.75" Y="18.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAIFA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentTargetData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData">
+    <Position X="35" Y="12.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>CAAQAAAAACUAAAABAAAAAABAEAAAAAAIAAABAQAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentTargetTrackingData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.ParkingAgent">
+    <Position X="24.75" Y="16.75" Width="2.25" />
+    <AssociationLine Name="AgentData" Type="AutomaticParking.Agents.Data.ParkingAgentData" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="17.188" />
+        <Point X="28.5" Y="17.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TargetTrackingData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.438" Y="16.75" />
+        <Point X="26.438" Y="16.299" />
+        <Point X="32.355" Y="16.299" Type="JumpStart" />
+        <Point X="32.521" Y="16.299" Type="JumpEnd" />
+        <Point X="37.125" Y="16.299" />
+        <Point X="37.125" Y="15.469" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RewardData" Type="AutomaticParking.Agents.Data.ParkingAgentRewardData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26" Y="16.75" />
+        <Point X="26" Y="15.912" />
+        <Point X="28" Y="15.912" />
+        <Point X="28" Y="15.536" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.122" Y="0.164" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CarData" Type="AutomaticParking.Car.CarData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24.75" Y="17.312" />
+        <Point X="18.938" Y="17.312" />
+        <Point X="18.938" Y="16.723" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TargetData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.062" Y="18.752" />
+        <Point X="26.062" Y="21.682" />
+        <Point X="30.942" Y="21.682" />
+        <Point X="30.942" Y="20.375" />
+        <Point X="31.75" Y="20.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="CollisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="25.312" Y="16.75" />
+        <Point X="25.312" Y="11.595" />
+        <Point X="31.688" Y="11.595" />
+        <Point X="31.688" Y="11.305" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AgentPlacer" Type="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotEnteringCarPlacer" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24.75" Y="17.625" />
+        <Point X="12.062" Y="17.625" />
+        <Point X="12.062" Y="20" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TargetPlacer" Type="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotAgentTargetPlacer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24.75" Y="17.875" />
+        <Point X="15.75" Y="17.875" />
+        <Point X="15.75" Y="20" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ParkedCarsPlacer" Type="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotParkedCarsPlacer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="25.75" Y="18.752" />
+        <Point X="25.75" Y="21.008" />
+        <Point X="23.726" Y="21.008" Type="JumpStart" />
+        <Point X="23.56" Y="21.008" Type="JumpEnd" />
+        <Point X="21.25" Y="21.008" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ActionsHandler" Type="AutomaticParking.Agents.Components.ParkingAgentActionsHandler" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24.75" Y="17.125" />
+        <Point X="22.562" Y="17.125" />
+        <Point X="22.562" Y="16.68" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="MetricsCalculator" Type="AutomaticParking.Agents.Components.ParkingAgentMetricsCalculator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.75" Y="16.75" />
+        <Point X="26.75" Y="16.449" />
+        <Point X="32.355" Y="16.449" Type="JumpStart" />
+        <Point X="32.521" Y="16.449" Type="JumpEnd" />
+        <Point X="36.875" Y="16.449" />
+        <Point X="36.875" Y="16.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RewardCalculator" Type="AutomaticParking.Agents.Components.ParkingAgentRewardCalculator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.188" Y="16.75" />
+        <Point X="26.188" Y="16.084" />
+        <Point X="31.688" Y="16.084" />
+        <Point X="31.688" Y="14.507" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ObservationsCollector" Type="AutomaticParking.Agents.Components.ParkingAgentObservationsCollector" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.375" Y="18.752" />
+        <Point X="26.375" Y="19.375" />
+        <Point X="28.188" Y="19.375" />
+        <Point X="28.188" Y="19.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="CollisionsHandler" Type="AutomaticParking.Agents.Components.ParkingAgentCollisionsHandler" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24.938" Y="16.75" />
+        <Point X="24.938" Y="10.438" />
+        <Point X="26" Y="10.438" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="StatsRecorder" Type="AutomaticParking.Agents.Components.ParkingAgentStatsRecorder" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="25.688" Y="16.75" />
+        <Point X="25.688" Y="11.715" />
+        <Point X="33.792" Y="11.715" Type="JumpStart" />
+        <Point X="33.958" Y="11.715" Type="JumpEnd" />
+        <Point X="36.125" Y="11.715" />
+        <Point X="36.125" Y="11.238" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIIAQAQAQgAEIAAApEAgAAAAAAwAAEQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Agents\ParkingAgent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AgentData" />
+      <Property Name="TargetTrackingData" />
+      <Property Name="RewardData" />
+      <Property Name="CarData" />
+      <Property Name="TargetData" />
+      <Property Name="CollisionData" />
+      <Property Name="AgentPlacer" />
+      <Property Name="TargetPlacer" />
+      <Property Name="ParkedCarsPlacer" />
+      <Property Name="ActionsHandler" />
+      <Property Name="MetricsCalculator" />
+      <Property Name="RewardCalculator" />
+      <Property Name="ObservationsCollector" />
+      <Property Name="CollisionsHandler" />
+      <Property Name="StatsRecorder" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.CarData">
+    <Position X="17.75" Y="13.5" Width="2.25" />
+    <AssociationLine Name="wheelsData" Type="AutomaticParking.Car.Wheel.WheelsData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.438" Y="13.5" />
+        <Point X="18.438" Y="12.25" />
+        <Point X="17.75" Y="12.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAgAhAAAAABAAAAAAAAAQAAAAAAAAAAwAMA=</HashCode>
+      <FileName>Assets\Scripts\Car\CarData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="wheelsData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.CarEngine">
+    <Position X="14.75" Y="15.25" Width="2.5" />
+    <AssociationLine Name="carData" Type="AutomaticParking.Car.CarData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.062" Y="15.25" />
+        <Point X="16.062" Y="14.375" />
+        <Point X="17.75" Y="14.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="wheelsOperator" Type="AutomaticParking.Car.Wheel.WheelsOperator" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.625" Y="15.25" />
+        <Point X="15.625" Y="14.375" />
+        <Point X="13.688" Y="14.375" />
+        <Point X="13.688" Y="14.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAFA=</HashCode>
+      <FileName>Assets\Scripts\Car\CarEngine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+      <Field Name="wheelsOperator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Creation.CarPoolsInitializer">
+    <Position X="14.75" Y="25" Width="3" />
+    <AssociationLine Name="NextRandomCarPoolProvider" Type="AutomaticParking.Common.NextRandomItemProvider&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.062" Y="26.684" />
+        <Point X="15.062" Y="26.95" />
+        <Point X="13.312" Y="26.95" />
+        <Point X="13.312" Y="27.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAABQAAAAAAAAAAAAAAAAAQAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Car\Creation\CarPoolsInitializer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="poolData" />
+      <Field Name="factoryData" />
+      <Property Name="NextRandomCarPoolProvider" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Creation.CarsFactoryData">
+    <Position X="11.25" Y="25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Car\Creation\CarsFactoryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Car.Creation.CarSpawner">
+    <Position X="18.75" Y="25" Width="3.75" />
+    <AssociationLine Name="carPoolsInitializer" Type="AutomaticParking.Car.Creation.CarPoolsInitializer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.438" Y="25" />
+        <Point X="19.438" Y="24.625" />
+        <Point X="16.5" Y="24.625" />
+        <Point X="16.5" Y="25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="carTransformConfigurator" Type="AutomaticParking.Car.Creation.CarTransformConfigurator" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22.5" Y="25.818" />
+        <Point X="25.062" Y="25.818" />
+        <Point X="25.062" Y="25.261" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAggAAAEAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Car\Creation\CarSpawner.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carPoolsInitializer" />
+      <Field Name="carTransformConfigurator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Creation.CarTransformConfigurator">
+    <Position X="23" Y="23" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAABAAAAAAAAIAgAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Car\Creation\CarTransformConfigurator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Car.UserInput.CarUserInputData">
+    <Position X="29.5" Y="22.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAIAAAAAAIAAAgBAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Car\UserInput\CarUserInputData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Car.UserInput.CarUserInputHandler">
+    <Position X="17.75" Y="9.75" Width="2.75" />
+    <AssociationLine Name="carData" Type="AutomaticParking.Car.CarData" FixedToPoint="true">
+      <Path>
+        <Point X="19.5" Y="11.175" />
+        <Point X="19.5" Y="13.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="interpreter" Type="AutomaticParking.Car.UserInput.CarUserInputInterpreter" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.312" Y="11.175" />
+        <Point X="20.312" Y="12.625" />
+        <Point X="21.5" Y="12.625" />
+        <Point X="21.5" Y="13" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFA=</HashCode>
+      <FileName>Assets\Scripts\Car\UserInput\CarUserInputHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+      <Field Name="interpreter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.UserInput.CarUserInputInterpreter">
+    <Position X="21" Y="13" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAQABA=</HashCode>
+      <FileName>Assets\Scripts\Car\UserInput\CarUserInputInterpreter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Wheel.WheelData">
+    <Position X="11.25" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Car\Wheel\WheelData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Car.Wheel.WheelsData">
+    <Position X="15.5" Y="11.5" Width="2.25" />
+    <AssociationLine Name="DrivingWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="12.062" />
+        <Point X="13.25" Y="12.062" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SteeringWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="11.688" />
+        <Point X="13.25" Y="11.688" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="BrakingWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="12.812" />
+        <Point X="13.25" Y="12.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AllWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="12.438" />
+        <Point X="13.25" Y="12.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAABAAAAAAAAAAAAAAAAAAAgACIAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Car\Wheel\WheelsData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="DrivingWheels" />
+      <Property Name="SteeringWheels" />
+      <Property Name="BrakingWheels" />
+      <Property Name="AllWheels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Wheel.WheelsOperator">
+    <Position X="11.25" Y="14.75" Width="2.75" />
+    <AssociationLine Name="wheelsData" Type="AutomaticParking.Car.Wheel.WheelsData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="14.75" />
+        <Point X="12" Y="13.851" />
+        <Point X="16.625" Y="13.851" />
+        <Point X="16.625" Y="12.925" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAKAAAAAAAAAAAAAAABAAAAAAAAAQAAAAAAAAAACAEA=</HashCode>
+      <FileName>Assets\Scripts\Car\Wheel\WheelsOperator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="wheelsData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Common.NextRandomItemProvider&lt;T&gt;">
+    <Position X="11.25" Y="27.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\NextRandomItemProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Enumerations.Tag">
+    <Position X="22" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAQAAAAEAAAAAAAAAAAEAAQAAABAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Common\Enumerations\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Extensions.EnumExtensions">
+    <Position X="35.5" Y="24.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\Extensions\EnumExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Extensions.ExceptionThrowingExtensions">
+    <Position X="35" Y="20" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Common\Extensions\ExceptionThrowingExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Extensions.GenericExtensions">
+    <Position X="29.5" Y="24.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\Extensions\GenericExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Extensions.RandomExtensions">
+    <Position X="32.25" Y="22.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>QgAAAQAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Common\Extensions\RandomExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Extensions.SequenceExtensions">
+    <Position X="35.5" Y="21.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAQAIAAgAAAQAACAAAAIAEAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\Extensions\SequenceExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Extensions.StandardTypeExtensions">
+    <Position X="32.25" Y="24.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\Extensions\StandardTypeExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Patterns.Factory.ComponentFactory&lt;TComponent&gt;">
+    <Position X="23" Y="26.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAIAAAAAAEACAAAAAACAABA=</HashCode>
+      <FileName>Assets\Scripts\Common\Patterns\Factory\ComponentFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Common.Patterns.Factory.ComponentPoolFactory&lt;TComponent&gt;">
+    <Position X="18.75" Y="27.25" Width="3.75" />
+    <AssociationLine Name="componentFactory" Type="AutomaticParking.Common.Patterns.Factory.ComponentFactory&lt;TComponent&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.25" Y="28.738" />
+        <Point X="21.25" Y="29.392" />
+        <Point X="24.938" Y="29.392" />
+        <Point X="24.938" Y="29.017" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="data" Type="AutomaticParking.Common.Patterns.Pool.PoolData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.375" Y="28.738" />
+        <Point X="19.375" Y="29.435" />
+        <Point X="16.438" Y="29.435" />
+        <Point X="16.438" Y="29.06" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAACAAAAAAAAAEAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\Patterns\Factory\ComponentPoolFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="componentFactory" />
+      <Field Name="data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Common.Patterns.Pool.PoolData">
+    <Position X="14.75" Y="27.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAACAAAAAAAACAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Common\Patterns\Pool\PoolData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.Data.EnteringCarPlacingData">
+    <Position X="11.25" Y="22" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAgAAAAIAAAAAAgAAAAAAAgAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\Data\EnteringCarPlacingData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.Data.ParkingLotData">
+    <Position X="14.75" Y="22" Width="3.5" />
+    <AssociationLine Name="ParkingSpotData" Type="AutomaticParking.ParkingLot.Data.ParkingSpotData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.25" Y="23.843" />
+        <Point X="19.688" Y="23.843" />
+        <Point X="19.688" Y="23.425" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAgAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\Data\ParkingLotData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ParkingSpotData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.Data.ParkingSpotData">
+    <Position X="18.75" Y="22" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\Data\ParkingSpotData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotAgentTargetPlacer">
+    <Position X="14.75" Y="20" Width="2.5" />
+    <AssociationLine Name="parkingLotData" Type="AutomaticParking.ParkingLot.Data.ParkingLotData" FixedToPoint="true">
+      <Path>
+        <Point X="16" Y="21.233" />
+        <Point X="16" Y="22" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\ObjectPlacers\ParkingLotAgentTargetPlacer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="parkingLotData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotEnteringCarPlacer">
+    <Position X="11.25" Y="20" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\ObjectPlacers\ParkingLotEnteringCarPlacer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotParkedCarsPlacer">
+    <Position X="18.75" Y="20" Width="2.5" />
+    <AssociationLine Name="carSpawner" Type="AutomaticParking.Car.Creation.CarSpawner" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.25" Y="21.425" />
+        <Point X="20.25" Y="21.709" />
+        <Point X="21.25" Y="21.709" />
+        <Point X="21.25" Y="25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="parkingLotData" Type="AutomaticParking.ParkingLot.Data.ParkingLotData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="21.425" />
+        <Point X="19.75" Y="21.688" />
+        <Point X="17.75" Y="21.688" />
+        <Point X="17.75" Y="22" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAEAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\ObjectPlacers\ParkingLotParkedCarsPlacer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carSpawner" />
+      <Field Name="parkingLotData" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
