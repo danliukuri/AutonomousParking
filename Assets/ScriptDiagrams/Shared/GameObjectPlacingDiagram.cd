@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutomaticParking.ParkingLot.Data.EnteringCarPlacingData">
+    <Position X="0.75" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAgAAAAIAAAAAAgAAAAAAAgAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\Data\EnteringCarPlacingData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.Data.ParkingLotData">
+    <Position X="4" Y="2.5" Width="3.5" />
+    <AssociationLine Name="ParkingSpotData" Type="AutomaticParking.ParkingLot.Data.ParkingSpotData" FixedFromPoint="true">
+      <Path>
+        <Point X="4.25" Y="4.761" />
+        <Point X="4.25" Y="5.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAgAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\Data\ParkingLotData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ParkingSpotData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.Data.ParkingSpotData">
+    <Position X="2.25" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\Data\ParkingSpotData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotAgentTargetPlacer">
+    <Position X="3.25" Y="0.75" Width="2.5" />
+    <AssociationLine Name="parkingLotData" Type="AutomaticParking.ParkingLot.Data.ParkingLotData" FixedToPoint="true">
+      <Path>
+        <Point X="5.375" Y="1.983" />
+        <Point X="5.375" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\ObjectPlacers\ParkingLotAgentTargetPlacer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="parkingLotData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotEnteringCarPlacer">
+    <Position X="0.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\ObjectPlacers\ParkingLotEnteringCarPlacer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.ParkingLot.ObjectPlacers.ParkingLotParkedCarsPlacer">
+    <Position X="6" Y="0.75" Width="2.5" />
+    <AssociationLine Name="carSpawner" Type="AutomaticParking.Car.Creation.CarSpawner" FixedFromPoint="true">
+      <Path>
+        <Point X="8.062" Y="2.175" />
+        <Point X="8.062" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="parkingLotData" Type="AutomaticParking.ParkingLot.Data.ParkingLotData" FixedToPoint="true">
+      <Path>
+        <Point X="7.125" Y="2.175" />
+        <Point X="7.125" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAEAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ParkingLot\ObjectPlacers\ParkingLotParkedCarsPlacer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carSpawner" />
+      <Field Name="parkingLotData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Creation.CarSpawner">
+    <Position X="4.75" Y="5.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAggAAAEAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Car\Creation\CarSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
