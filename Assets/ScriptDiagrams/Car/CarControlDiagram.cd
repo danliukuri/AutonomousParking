@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutomaticParking.Car.CarData">
+    <Position X="6.75" Y="2.25" Width="2.25" />
+    <AssociationLine Name="wheelsData" Type="AutomaticParking.Car.Wheel.WheelsData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.562" Y="2.25" />
+        <Point X="8.562" Y="1.25" />
+        <Point X="7.5" Y="1.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAgAhAAAAABAAAAAAAAAQAAAAAAAAAAwAMA=</HashCode>
+      <FileName>Assets\Scripts\Car\CarData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="wheelsData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.CarEngine">
+    <Position X="4" Y="4" Width="2.5" />
+    <AssociationLine Name="carData" Type="AutomaticParking.Car.CarData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.312" Y="4" />
+        <Point X="5.312" Y="3.125" />
+        <Point X="6.75" Y="3.125" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="wheelsOperator" Type="AutomaticParking.Car.Wheel.WheelsOperator" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.875" Y="4" />
+        <Point X="4.875" Y="3.125" />
+        <Point X="3.438" Y="3.125" />
+        <Point X="3.438" Y="3.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAFA=</HashCode>
+      <FileName>Assets\Scripts\Car\CarEngine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+      <Field Name="wheelsOperator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Wheel.WheelData">
+    <Position X="1" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAQAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Car\Wheel\WheelData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Car.Wheel.WheelsData">
+    <Position X="5.25" Y="0.5" Width="2.25" />
+    <AssociationLine Name="DrivingWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.812" />
+        <Point X="3" Y="1.812" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SteeringWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="0.625" />
+        <Point X="3" Y="0.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="BrakingWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.375" />
+        <Point X="3" Y="1.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AllWheels" Type="AutomaticParking.Car.Wheel.WheelData" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1" />
+        <Point X="3" Y="1" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAABAAAAAAAAAAAAAAAAAAAgACIAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Car\Wheel\WheelsData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="DrivingWheels" />
+      <Property Name="SteeringWheels" />
+      <Property Name="BrakingWheels" />
+      <Property Name="AllWheels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.Wheel.WheelsOperator">
+    <Position X="1" Y="3.5" Width="2.75" />
+    <AssociationLine Name="wheelsData" Type="AutomaticParking.Car.Wheel.WheelsData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.75" Y="3.5" />
+        <Point X="1.75" Y="2.696" />
+        <Point X="6.375" Y="2.696" />
+        <Point X="6.375" Y="1.925" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAKAAAAAAAAAAAAAAABAAAAAAAAAQAAAAAAAAAACAEA=</HashCode>
+      <FileName>Assets\Scripts\Car\Wheel\WheelsOperator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="wheelsData" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
