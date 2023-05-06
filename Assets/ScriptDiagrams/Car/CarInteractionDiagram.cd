@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentActionsHandler">
+    <Position X="1.5" Y="6.25" Width="3.25" />
+    <AssociationLine Name="carData" Type="AutomaticParking.Car.CarData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.875" Y="6.25" />
+        <Point X="3.875" Y="6.01" />
+        <Point X="7.5" Y="6.01" />
+        <Point X="7.5" Y="4.675" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgACAAgAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentActionsHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+      <Field Name="interpreter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.CarData">
+    <Position X="5.75" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAgAhAAAAABAAAAAAAAAQAAAAAAAAAAwAMA=</HashCode>
+      <FileName>Assets\Scripts\Car\CarData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Car.UserInput.CarUserInputHandler">
+    <Position X="8.5" Y="4.5" Width="2.75" />
+    <AssociationLine Name="carData" Type="AutomaticParking.Car.CarData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.562" Y="4.5" />
+        <Point X="10.562" Y="3.75" />
+        <Point X="8" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="interpreter" Type="AutomaticParking.Car.UserInput.CarUserInputInterpreter" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.562" Y="5.925" />
+        <Point X="10.562" Y="7.438" />
+        <Point X="9.25" Y="7.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFA=</HashCode>
+      <FileName>Assets\Scripts\Car\UserInput\CarUserInputHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+      <Field Name="interpreter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.UserInput.CarUserInputInterpreter">
+    <Position X="6" Y="6.25" Width="3.25" />
+    <AssociationLine Name="carData" Type="AutomaticParking.Car.CarData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.312" Y="6.25" />
+        <Point X="8.312" Y="4.25" />
+        <Point X="8" Y="4.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAQABA=</HashCode>
+      <FileName>Assets\Scripts\Car\UserInput\CarUserInputInterpreter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="carData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Car.UserInput.CarUserInputData">
+    <Position X="8.75" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAIAAAAAAIAAAgBAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Car\UserInput\CarUserInputData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.ParkingAgent">
+    <Position X="1.5" Y="1" Width="4" />
+    <AssociationLine Name="CarData" Type="AutomaticParking.Car.CarData" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="5.218" />
+        <Point X="6.562" Y="5.218" />
+        <Point X="6.562" Y="4.675" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIIAQAQAQgAEIAAApEAgAAAAAAwAAEQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Agents\ParkingAgent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CarData" />
+      <Property Name="ActionsHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
