@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentCollisionsHandler">
+    <Position X="4.75" Y="0.5" Width="3" />
+    <AssociationLine Name="collisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" FixedFromPoint="true">
+      <Path>
+        <Point X="6.875" Y="1.925" />
+        <Point X="6.875" Y="3" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentCollisionsHandler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="collisionData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentCollisionData">
+    <Position X="4.75" Y="3" Width="2.25" />
+    <AssociationLine Name="CollisionTag" Type="AutomaticParking.Common.Enumerations.Tag" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.938" Y="4.555" />
+        <Point X="5.938" Y="5" />
+        <Point X="7.25" Y="5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAIAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentCollisionData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CollisionTag" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Common.Enumerations.Tag">
+    <Position X="7.25" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAQAAAAEAAAAAAAAAAAEAAQAAABAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Common\Enumerations\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.ParkingAgent">
+    <Position X="0.5" Y="0.5" Width="4" />
+    <AssociationLine Name="CollisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="2.562" />
+        <Point X="5.625" Y="2.562" />
+        <Point X="5.625" Y="3" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="CollisionsHandler" Type="AutomaticParking.Agents.Components.ParkingAgentCollisionsHandler" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="2.375" />
+        <Point X="5.875" Y="2.375" />
+        <Point X="5.875" Y="1.925" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIIAQAQAQgAEIAAApEAgAAAAAAwAAEQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Agents\ParkingAgent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CollisionData" />
+      <Property Name="CollisionsHandler" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
