@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AutomaticParking.Agents.ParkingAgent">
+    <Position X="0.5" Y="0.5" Width="3.75" />
+    <AssociationLine Name="ActionsHandler" Type="AutomaticParking.Agents.Components.ParkingAgentActionsHandler" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="3.875" />
+        <Point X="7.505" Y="3.875" />
+        <Point X="7.505" Y="4.646" />
+        <Point X="9.239" Y="4.646" />
+        <Point X="9.239" Y="5.382" />
+        <Point X="10.5" Y="5.382" />
+        <Point X="10.5" Y="5.75" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="MetricsCalculator" Type="AutomaticParking.Agents.Components.ParkingAgentMetricsCalculator" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="4.375" />
+        <Point X="4.625" Y="4.375" />
+        <Point X="4.625" Y="5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RewardCalculator" Type="AutomaticParking.Agents.Components.ParkingAgentRewardCalculator" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="4.125" />
+        <Point X="7.25" Y="4.125" />
+        <Point X="7.25" Y="5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ObservationsCollector" Type="AutomaticParking.Agents.Components.ParkingAgentObservationsCollector" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="3.125" />
+        <Point X="7.25" Y="3.125" />
+        <Point X="7.25" Y="2.824" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="CollisionsHandler" Type="AutomaticParking.Agents.Components.ParkingAgentCollisionsHandler" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="3.625" />
+        <Point X="7.768" Y="3.625" />
+        <Point X="7.768" Y="4.375" />
+        <Point X="9.5" Y="4.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="StatsRecorder" Type="AutomaticParking.Agents.Components.ParkingAgentStatsRecorder" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="3.375" />
+        <Point X="9.25" Y="3.375" />
+        <Point X="9.25" Y="2.632" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIIAQAQAQgAEIAAApEAgAAAAAAwAAEQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Agents\ParkingAgent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ActionsHandler" />
+      <Property Name="MetricsCalculator" />
+      <Property Name="RewardCalculator" />
+      <Property Name="ObservationsCollector" />
+      <Property Name="CollisionsHandler" />
+      <Property Name="StatsRecorder" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentActionsHandler">
+    <Position X="9.25" Y="5.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgACAAgAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentActionsHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentCollisionsHandler">
+    <Position X="9.5" Y="3.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentCollisionsHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentMetricsCalculator">
+    <Position X="0.5" Y="5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAggAAAAAAAEgAAEIAAAAAAAAAEAAIAAAAAYAAAAUAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentMetricsCalculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentObservationsCollector">
+    <Position X="4.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>gAAgAAAAAAAAQAAAAAAAABAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentObservationsCollector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentRewardCalculator">
+    <Position X="5.25" Y="5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>ABAgAACAAAQAAAAAEAQEAAAAEAAAAAAAIAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentRewardCalculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentStatsRecorder">
+    <Position X="8" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAABIA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentStatsRecorder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
