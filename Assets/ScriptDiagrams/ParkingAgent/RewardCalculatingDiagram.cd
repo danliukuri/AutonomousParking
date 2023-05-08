@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentRewardData">
+    <Position X="10" Y="5.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAIACQEIIgAAAAAAAAAAAEAAAAAAYAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentRewardData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Components.ParkingAgentRewardCalculator">
+    <Position X="6" Y="5.25" Width="3.75" />
+    <AssociationLine Name="agentCollisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.25" Y="5.25" />
+        <Point X="9.25" Y="4.77" />
+        <Point X="13.125" Y="4.77" />
+        <Point X="13.125" Y="2.997" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="agentData" Type="AutomaticParking.Agents.Data.ParkingAgentData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.438" Y="5.25" />
+        <Point X="6.438" Y="2.625" />
+        <Point X="5.75" Y="2.625" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="rewardData" Type="AutomaticParking.Agents.Data.ParkingAgentRewardData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.5" Y="5.25" />
+        <Point X="9.5" Y="4.981" />
+        <Point X="13.125" Y="4.981" />
+        <Point X="13.125" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="targetTrackingData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData" FixedFromPoint="true">
+      <Path>
+        <Point X="8.312" Y="5.25" />
+        <Point X="8.312" Y="4.469" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAgAACAAAQAAAAAEAQEAAAAEAAAAAAAIAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Components\ParkingAgentRewardCalculator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="agentCollisionData" />
+      <Field Name="agentData" />
+      <Field Name="rewardData" />
+      <Field Name="targetTrackingData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.ParkingAgent">
+    <Position X="3.5" Y="4.25" Width="2.25" />
+    <AssociationLine Name="AgentData" Type="AutomaticParking.Agents.Data.ParkingAgentData" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="4.25" />
+        <Point X="5.25" Y="3.767" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TargetTrackingData" Type="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="6.75" />
+        <Point X="3.315" Y="6.75" />
+        <Point X="3.315" Y="0.875" />
+        <Point X="8.125" Y="0.875" />
+        <Point X="8.125" Y="1.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RewardData" Type="AutomaticParking.Agents.Data.ParkingAgentRewardData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="8.062" />
+        <Point X="8.5" Y="8.062" />
+        <Point X="8.5" Y="8.062" />
+        <Point X="10" Y="8.062" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.164" Y="0.122" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CollisionData" Type="AutomaticParking.Agents.Data.ParkingAgentCollisionData" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="8.062" />
+        <Point X="3.153" Y="8.062" />
+        <Point X="3.153" Y="0.714" />
+        <Point X="13.125" Y="0.714" />
+        <Point X="13.125" Y="1.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RewardCalculator" Type="AutomaticParking.Agents.Components.ParkingAgentRewardCalculator" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="7.875" />
+        <Point X="8.312" Y="7.875" />
+        <Point X="8.312" Y="7.507" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAIIAQAQAQgAEIAAApEAgAAAAAAwAAEQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Agents\ParkingAgent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AgentData" />
+      <Property Name="TargetTrackingData" />
+      <Property Name="RewardData" />
+      <Property Name="CollisionData" />
+      <Property Name="RewardCalculator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentData">
+    <Position X="3.5" Y="1.25" Width="2.25" />
+    <AssociationLine Name="Agent" Type="AutomaticParking.Agents.ParkingAgent" FixedToPoint="true">
+      <Path>
+        <Point X="4.188" Y="3.767" />
+        <Point X="4.188" Y="4.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAABAAEAAAYAAABAAAAAAEAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Agent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentTargetTrackingData">
+    <Position X="6.75" Y="1.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>CAAQAAAAACUAAAABAAAAAABAEAAAAAAIAAABAQAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentTargetTrackingData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticParking.Agents.Data.ParkingAgentCollisionData">
+    <Position X="11.25" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAIAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Agents\Data\ParkingAgentCollisionData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
