@@ -1,9 +1,9 @@
 ﻿using System;
-using AutomaticParking.Car;
-using AutomaticParking.Car.UserInput;
+using AutonomousParking.Car;
+using AutonomousParking.Car.UserInput;
 using Unity.MLAgents.Actuators;
 
-namespace AutomaticParking.Agents.Components
+namespace AutonomousParking.Agents.Components
 {
     public class ParkingAgentActionsHandler
     {

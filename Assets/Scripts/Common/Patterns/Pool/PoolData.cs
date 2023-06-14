@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutomaticParking.Common.Patterns.Pool
+namespace AutonomousParking.Common.Patterns.Pool
 {
     public class PoolData : MonoBehaviour
     {

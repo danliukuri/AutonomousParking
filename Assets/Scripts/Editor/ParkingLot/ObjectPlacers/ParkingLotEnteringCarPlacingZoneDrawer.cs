@@ -1,9 +1,9 @@
-﻿using AutomaticParking.ParkingLot.Data;
-using AutomaticParking.ParkingLot.ObjectPlacers;
+﻿using AutonomousParking.ParkingLot.Data;
+using AutonomousParking.ParkingLot.ObjectPlacers;
 using UnityEditor;
 using UnityEngine;
 
-namespace AutomaticParking.Editor.ParkingLot.ObjectPlacers
+namespace AutonomousParking.Editor.ParkingLot.ObjectPlacers
 {
     [CanEditMultipleObjects, CustomEditor(typeof(ParkingLotEnteringCarPlacer))]
     public class ParkingLotEnteringCarPlacingZoneDrawer : UnityEditor.Editor

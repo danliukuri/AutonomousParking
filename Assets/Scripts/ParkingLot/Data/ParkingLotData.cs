@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace AutomaticParking.ParkingLot.Data
+namespace AutonomousParking.ParkingLot.Data
 {
     public class ParkingLotData : MonoBehaviour
     {

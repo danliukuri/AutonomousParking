@@ -1,6 +1,6 @@
-﻿using AutomaticParking.Common.Enumerations;
+﻿using AutonomousParking.Common.Enumerations;
 
-namespace AutomaticParking.Agents.Data
+namespace AutonomousParking.Agents.Data
 {
     public class ParkingAgentCollisionData
     {

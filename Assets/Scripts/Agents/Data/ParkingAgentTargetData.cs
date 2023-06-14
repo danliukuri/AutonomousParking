@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutomaticParking.Agents.Data
+namespace AutonomousParking.Agents.Data
 {
     public class ParkingAgentTargetData : MonoBehaviour
     {

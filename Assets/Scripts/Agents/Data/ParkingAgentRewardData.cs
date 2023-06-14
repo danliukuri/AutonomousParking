@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using AutomaticParking.Common.Enumerations;
+using AutonomousParking.Common.Enumerations;
 using UnityEngine;
 
-namespace AutomaticParking.Agents.Data
+namespace AutonomousParking.Agents.Data
 {
     [Serializable]
     public class ParkingAgentRewardData

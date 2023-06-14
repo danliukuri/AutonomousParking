@@ -1,8 +1,8 @@
-﻿using AutomaticParking.Common.Extensions;
-using AutomaticParking.ParkingLot.Data;
+﻿using AutonomousParking.Common.Extensions;
+using AutonomousParking.ParkingLot.Data;
 using UnityEngine;
 
-namespace AutomaticParking.Car.Creation
+namespace AutonomousParking.Car.Creation
 {
     public class CarTransformConfigurator : MonoBehaviour
     {

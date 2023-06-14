@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutomaticParking.Common.Extensions
+namespace AutonomousParking.Common.Extensions
 {
     public static class StandardTypeExtensions
     {

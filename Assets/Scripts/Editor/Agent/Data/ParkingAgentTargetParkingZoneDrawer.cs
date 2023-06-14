@@ -1,8 +1,8 @@
-﻿using AutomaticParking.Agents.Data;
+﻿using AutonomousParking.Agents.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace AutomaticParking.Editor.Agent.Data
+namespace AutonomousParking.Editor.Agent.Data
 {
     [CanEditMultipleObjects, CustomEditor(typeof(ParkingAgentTargetData))]
     public class ParkingAgentTargetParkingZoneDrawer : UnityEditor.Editor

@@ -1,4 +1,4 @@
-﻿namespace AutomaticParking.Agents.Data
+﻿namespace AutonomousParking.Agents.Data
 {
     public static class ParkingAgentRecordKey
     {
