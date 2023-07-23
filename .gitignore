@@ -73,6 +73,12 @@ crashlytics-build.properties
 /[Aa]ssets/[Mm][Ll][Aa]gents/Training/Results/
 /[Aa]ssets/[Mm][Ll][Aa]gents/Training/Results.meta
 
+# TextMeshPro plugin
+/[Aa]ssets/[Tt]ext*[Mm]esh*[Pp]ro
+/[Aa]ssets/[Tt]ext*[Mm]esh*[Pp]ro.meta
+/[Aa]ssets/[Pp]lugins/[Tt]ext*[Mm]esh*[Pp]ro
+/[Aa]ssets/[Pp]lugins/[Tt]ext*[Mm]esh*[Pp]ro.meta
+
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
