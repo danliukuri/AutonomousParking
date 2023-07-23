@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace AutomaticParking.Car.Creation
+namespace AutonomousParking.Car.Creation
 {
     public class CarsFactoryData : MonoBehaviour
     {
