@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutomaticParking.Car.UserInput
+namespace AutonomousParking.Car.UserInput
 {
     public static class CarUserInputData
     {

@@ -1,7 +1,7 @@
-﻿using AutomaticParking.Agents.Data;
-using AutomaticParking.Common.Extensions;
+﻿using AutonomousParking.Agents.Data;
+using AutonomousParking.Common.Extensions;
 
-namespace AutomaticParking.Agents.Components
+namespace AutonomousParking.Agents.Components
 {
     public class ParkingAgentRewardCalculator
     {

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using AutomaticParking.Common;
-using AutomaticParking.Common.Patterns.Factory;
-using AutomaticParking.Common.Patterns.Pool;
+using AutonomousParking.Common;
+using AutonomousParking.Common.Patterns.Factory;
+using AutonomousParking.Common.Patterns.Pool;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace AutomaticParking.Car.Creation
+namespace AutonomousParking.Car.Creation
 {
     public class CarPoolsInitializer : MonoBehaviour
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using AutomaticParking.Common.Extensions;
-using AutomaticParking.ParkingLot.Data;
+using AutonomousParking.Common.Extensions;
+using AutonomousParking.ParkingLot.Data;
 using UnityEngine;
 
-namespace AutomaticParking.ParkingLot.ObjectPlacers
+namespace AutonomousParking.ParkingLot.ObjectPlacers
 {
     public class ParkingLotAgentTargetPlacer : MonoBehaviour
     {

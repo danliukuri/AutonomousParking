@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AutomaticParking.Common.Extensions
+namespace AutonomousParking.Common.Extensions
 {
     public static class SequenceExtensions
     {

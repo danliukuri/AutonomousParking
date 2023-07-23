@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutomaticParking.Car.Wheel
+namespace AutonomousParking.Car.Wheel
 {
     public class WheelsData : MonoBehaviour
     {

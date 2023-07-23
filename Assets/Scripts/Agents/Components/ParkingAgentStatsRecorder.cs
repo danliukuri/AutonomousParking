@@ -1,10 +1,10 @@
 ﻿using System;
-using AutomaticParking.Agents.Data;
-using AutomaticParking.Common.Enumerations;
+using AutonomousParking.Agents.Data;
+using AutonomousParking.Common.Enumerations;
 using Unity.MLAgents;
-using static AutomaticParking.Agents.Data.ParkingAgentRecordKey;
+using static AutonomousParking.Agents.Data.ParkingAgentRecordKey;
 
-namespace AutomaticParking.Agents.Components
+namespace AutonomousParking.Agents.Components
 {
     public class ParkingAgentStatsRecorder
     {

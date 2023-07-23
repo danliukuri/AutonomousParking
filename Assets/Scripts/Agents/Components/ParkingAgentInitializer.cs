@@ -1,9 +1,9 @@
-﻿using AutomaticParking.Agents.Data;
-using AutomaticParking.Car;
-using AutomaticParking.ParkingLot.ObjectPlacers;
+﻿using AutonomousParking.Agents.Data;
+using AutonomousParking.Car;
+using AutonomousParking.ParkingLot.ObjectPlacers;
 using UnityEngine;
 
-namespace AutomaticParking.Agents.Components
+namespace AutonomousParking.Agents.Components
 {
     public class ParkingAgentInitializer : MonoBehaviour
     {
