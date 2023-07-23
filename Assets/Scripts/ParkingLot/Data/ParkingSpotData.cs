@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutomaticParking.ParkingLot.Data
+namespace AutonomousParking.ParkingLot.Data
 {
     public class ParkingSpotData : MonoBehaviour
     {

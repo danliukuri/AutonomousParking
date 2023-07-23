@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AutomaticParking.Common.Extensions;
+using AutonomousParking.Common.Extensions;
 
-namespace AutomaticParking.Common.Enumerations
+namespace AutonomousParking.Common.Enumerations
 {
     public class Tag
     {

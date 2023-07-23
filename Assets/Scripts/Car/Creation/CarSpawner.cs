@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using AutonomousParking.ParkingLot.Data;
 using System.Linq;
 using AutomaticParking.Demonstration.Architecture;
-using AutomaticParking.ParkingLot.Data;
+using AutonomousParking.ParkingLot.Data;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace AutomaticParking.Car.Creation
+namespace AutonomousParking.Car.Creation
 {
     public class CarSpawner : MonoBehaviour
     {

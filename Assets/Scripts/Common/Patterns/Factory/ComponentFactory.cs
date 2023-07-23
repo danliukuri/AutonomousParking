@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AutomaticParking.Common.Patterns.Factory
+namespace AutonomousParking.Common.Patterns.Factory
 {
     public class ComponentFactory<TComponent> where TComponent : Component
     {

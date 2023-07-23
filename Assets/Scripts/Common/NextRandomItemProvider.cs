@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using AutomaticParking.Common.Extensions;
+using AutonomousParking.Common.Extensions;
 
-namespace AutomaticParking.Common
+namespace AutonomousParking.Common
 {
     public class NextRandomItemProvider<T>
     {

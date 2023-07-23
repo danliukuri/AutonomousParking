@@ -1,8 +1,8 @@
-﻿using AutomaticParking.Agents.Data;
+﻿using AutonomousParking.Agents.Data;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-namespace AutomaticParking.Agents.Components
+namespace AutonomousParking.Agents.Components
 {
     public class ParkingAgentObservationsCollector
     {

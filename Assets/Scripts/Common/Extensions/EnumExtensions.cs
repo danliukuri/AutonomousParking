@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace AutomaticParking.Common.Extensions
+namespace AutonomousParking.Common.Extensions
 {
     public static class EnumExtensions
     {

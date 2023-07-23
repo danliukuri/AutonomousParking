@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutomaticParking.Car.UserInput
+namespace AutonomousParking.Car.UserInput
 {
     public class CarUserInputInterpreter
     {
