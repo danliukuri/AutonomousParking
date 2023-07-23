@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using AutonomousParking.ParkingLot.Data;
+using System.Linq;
+using AutomaticParking.Demonstration.Architecture;
 using AutonomousParking.ParkingLot.Data;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -10,6 +13,12 @@ namespace AutonomousParking.Car.Creation
         [SerializeField] private CarPoolsInitializer carPoolsInitializer;
         [SerializeField] private CarTransformConfigurator carTransformConfigurator;
         private readonly Dictionary<Transform, IObjectPool<Transform>> cars = new();
+
+        private void Awake()
+        {
+            ServiceLocator.Instance.Register(this);
+            carPoolsInitializer ??= ServiceLocator.Instance.Get<CarPoolsInitializer>().First();
+        }
 
         public Transform Spawn(Transform parkingSpot, ParkingSpotData parkingSpotData) =>
             Spawn(carPoolsInitializer.NextRandomCarPoolProvider.Get(), parkingSpot, parkingSpotData);

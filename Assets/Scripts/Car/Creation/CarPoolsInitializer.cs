@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using AutonomousParking.Common;
 using AutonomousParking.Common.Patterns.Factory;
 using AutonomousParking.Common.Patterns.Pool;
+using AutomaticParking.Demonstration.Architecture;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -17,6 +18,8 @@ namespace AutonomousParking.Car.Creation
 
         private void Awake()
         {
+            ServiceLocator.Instance.Register(this);
+
             foreach (GameObject carPrefab in factoryData.Prefabs)
             {
                 var carFactory = new ComponentFactory<Transform>(carPrefab, factoryData.Parent);
