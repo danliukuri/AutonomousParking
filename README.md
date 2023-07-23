@@ -1,4 +1,4 @@
-![Banner](https://github.com/yuradanyliuk/AutonomousParking/assets/56362999/ea7b6435-8425-4d32-bdf6-92d460297717)
+![Banner](https://github.com/yuradanyliuk/AutonomousParking/assets/56362999/7a597506-8a39-4713-8796-9ce82856b69b)
 
 This project focuses on using reinforcement learning techniques to teach an intelligent agent how to navigate and park a car accurately in various parking scenarios.
 
@@ -7,8 +7,8 @@ Also, for convenience, [final attempts](https://tensorboard.dev/experiment/snac9
 #
 Parking lots were designed using a reference database, [dimensions.com](https://www.dimensions.com).
 
-![ParkingLotsMockupsPreview](https://github.com/yuradanyliuk/AutonomousParking/assets/56362999/bdae3cb3-f88b-4937-a7fd-794526915e4e)
+![ParkingLotsMockupsPreview](https://github.com/yuradanyliuk/AutonomousParking/assets/56362999/1c3759db-2399-4041-9201-e7ec58817018)
 
 The elements of the parking lots were created using Unity's built-in tools. For the cars, ready-made models from the [“Low Poly Soviet Cars Pack”](https://assetstore.unity.com/packages/3d/vehicles/low-poly-soviet-cars-pack-184453) were used.
 
-![ParkingLotsPreview](https://github.com/yuradanyliuk/AutonomousParking/assets/56362999/01d981cc-ff51-420e-bd36-041761fa0889)
+![ParkingLotsPreview](https://github.com/yuradanyliuk/AutonomousParking/assets/56362999/55ea93fe-ad0d-49ce-9930-14b357e1d2ea)
