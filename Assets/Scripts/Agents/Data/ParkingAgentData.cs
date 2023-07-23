@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace AutomaticParking.Agents.Data
+namespace AutonomousParking.Agents.Data
 {
     [Serializable]
     public class ParkingAgentData

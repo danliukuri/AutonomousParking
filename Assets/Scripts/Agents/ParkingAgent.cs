@@ -1,13 +1,13 @@
-﻿using AutomaticParking.Agents.Components;
-using AutomaticParking.Agents.Data;
-using AutomaticParking.Car;
-using AutomaticParking.ParkingLot.ObjectPlacers;
+﻿using AutonomousParking.Agents.Components;
+using AutonomousParking.Agents.Data;
+using AutonomousParking.Car;
+using AutonomousParking.ParkingLot.ObjectPlacers;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-namespace AutomaticParking.Agents
+namespace AutonomousParking.Agents
 {
     public class ParkingAgent : Agent
     {

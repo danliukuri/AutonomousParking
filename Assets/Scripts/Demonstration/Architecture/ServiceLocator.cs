@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutomaticParking.Demonstration.Architecture
+namespace AutonomousParking.Demonstration.Architecture
 {
     public class ServiceLocator
     {

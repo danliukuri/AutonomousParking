@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace AutomaticParking.Demonstration.Infrastructure
+namespace AutonomousParking.Demonstration.Infrastructure
 {
     public class SceneLoader
     {

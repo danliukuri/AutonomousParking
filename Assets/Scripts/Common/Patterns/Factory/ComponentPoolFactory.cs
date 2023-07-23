@@ -1,8 +1,8 @@
-﻿using AutomaticParking.Common.Patterns.Pool;
+﻿using AutonomousParking.Common.Patterns.Pool;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace AutomaticParking.Common.Patterns.Factory
+namespace AutonomousParking.Common.Patterns.Factory
 {
     public class ComponentPoolFactory<TComponent> where TComponent : Component
     {

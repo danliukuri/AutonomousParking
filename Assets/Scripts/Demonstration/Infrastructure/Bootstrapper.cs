@@ -1,8 +1,8 @@
-﻿using AutomaticParking.Demonstration.Architecture;
+﻿using AutonomousParking.Demonstration.Architecture;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace AutomaticParking.Demonstration.Infrastructure
+namespace AutonomousParking.Demonstration.Infrastructure
 {
     public class Bootstrapper : MonoBehaviour
     {

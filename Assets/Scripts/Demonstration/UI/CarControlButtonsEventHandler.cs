@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AutomaticParking.Demonstration.Architecture;
+using AutonomousParking.Demonstration.Architecture;
 using TMPro;
 using UnityEngine;
 
-namespace AutomaticParking.Demonstration.UI
+namespace AutonomousParking.Demonstration.UI
 {
     public class CarControlButtonsEventHandler : MonoBehaviour
     {

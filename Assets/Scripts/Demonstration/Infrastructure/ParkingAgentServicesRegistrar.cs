@@ -1,8 +1,8 @@
-﻿using AutomaticParking.Demonstration.Architecture;
+﻿using AutonomousParking.Demonstration.Architecture;
 using Unity.MLAgents.Policies;
 using UnityEngine;
 
-namespace AutomaticParking.Demonstration.Infrastructure
+namespace AutonomousParking.Demonstration.Infrastructure
 {
     public class ParkingAgentServicesRegistrar : MonoBehaviour
     {
