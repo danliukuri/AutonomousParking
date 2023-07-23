@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using AutomaticParking.Demonstration.Architecture;
+using AutonomousParking.Demonstration.Architecture;
 using Unity.MLAgents.Policies;
 
-namespace AutomaticParking.Demonstration
+namespace AutonomousParking.Demonstration
 {
     public class CarControlTypeChanger
     {

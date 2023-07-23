@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using AutonomousParking.ParkingLot.Data;
 using System.Linq;
-using AutomaticParking.Demonstration.Architecture;
-using AutonomousParking.ParkingLot.Data;
+using AutonomousParking.Demonstration.Architecture;
 using UnityEngine;
 using UnityEngine.Pool;
 

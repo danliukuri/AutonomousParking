@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using AutonomousParking.Common;
 using AutonomousParking.Common.Patterns.Factory;
 using AutonomousParking.Common.Patterns.Pool;
-using AutomaticParking.Demonstration.Architecture;
+using AutonomousParking.Demonstration.Architecture;
 using UnityEngine;
 using UnityEngine.Pool;
 

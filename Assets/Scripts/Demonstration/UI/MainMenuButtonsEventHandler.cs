@@ -1,13 +1,13 @@
 ﻿using System.Linq;
-using AutomaticParking.Car.Creation;
-using AutomaticParking.Demonstration.Architecture;
-using AutomaticParking.Demonstration.Infrastructure;
+using AutonomousParking.Car.Creation;
+using AutonomousParking.Demonstration.Architecture;
+using AutonomousParking.Demonstration.Infrastructure;
 using Unity.MLAgents;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace AutomaticParking.Demonstration.UI
+namespace AutonomousParking.Demonstration.UI
 {
     public class MainMenuButtonsEventHandler : MonoBehaviour
     {
