@@ -1,6 +1,7 @@
 ![Banner](https://github.com/yuradanyliuk/AutonomousParking/assets/56362999/7a597506-8a39-4713-8796-9ce82856b69b)
 
 This project focuses on using reinforcement learning techniques to teach an intelligent agent how to navigate and park a car accurately in various parking scenarios.
+It's a part of [my bachelor's thesis](https://drive.google.com/drive/folders/1YK7YRnL6dpJ33humapjptR0H9O5MAja_), majoring in "Information Management Systems and Technologies" at KPI, Ukraine.
 
 The software development process was iterative, with a lot of [model training](https://tensorboard.dev/experiment/wW80LL6ySPGVxk6jJeQvRw) in general, which can be found on the TensorBoard.dev link provided.
 Also, for convenience, [final attempts](https://tensorboard.dev/experiment/snac9DewTPWmc1rOr1o9kA) were selected separately.
