@@ -47,4 +47,4 @@ Within the project, a [designated branch](/../create-model-demonstration-app) ha
 > Ensure that the TextMeshPro Essentials package is imported. To accomplish this in Unity, click the button:
 > > Window > TextMeshPro > Import TMP Examples and Extras.
 
-![Demonstration app in operation](https://github.com/danliukuri/AutonomousParking/assets/56362999/c7662a3d-a890-43da-bed3-13cf2817e069)
+![Demonstration app in operation](https://github.com/danliukuri/AutonomousParking/assets/56362999/67bde620-81b7-4cf3-af3c-bc0cd01f15f2)
